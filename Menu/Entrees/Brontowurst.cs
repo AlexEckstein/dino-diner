@@ -1,35 +1,57 @@
 ﻿using System;
+using System.Collections.Generic;
 
-namespace DinoDiner.Menu.Entree
+namespace DinoDiner.Menu.Entrees
 {
     public class Brontowurst
     {
+        private List<string> ingredients = new List<string>() { "brautwurst", "whole-wheat bun", "peppers", "onions" };
+        private double price;
+        private uint calories;
+        private bool bun = true;
+        private bool peppers = true;
+        private bool onions = true;
+        public double Price
+        {
+            get { return price; }
+            set { price = value; }
+        }
+        public List<string> Ingredients
+        {
+            get { return ingredients; }
+            set { ingredients = value; }
+        }
+        public uint Calories
+        {
+            get { return calories; }
+            set { calories = value; }
+        }
+        /// <summary>
+        /// Constructor of the class, adds ingredients to list if not held
+        /// </summary>
         public Brontowurst()
         {
-            private List<string> ingredients;
-            private double price;
-            private unit calories;
-            public double Price
-            {
-                get { return price; }
-                set { price = 5.36; }
-            }
-
-            public List<string> Ingredients
-            {
-                get { return ingredients; }
-                set { ingredients =  ["brautwurst", "whole-wheat bun", "peppers", "onions"]; }
-            }
-            public unit Calories
-            {
-                get { return calories; }
-                set { calories = 498; }
-            }
+            this.Calories = 498;
+            this.Price = 5.36;
+            
+            if (bun) ingredients.Add("whole-wheat bun");
+            if (peppers) ingredients.Add("pepers");
+            if (onions) ingredients.Add("onions");
+            this.Ingredients = ingredients;
+        }
+        public void HoldBun()
+        {
+            this.bun = false;
         }
 
-    public void Bun();
-    public void Pepper();
-    public void onions();
+        public void HoldPeppers()
+        {
+            this.peppers = false;
+        }
 
+        public void HoldOnion()
+        {
+            this.onions = false;
+        }
     }
 }
