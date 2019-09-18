@@ -8,21 +8,14 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// Public class holding Calories, Price, and Ingredients for DinoNuggets
     /// </summary>
-    public class DinoNuggets
+    public class DinoNuggets : Entree
     {
-        /// <summary>
-        /// Public uint holding calories
-        /// </summary>
-        public uint Calories { get; set; }
+        
         /// <summary>
         /// Public list holding ingredients 
         /// </summary>
         public List<string> Ingredients { get; set; }
-        /// <summary>
-        /// Public double holding price
-        /// </summary>
-        public double Price { get;  set; }
-
+      
         /// <summary>
         /// Constructor for DinoNuggets
         /// </summary>

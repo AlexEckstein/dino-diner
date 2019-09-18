@@ -8,16 +8,9 @@ using System.Collections.Generic;
     /// <summary>
     /// Public class that holds the price, calories and ingredients of PterodactylWings
     /// </summary>
-    public class PterodactylWings
+    public class PterodactylWings : Entree
     {
-        /// <summary>
-        /// Public double holding price 
-        /// </summary>
-        public double Price { get; set; }
-        /// <summary>
-        /// Public double holding Calories
-        /// </summary>
-        public uint Calories { get; set; }
+        
         /// <summary>
         /// Public list holding ingredients
         /// </summary>

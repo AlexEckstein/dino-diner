@@ -8,7 +8,7 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// Public class TRexKingBurger contains price, calories, and ingredients
     /// </summary>
-    public class TRexKingBurger
+    public class TRexKingBurger : Entree
     {
         /// <summary>
         /// Private bools for determining ingredients list
@@ -21,16 +21,6 @@ namespace DinoDiner.Menu.Entrees
         private bool mustard = true;
         private bool ketchup = true;
         private bool mayo = true;
-
-        /// <summary>
-        /// Public double holding price
-        /// </summary>
-        public double Price { get; set; }
-
-        /// <summary>
-        /// Public uint holding calories
-        /// </summary>
-        public uint Calories { get; set; }
 
         /// <summary>
         /// Public list holding ingredients
