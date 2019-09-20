@@ -11,23 +11,6 @@ namespace DinoDiner.Menu.Entrees
     public class TRexKingBurger : Entree
     {
         /// <summary>
-        /// Private bools for determining ingredients list
-        /// </summary>
-        private bool bun = true;
-        private bool lettuce = true;
-        private bool tomato = true;
-        private bool onion = true;
-        private bool pickle = true;
-        private bool mustard = true;
-        private bool ketchup = true;
-        private bool mayo = true;
-
-        /// <summary>
-        /// Public list holding ingredients
-        /// </summary>
-        public List<string> Ingredients { get; set; }
-
-        /// <summary>
         /// Constructor for TRexKingBurger
         /// </summary>
         public TRexKingBurger()
@@ -37,25 +20,16 @@ namespace DinoDiner.Menu.Entrees
             this.Ingredients = new List<string>()
             {
                 "Steakburger Pattie","Steakburger Pattie",
-                "Steakburger Pattie"
+                "Steakburger Pattie", "Whole Wheat Bun",
+                "Lettuce","Tomato","Onion","Pickle",
+                "Ketchup","Mustard","Mayo"
             };
-
-            //Conditionals for ingredients
-            if (bun) this.Ingredients.Add("Whole Wheat Bun");
-            if (lettuce) this.Ingredients.Add("Lettuce");
-            if (tomato) this.Ingredients.Add("Tomato");
-            if (onion) this.Ingredients.Add("Onion");
-            if (pickle) this.Ingredients.Add("Pickle");
-            if (ketchup) this.Ingredients.Add("Ketchup");
-            if (mustard) this.Ingredients.Add("Mustard");
-            if (mayo) this.Ingredients.Add("Mayo");
         }
         /// <summary>
         /// Void method that removes Bun from ingredients list
         /// </summary>
         public void HoldBun()
         {
-            this.bun = false;
             this.Ingredients.Remove("Whole Wheat Bun");
         }
         /// <summary>
@@ -63,7 +37,6 @@ namespace DinoDiner.Menu.Entrees
         /// </summary>
         public void HoldLettuce()
         {
-            this.lettuce = false;
             this.Ingredients.Remove("Lettuce");
         }
         /// <summary>
@@ -71,7 +44,6 @@ namespace DinoDiner.Menu.Entrees
         /// </summary>
         public void HoldTomato()
         {
-            this.tomato = false;
             this.Ingredients.Remove("Tomato");
         }
         /// <summary>
@@ -79,7 +51,6 @@ namespace DinoDiner.Menu.Entrees
         /// </summary>
         public void HoldOnion()
         {
-            this.onion = false;
             this.Ingredients.Remove("Onion");
         }
         /// <summary>
@@ -87,7 +58,6 @@ namespace DinoDiner.Menu.Entrees
         /// </summary>
         public void HoldPickle()
         {
-            this.pickle = false;
             this.Ingredients.Remove("Pickle");
         }
         /// <summary>
@@ -95,7 +65,6 @@ namespace DinoDiner.Menu.Entrees
         /// </summary>
         public void HoldMustard()
         {
-            this.mustard = false;
             this.Ingredients.Remove("Mustard");
         }
         /// <summary>
@@ -103,7 +72,6 @@ namespace DinoDiner.Menu.Entrees
         /// </summary>
         public void HoldKetchup()
         {
-            this.ketchup = false;
             this.Ingredients.Remove("Ketchup");
         }
         /// <summary>
@@ -111,7 +79,6 @@ namespace DinoDiner.Menu.Entrees
         /// </summary>
         public void HoldMayo()
         {
-            this.mayo = false;
             this.Ingredients.Remove("Mayo");
         }
     }

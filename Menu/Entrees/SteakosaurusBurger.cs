@@ -11,19 +11,6 @@ namespace DinoDiner.Menu.Entrees
     public class SteakosaurusBurger : Entree
     {
         /// <summary>
-        /// Private bools for determining ingredients list
-        /// </summary>
-        private bool bun = true;
-        private bool pickle = true;
-        private bool mustard = true;
-        private bool ketchup = true;
-
-        /// <summary>
-        /// Public list holding ingredients
-        /// </summary>
-        public List<string> Ingredients { get; set; }
-
-        /// <summary>
         /// Constructor for SteakosaurusBurger
         /// </summary>
         public SteakosaurusBurger()
@@ -32,20 +19,18 @@ namespace DinoDiner.Menu.Entrees
             this.Calories = 621;
             this.Ingredients = new List<string>()
             {
-                "Steakburger Pattie"
+                "Steakburger Pattie",
+                "Whole Wheat Bun",
+                "Pickle",
+                "Ketchup",
+                "Mustard"
             };
-
-            if (bun) this.Ingredients.Add("Whole Wheat Bun");
-            if (pickle) this.Ingredients.Add("Pickle");
-            if (ketchup) this.Ingredients.Add("Ketchup");
-            if (mustard) this.Ingredients.Add("Mustard");
         }
         /// <summary>
         /// Void method that removes Bun from ingredients list
         /// </summary>
         public void HoldBun()
         {
-            this.bun = false;
             this.Ingredients.Remove("Whole Wheat Bun");
         }
         /// <summary>
@@ -53,7 +38,6 @@ namespace DinoDiner.Menu.Entrees
         /// </summary>
         public void HoldPickle()
         {
-            this.pickle = false;
             this.Ingredients.Remove("Pickle");
         }
         /// <summary>
@@ -61,7 +45,6 @@ namespace DinoDiner.Menu.Entrees
         /// </summary>
         public void HoldKetchup()
         {
-            this.ketchup = false;
             this.Ingredients.Remove("Ketchup");
         }
         /// <summary>
@@ -69,7 +52,6 @@ namespace DinoDiner.Menu.Entrees
         /// </summary>
         public void HoldMustard()
         {
-            this.mustard = false;
             this.Ingredients.Remove("Mustard");
         }
 

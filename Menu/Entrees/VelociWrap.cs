@@ -10,15 +10,6 @@ namespace DinoDiner.Menu.Entrees
     /// </summary>
     public class VelociWrap : Entree
     {
-        /// <summary>
-        /// Private variables to determine ingredients
-        /// </summary>
-        private bool dressing = true;
-        private bool lettuce = true;
-        private bool cheese = true;
-       
-       
-        public List<string> Ingredients { get; set; }
 
         public VelociWrap()
         {
@@ -26,19 +17,16 @@ namespace DinoDiner.Menu.Entrees
             this.Calories = 356;
             this.Ingredients = new List<string>()
             {
-                "Flour Tortilla", "Chicken Breast"
+                "Flour Tortilla", "Chicken Breast",
+                "Parmesan Cheese","Romaine Lettuce",
+                "Ceasar Dressing"
             };
-            if (dressing) this.Ingredients.Add("Ceasar Dressing");
-            if (lettuce) this.Ingredients.Add("Romaine Lettuce");
-            if (cheese) this.Ingredients.Add("Parmesan Cheese");
-
         }
         /// <summary>
         /// Void method that removes Ceasar Dressing from ingredients list
         /// </summary>
         public void HoldDressing()
         {
-            this.dressing = false;
             this.Ingredients.Remove("Ceasar Dressing");
         }
         /// <summary>
@@ -46,7 +34,6 @@ namespace DinoDiner.Menu.Entrees
         /// </summary>
         public void HoldLettuce()
         {
-            this.lettuce = false;
             this.Ingredients.Remove("Romaine Lettuce");
         }
         /// <summary>
@@ -54,7 +41,6 @@ namespace DinoDiner.Menu.Entrees
         /// </summary>
         public void HoldCheese()
         {
-            this.cheese = false;
             this.Ingredients.Remove("Parmesan Cheese");
         }
     }

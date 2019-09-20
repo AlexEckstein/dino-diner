@@ -10,11 +10,6 @@ using System.Collections.Generic;
     /// </summary>
     public class PterodactylWings : Entree
     {
-        
-        /// <summary>
-        /// Public list holding ingredients
-        /// </summary>
-        public List<string> Ingredients { get; set; }
         /// <summary>
         /// Constructor for PterodactylWings 
         /// </summary>

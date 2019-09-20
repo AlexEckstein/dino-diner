@@ -10,12 +10,6 @@ namespace DinoDiner.Menu.Entrees
     /// </summary>
     public class DinoNuggets : Entree
     {
-        
-        /// <summary>
-        /// Public list holding ingredients 
-        /// </summary>
-        public List<string> Ingredients { get; set; }
-      
         /// <summary>
         /// Constructor for DinoNuggets
         /// </summary>

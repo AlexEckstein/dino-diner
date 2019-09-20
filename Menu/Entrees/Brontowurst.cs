@@ -11,18 +11,6 @@ namespace DinoDiner.Menu.Entrees
     public class Brontowurst: Entree
     {
         /// <summary>
-        /// Private variables for Brontowurst class
-        /// </summary>      
-        private bool bun = true;
-        private bool peppers = true;
-        private bool onions = true;
-
-        /// <summary>
-        /// Public list holding Ingredients
-        /// </summary>
-        public List<string> Ingredients { get; set; }
-       
-        /// <summary>
         /// Constructor of the class, adds ingredients to list if not held
         /// </summary>
         public Brontowurst()
@@ -31,21 +19,15 @@ namespace DinoDiner.Menu.Entrees
             this.Price = 5.36;
             this.Ingredients = new List<string>()
             {
-                "Brautwurst"
+                "Brautwurst","Whole Wheat Bun",
+                "Peppers","Onion"
             };
-            if (bun) Ingredients.Add("Whole Wheat Bun");
-
-            if (peppers) Ingredients.Add("Peppers");
-
-            if (onions) Ingredients.Add("Onion");
-            
         }
         /// <summary>
         /// Void method that removes Bun from ingredients list 
         /// </summary>
         public void HoldBun()
         {
-            this.bun = false;
             this.Ingredients.Remove("Whole Wheat Bun");
         }
         /// <summary>
@@ -53,7 +35,6 @@ namespace DinoDiner.Menu.Entrees
         /// </summary>
         public void HoldPeppers()
         {
-            this.peppers = false;
             this.Ingredients.Remove("Peppers");
         }
         /// <summary>
@@ -61,7 +42,6 @@ namespace DinoDiner.Menu.Entrees
         /// </summary>
         public void HoldOnion()
         {
-            this.onions = false;
             this.Ingredients.Remove("Onion");
         }
     }
