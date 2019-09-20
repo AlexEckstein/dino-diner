@@ -13,6 +13,21 @@ namespace DinoDiner.Menu.Sides
             if (this.Size == Size.Small) { this.Calories = 352; this.Price = 0.99; }
             if (this.Size == Size.Medium) { this.Calories = 410; this.Price = 1.45; }
             if (this.Size == Size.Large) { this.Calories = 590; this.Price = 1.95; }
+            this.Ingredients = new List<string>()
+            {
+                "Potatoes",
+                "Salt",
+                "Vegtable Oil"
+            };
+        }
+
+        public override Size Size
+        { get { return this.Size; }
+            set  {
+                if (this.Size == Size.Small) { this.Calories = 352; this.Price = 0.99; }
+                if (this.Size == Size.Medium) { this.Calories = 410; this.Price = 1.45; }
+                if (this.Size == Size.Large) { this.Calories = 590; this.Price = 1.95; }
+            }
         }
     }
 }

@@ -10,18 +10,25 @@ namespace DinoDiner.Menu.Sides
     /// </summary>
     public class Fryceritops: Side
     {
+
         public Fryceritops()
         {
-            this.Size = Size.Small;
-            if (this.Size == Size.Small) this.Calories = 222; this.Price = 0.99;
-            if (this.Size == Size.Medium) this.Calories = 365; this.Price = 1.45;
-            if (this.Size == Size.Large) this.Calories = 480; this.Price = 1.95;
-           /* this.Ingredients = new List<string>()
+           this.Size = Size.Small;
+           this.Ingredients = new List<string>()
             {
-                "Potatoes",
+                "Potato",
                 "Salt",
                 "Vegtable Oil"
-            };*/
+            };
+        }
+        public override Size Size
+        { get { return this.Size; }
+            set {
+                this.Size = value;
+                if (this.Size == Size.Small) { this.Calories = 222; this.Price = 0.99; }
+                if (this.Size == Size.Medium) { this.Calories = 365; this.Price = 1.45; }
+                if (this.Size == Size.Large) { this.Calories = 480; this.Price = 1.95; }
+            }
         }
     }
 }
