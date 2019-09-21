@@ -14,15 +14,24 @@ namespace DinoDiner.Menu.Sides
         public Fryceritops()
         {
            this.Size = Size.Small;
-           this.Ingredients = new List<string>()
+            this.Calories = 222;
+            this.Price = 0.99;
+            this.Ingredients = new List<string>()
             {
                 "Potato",
                 "Salt",
                 "Vegtable Oil"
             };
+            
         }
+        /// <summary>
+        /// Changes Calories and Price according to size
+        /// </summary>
         public override Size Size
-        { get { return this.Size; }
+        {
+            get {
+                return this.Size;
+            }
             set {
                 this.Size = value;
                 if (this.Size == Size.Small) { this.Calories = 222; this.Price = 0.99; }

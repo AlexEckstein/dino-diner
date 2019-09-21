@@ -13,9 +13,8 @@ namespace DinoDiner.Menu.Sides
         public MeteorMacAndCheese()
         {
             this.Size = Size.Small;
-            if (this.Size == Size.Small) this.Calories = 420; this.Price = 0.99;
-            if (this.Size == Size.Medium) this.Calories = 490; this.Price = 1.45;
-            if (this.Size == Size.Large) this.Calories = 520; this.Price = 1.95;
+            this.Calories = 420;
+            this.Price = 0.99;
             this.Ingredients = new List<string>()
             {
                 "Macaroni Noodles",
@@ -23,11 +22,16 @@ namespace DinoDiner.Menu.Sides
                 "Pork Sausage"
             };
         }
-
-        public override Size Size {
-            get { return this.Size; }
-            set
-            {
+        /// <summary>
+        /// Changes Calories and Price according to size
+        /// </summary>
+        public override Size Size
+        {
+            get {
+                return this.Size;
+            }
+            set {
+                this.Size = value;
                 if (this.Size == Size.Small) this.Calories = 420; this.Price = 0.99;
                 if (this.Size == Size.Medium) this.Calories = 490; this.Price = 1.45;
                 if (this.Size == Size.Large) this.Calories = 520; this.Price = 1.95;
