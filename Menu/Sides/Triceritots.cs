@@ -2,6 +2,7 @@
 *   Author: Alex Eckstein
 */
 using System.Collections.Generic;
+using DinoDiner.Menu.Enums;
 
 namespace DinoDiner.Menu.Sides
 {

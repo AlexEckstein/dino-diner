@@ -1,12 +1,11 @@
-﻿/*  Side.cs
-*   Author: Alex Eckstein
-*/
+﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using DinoDiner.Menu.Enums;
 
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu.Drinks
 {
-    public abstract class Side
+    public abstract class Drink
     {
         /// <summary>
         /// Gets and sets the price
@@ -21,7 +20,7 @@ namespace DinoDiner.Menu.Sides
         /// <summary>
         /// Gets the ingredients list
         /// </summary>
-        public List<string> Ingredients { get; protected set;}
+        public List<string> Ingredients { get; protected set; }
 
         /// <summary>
         /// Gets or sets the size
