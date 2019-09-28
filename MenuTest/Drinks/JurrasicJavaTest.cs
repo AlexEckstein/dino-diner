@@ -94,9 +94,17 @@ namespace MenuTest.Drinks
         [Fact]
         public void ShouldBeAbleToHoldIce()
         {
-            SodaSaurus ss = new SodaSaurus();
+            JurrasicJava ss = new JurrasicJava();
             ss.HoldIce();
             Assert.False(ss.Ice);
+        }
+
+        [Fact]
+        public void ShouldBeAbleToLeaveSpaceForCream()
+        {
+            JurrasicJava ss = new JurrasicJava();
+            ss.LeaveRoomForCream();
+            Assert.True(ss.RoomForCream);
         }
     }
 }

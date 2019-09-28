@@ -1,6 +1,11 @@
-﻿namespace MenuTest.Drinks
+﻿using DinoDiner.Menu.Drinks;
+using DinoDiner.Menu.Enums;
+using System;
+using Xunit;
+
+namespace MenuTest.Drinks
 {
-    class WaterTest
+    public class WaterTest
     {
     }
 }
