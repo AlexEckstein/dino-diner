@@ -1,7 +1,5 @@
-﻿using System;
+﻿using DinoDiner.Menu.Enums;
 using System.Collections.Generic;
-using System.Text;
-using DinoDiner.Menu.Enums;
 
 namespace DinoDiner.Menu.Drinks
 {

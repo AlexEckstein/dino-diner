@@ -3,7 +3,7 @@
 */
 using System.Collections.Generic;
 
-    namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu.Entrees
 {
     /// <summary>
     /// Public class that holds the price, calories and ingredients of PterodactylWings

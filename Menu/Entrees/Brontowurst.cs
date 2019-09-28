@@ -8,7 +8,7 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// Public class that holds the price, calories and ingredients of Brontowurst
     /// </summary>
-    public class Brontowurst: Entree
+    public class Brontowurst : Entree
     {
         /// <summary>
         /// Constructor of the class, adds ingredients to list if not held

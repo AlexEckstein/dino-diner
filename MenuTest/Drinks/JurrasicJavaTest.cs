@@ -1,63 +1,60 @@
 ﻿using DinoDiner.Menu.Drinks;
 using DinoDiner.Menu.Enums;
-using System;
 using Xunit;
-
 namespace MenuTest.Drinks
 {
-    public class SodaSaurusTest
+    public class JurrasicJavaTest
     {
         [Fact]
         public void ShouldHaveCorrectDefaultPrice()
         {
-            SodaSaurus ss = new SodaSaurus();
-            Assert.Equal(1.50, ss.Price, 2);
+            JurrasicJava ss = new JurrasicJava();
+            Assert.Equal(0.59, ss.Price, 2);
         }
 
         [Fact]
         public void ShouldHaveCorrectDefaultCalories()
         {
-            SodaSaurus ss = new SodaSaurus();
-            Assert.Equal<uint>(112, ss.Calories);
+            JurrasicJava ss = new JurrasicJava();
+            Assert.Equal<uint>(2, ss.Calories);
         }
 
         [Fact]
         public void ShouldHaveCorrectIngedients()
         {
-            SodaSaurus ss = new SodaSaurus();
+            JurrasicJava ss = new JurrasicJava();
             Assert.Contains<string>("Water", ss.Ingredients);
-            Assert.Contains<string>("Natural Flavors", ss.Ingredients);
-            Assert.Contains<string>("Cane Sugar", ss.Ingredients);
-            Assert.Equal<int>(3, ss.Ingredients.Count);
+            Assert.Contains<string>("Coffee", ss.Ingredients);
+            Assert.Equal<int>(2, ss.Ingredients.Count);
         }
 
         [Fact]
         public void ShouldHaveCorrectDefaultSize()
         {
-            SodaSaurus ss = new SodaSaurus();
+            JurrasicJava ss = new JurrasicJava();
             Assert.Equal<Size>(Size.Small, ss.Size);
         }
 
         [Fact]
         public void ShouldUseCorrectPriceForMedium()
         {
-            SodaSaurus ss = new SodaSaurus();
+            JurrasicJava ss = new JurrasicJava();
             ss.Size = Size.Medium;
-            Assert.Equal(2.0, ss.Price, 2);
+            Assert.Equal(0.99, ss.Price, 2);
         }
 
         [Fact]
         public void ShouldUseCorrectCaloriesForMedium()
         {
-            SodaSaurus ss = new SodaSaurus();
+            JurrasicJava ss = new JurrasicJava();
             ss.Size = Size.Medium;
-            Assert.Equal<uint>(156, ss.Calories);
+            Assert.Equal<uint>(4, ss.Calories);
         }
 
         [Fact]
         public void ShouldBeAbleToSetSizeToMedium()
         {
-            SodaSaurus ss = new SodaSaurus();
+            JurrasicJava ss = new JurrasicJava();
             ss.Size = Size.Medium;
             Assert.Equal<Size>(Size.Medium, ss.Size);
         }
@@ -65,36 +62,33 @@ namespace MenuTest.Drinks
         [Fact]
         public void ShouldUseCorrectPriceForLarge()
         {
-            SodaSaurus ss = new SodaSaurus();
+            JurrasicJava ss = new JurrasicJava();
             ss.Size = Size.Large;
-            Assert.Equal(2.5, ss.Price, 2);
+            Assert.Equal(1.49, ss.Price, 2);
         }
 
         [Fact]
         public void ShouldUseCorrectCaloriesForLarge()
         {
-            SodaSaurus ss = new SodaSaurus();
+            JurrasicJava ss = new JurrasicJava();
             ss.Size = Size.Large;
-            Assert.Equal<uint>(208, ss.Calories);
+            Assert.Equal<uint>(8, ss.Calories);
         }
 
         [Fact]
         public void ShouldBeAbleToSetSizeToLarge()
         {
-            SodaSaurus ss = new SodaSaurus();
+            JurrasicJava ss = new JurrasicJava();
             ss.Size = Size.Large;
             Assert.Equal<Size>(Size.Large, ss.Size);
         }
 
         [Fact]
-        public void ShouldBeAbleToSelectAnyFlavor()
+        public void ShouldBeAbleToAddIce()
         {
-            SodaSaurus ss = new SodaSaurus();
-            foreach (SodaSaurusFlavor f in (SodaSaurusFlavor[])Enum.GetValues(typeof(SodaSaurusFlavor)))
-            {
-                ss.Flavor = f;
-                Assert.Equal<SodaSaurusFlavor>(f, ss.Flavor);
-            }
+            JurrasicJava ss = new JurrasicJava();
+            ss.AddIce();
+            Assert.True(ss.Ice);
         }
 
         [Fact]

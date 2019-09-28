@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using DinoDiner.Menu.Enums;
+﻿using DinoDiner.Menu.Enums;
 
 namespace DinoDiner.Menu.Drinks
 {
     public class Tyrannotea : ColdDrink
     {
-        public bool Sweet{ get; set; }
+        public bool Sweet { get; set; }
         public bool Lemon { get; private set; }
 
         public Tyrannotea()
@@ -38,7 +35,8 @@ namespace DinoDiner.Menu.Drinks
                 if (Sweet)
                 {
                     this.Calories = this.Calories * 2;
-                    if (!this.Ingredients.Contains("Cane Sugar")){
+                    if (!this.Ingredients.Contains("Cane Sugar"))
+                    {
                         this.Ingredients.Add("Cane Sugar");
                     }
                 }

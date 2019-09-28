@@ -1,20 +1,20 @@
 ﻿/*  Fryceritops.cs
 *   Author: Alex Eckstein
 */
-using System.Collections.Generic;
 using DinoDiner.Menu.Enums;
+using System.Collections.Generic;
 
 namespace DinoDiner.Menu.Sides
 {
     /// <summary>
     /// Public class Fryceritops inheritance from Side
     /// </summary>
-    public class Fryceritops: Side
+    public class Fryceritops : Side
     {
 
         public Fryceritops()
         {
-           this.Size = Size.Small;
+            this.Size = Size.Small;
             this.Calories = 222;
             this.Price = 0.99;
             this.Ingredients = new List<string>()
@@ -23,17 +23,19 @@ namespace DinoDiner.Menu.Sides
                 "Salt",
                 "Vegtable Oil"
             };
-            
+
         }
         /// <summary>
         /// Changes Calories and Price according to size
         /// </summary>
         public override Size Size
         {
-            get {
+            get
+            {
                 return this.Size;
             }
-            set {
+            set
+            {
                 this.Size = value;
                 if (this.Size == Size.Small) { this.Calories = 222; this.Price = 0.99; }
                 if (this.Size == Size.Medium) { this.Calories = 365; this.Price = 1.45; }

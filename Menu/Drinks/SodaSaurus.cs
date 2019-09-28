@@ -1,5 +1,4 @@
-﻿using System;
-using DinoDiner.Menu.Enums;
+﻿using DinoDiner.Menu.Enums;
 
 namespace DinoDiner.Menu.Drinks
 {
@@ -11,7 +10,7 @@ namespace DinoDiner.Menu.Drinks
             this.Ice = true;
             this.Flavor = SodaSaurusFlavor.Cola;
         }
-        public SodaSaurusFlavor Flavor {get; set;}
+        public SodaSaurusFlavor Flavor { get; set; }
 
         public override Size Size
         {

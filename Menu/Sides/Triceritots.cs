@@ -1,8 +1,8 @@
 ﻿/*  Triceritots.cs
 *   Author: Alex Eckstein
 */
-using System.Collections.Generic;
 using DinoDiner.Menu.Enums;
+using System.Collections.Generic;
 
 namespace DinoDiner.Menu.Sides
 {
@@ -18,7 +18,7 @@ namespace DinoDiner.Menu.Sides
         {
             this.Size = Size.Small;
             this.Calories = 352;
-            this.Price = 0.99; 
+            this.Price = 0.99;
             this.Ingredients = new List<string>()
             {
                 "Potatoes",
@@ -31,10 +31,12 @@ namespace DinoDiner.Menu.Sides
         /// </summary>
         public override Size Size
         {
-            get {
+            get
+            {
                 return this.Size;
             }
-            set {
+            set
+            {
                 this.Size = value;
                 if (this.Size == Size.Small) { this.Calories = 352; this.Price = 0.99; }
                 if (this.Size == Size.Medium) { this.Calories = 410; this.Price = 1.45; }

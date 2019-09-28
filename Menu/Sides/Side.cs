@@ -1,8 +1,8 @@
 ﻿/*  Side.cs
 *   Author: Alex Eckstein
 */
-using System.Collections.Generic;
 using DinoDiner.Menu.Enums;
+using System.Collections.Generic;
 
 namespace DinoDiner.Menu.Sides
 {
@@ -21,7 +21,7 @@ namespace DinoDiner.Menu.Sides
         /// <summary>
         /// Gets the ingredients list
         /// </summary>
-        public List<string> Ingredients { get; protected set;}
+        public List<string> Ingredients { get; protected set; }
 
         /// <summary>
         /// Gets or sets the size

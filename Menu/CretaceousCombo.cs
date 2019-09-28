@@ -1,11 +1,11 @@
 ﻿/*  CretaceousCombo.cs
 *   Author: Alex Eckstein
 */
-using System.Collections.Generic;
-using DinoDiner.Menu.Entrees;
 using DinoDiner.Menu.Drinks;
-using DinoDiner.Menu.Sides;
+using DinoDiner.Menu.Entrees;
 using DinoDiner.Menu.Enums;
+using DinoDiner.Menu.Sides;
+using System.Collections.Generic;
 
 namespace DinoDiner.Menu
 {

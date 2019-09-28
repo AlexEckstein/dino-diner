@@ -1,12 +1,13 @@
-﻿using System.Collections.Generic;
-using DinoDiner.Menu.Enums;
+﻿using DinoDiner.Menu.Enums;
+using System.Collections.Generic;
 
 namespace DinoDiner.Menu.Drinks
 {
     public class JurrasicJava : ColdDrink
     {
         public bool RoomForCream = false;
-        public override Size Size {
+        public override Size Size
+        {
             get
             {
                 return this.Size;

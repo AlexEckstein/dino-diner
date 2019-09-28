@@ -1,15 +1,15 @@
 ﻿/*  MeteorMacAndCheese.cs
 *   Author: Alex Eckstein
 */
-using System.Collections.Generic;
 using DinoDiner.Menu.Enums;
+using System.Collections.Generic;
 
 namespace DinoDiner.Menu.Sides
 {
     /// <summary>
     /// MeteorMacAndCheese class that inherits from Side
     /// </summary>
-    public class MeteorMacAndCheese: Side
+    public class MeteorMacAndCheese : Side
     {
         public MeteorMacAndCheese()
         {
@@ -28,10 +28,12 @@ namespace DinoDiner.Menu.Sides
         /// </summary>
         public override Size Size
         {
-            get {
+            get
+            {
                 return this.Size;
             }
-            set {
+            set
+            {
                 this.Size = value;
                 if (this.Size == Size.Small) this.Calories = 420; this.Price = 0.99;
                 if (this.Size == Size.Medium) this.Calories = 490; this.Price = 1.45;
