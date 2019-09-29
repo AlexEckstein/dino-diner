@@ -34,7 +34,18 @@ namespace MenuTest.Drinks
             JurrasicJava ss = new JurrasicJava();
             Assert.Equal<Size>(Size.Small, ss.Size);
         }
-
+        [Fact]
+        public void ShouldHaveCorrectDefaultRoomForCream()
+        {
+            JurrasicJava ss = new JurrasicJava();
+            Assert.False(ss.RoomForCream);
+        }
+        [Fact]
+        public void ShouldHaveCorrectDefaultIce()
+        {
+            JurrasicJava ss = new JurrasicJava();
+            Assert.False(ss.Ice);
+        }
         [Fact]
         public void ShouldUseCorrectPriceForMedium()
         {

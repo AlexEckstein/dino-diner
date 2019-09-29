@@ -1,8 +1,14 @@
-﻿using DinoDiner.Menu.Enums;
+﻿/*  Drink.cs
+*   Author: Alex Eckstein
+*/
+using DinoDiner.Menu.Enums;
 using System.Collections.Generic;
 
 namespace DinoDiner.Menu.Drinks
 {
+    /// <summary>
+    /// Abstract class of Drink
+    /// </summary>
     public abstract class Drink
     {
         /// <summary>

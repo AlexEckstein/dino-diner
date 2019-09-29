@@ -85,7 +85,7 @@ namespace MenuTest.Drinks
             Assert.Equal<Size>(Size.Large, ss.Size);
         }
 
-
+        [Fact]
         public void ShouldBeAbleToAddLemon()
         {
             Tyrannotea ss = new Tyrannotea();

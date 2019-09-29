@@ -1,25 +1,28 @@
-﻿using DinoDiner.Menu.Enums;
+﻿/*  Tyrannotea.cs
+*   Author: Alex Eckstein
+*/
+using DinoDiner.Menu.Enums;
 
 namespace DinoDiner.Menu.Drinks
 {
+    /// <summary>
+    /// Public class that holds Tyrannotea
+    /// </summary>
     public class Tyrannotea : ColdDrink
     {
+        /// <summary>
+        /// Public bool holding Sweet
+        /// </summary>
         public bool Sweet { get; set; }
-        public bool Lemon { get; private set; }
 
-        public Tyrannotea()
-        {
-            this.Sweet = false;
-            this.Lemon = false;
-            this.Size = Size.Small;
-            this.Ingredients.Add("Water");
-            this.Ingredients.Add("Tea");
-        }
-        public void AddLemon()
-        {
-            Lemon = true;
-            this.Ingredients.Add("Lemon");
-        }
+        /// <summary>
+        /// Public bool holding Lemon
+        /// </summary>
+        public bool Lemon { get; private set; }
+        
+        /// <summary>
+        /// Public override method that changes Calories and Price based upon size
+        /// </summary>
         public override Size Size
         {
             get
@@ -43,5 +46,25 @@ namespace DinoDiner.Menu.Drinks
             }
         }
 
+        /// <summary>
+        /// Constructor for Tyrannotea
+        /// </summary>
+        public Tyrannotea()
+        {
+            this.Sweet = false;
+            this.Lemon = false;
+            this.Size = Size.Small;
+            this.Ingredients.Add("Water");
+            this.Ingredients.Add("Tea");
+        }
+
+        /// <summary>
+        /// Void method that changes Lemon to true
+        /// </summary>
+        public void AddLemon()
+        {
+            Lemon = true;
+            this.Ingredients.Add("Lemon");
+        }
     }
 }
