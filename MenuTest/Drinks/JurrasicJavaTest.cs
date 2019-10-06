@@ -1,4 +1,4 @@
-﻿using DinoDiner.Menu.Drinks;
+﻿using DinoDiner.Menu;
 using DinoDiner.Menu.Enums;
 using Xunit;
 namespace MenuTest.Drinks

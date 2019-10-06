@@ -3,7 +3,7 @@
 */
 using System.Collections.Generic;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Public class holding Price, Calories, and Ingredients for VelociWrap
@@ -42,6 +42,10 @@ namespace DinoDiner.Menu.Entrees
         public void HoldCheese()
         {
             this.Ingredients.Remove("Parmesan Cheese");
+        }
+        public override string ToString()
+        {
+            return ("Veloci-Wrap");
         }
     }
 }

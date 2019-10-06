@@ -4,7 +4,7 @@
 using DinoDiner.Menu.Enums;
 using System.Collections.Generic;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Public Class holding JurrasicJava
@@ -29,6 +29,8 @@ namespace DinoDiner.Menu.Drinks
                 if (this.Size == Size.Large) { this.Calories = 8; this.Price = 1.49; }
             }
         }
+
+        public bool Decaf { get; private set; }
 
         /// <summary>
         /// Constructor for JurrasicJava
@@ -57,6 +59,18 @@ namespace DinoDiner.Menu.Drinks
         public void AddIce()
         {
             this.Ice = true;
+        }
+        public void MakeDecaf()
+        {
+            this.Decaf = true;
+        }
+        public override string ToString()
+        {
+            if (!Decaf)
+                return (Size.ToString() + " Jurassic Java");
+            else
+                return (Size.ToString() + " Decaf Jurassic Java");
+
         }
     }
 }

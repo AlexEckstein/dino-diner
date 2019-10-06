@@ -4,7 +4,7 @@
 using DinoDiner.Menu.Enums;
 using System.Collections.Generic;
 
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// MezzorellaSticks Class that inherits from Side
@@ -37,6 +37,14 @@ namespace DinoDiner.Menu.Sides
                 if (this.Size == Size.Medium) { this.Calories = 610; this.Price = 1.45; }
                 if (this.Size == Size.Large) { this.Calories = 720; this.Price = 1.95; }
             }
+        }
+        /// <summary>
+        /// Overrides the default ToString method
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return (Size.ToString() + " Mezzorella Sticks");
         }
     }
 }

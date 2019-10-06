@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     public class PrehistoricPBJ : Entree
     {
@@ -27,6 +27,10 @@ namespace DinoDiner.Menu.Entrees
         public void HoldJelly()
         {
             this.Ingredients.Remove("Jelly");
+        }
+        public override string ToString()
+        {
+            return ("Prehistoric PB&J");
         }
     }
 }

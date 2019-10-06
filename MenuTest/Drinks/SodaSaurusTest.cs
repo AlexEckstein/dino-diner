@@ -1,6 +1,5 @@
-﻿using DinoDiner.Menu.Drinks;
+﻿using DinoDiner.Menu;
 using DinoDiner.Menu.Enums;
-using System;
 using Xunit;
 
 namespace MenuTest.Drinks
@@ -86,17 +85,17 @@ namespace MenuTest.Drinks
             Assert.Equal<Size>(Size.Large, ss.Size);
         }
 
-      //  [Fact]
+        /*  [Fact]
         public void ShouldBeAbleToSelectAnyFlavor()
         {
             SodaSaurus ss = new SodaSaurus();
-            foreach (SodaSaurusFlavor f in (SodaSaurusFlavor[])Enum.GetValues(typeof(SodaSaurusFlavor)))
+            foreach (SodaSaurusFlavor f in (SodaSaurusFlavor[]))
             {
                 ss.Flavor = f;
                 Assert.Equal<SodaSaurusFlavor>(f, ss.Flavor);
             }
         }
-
+        */
         [Fact]
         public void ShouldBeAbleToHoldIce()
         {

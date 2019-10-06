@@ -3,7 +3,7 @@
 */
 using DinoDiner.Menu.Enums;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Public class for SodaSaurus
@@ -42,6 +42,14 @@ namespace DinoDiner.Menu.Drinks
             this.Size = Size.Small;
             this.Ice = true;
             this.Flavor = SodaSaurusFlavor.Cola;
+        }
+        /// <summary>
+        /// Overides ToString method
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return ($"{Size} {Flavor} Sodasaurus");
         }
     }
 }

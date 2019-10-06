@@ -3,7 +3,7 @@
 */
 using System.Collections.Generic;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Public class that holds the price, calories and ingredients of SteakosaurusBurger
@@ -54,6 +54,9 @@ namespace DinoDiner.Menu.Entrees
         {
             this.Ingredients.Remove("Mustard");
         }
-
+        public override string ToString()
+        {
+            return ("Steakosaurus Burger");
+        }
     }
 }

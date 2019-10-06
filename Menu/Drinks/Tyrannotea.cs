@@ -3,7 +3,7 @@
 */
 using DinoDiner.Menu.Enums;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Public class that holds Tyrannotea
@@ -65,6 +65,14 @@ namespace DinoDiner.Menu.Drinks
         {
             Lemon = true;
             this.Ingredients.Add("Lemon");
+        }
+        /// <summary>
+        /// Overides ToString method
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return ($"{Size} Tyrannotea");
         }
     }
 }

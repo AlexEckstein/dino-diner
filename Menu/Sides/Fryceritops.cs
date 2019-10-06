@@ -4,7 +4,7 @@
 using DinoDiner.Menu.Enums;
 using System.Collections.Generic;
 
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Public class Fryceritops inheritance from Side
@@ -41,6 +41,14 @@ namespace DinoDiner.Menu.Sides
                 if (this.Size == Size.Medium) { this.Calories = 365; this.Price = 1.45; }
                 if (this.Size == Size.Large) { this.Calories = 480; this.Price = 1.95; }
             }
+        }
+        /// <summary>
+        /// Overrides the default ToString method
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return (Size.ToString() + " Fryceritops");
         }
     }
 }

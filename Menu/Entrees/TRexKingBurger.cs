@@ -3,7 +3,7 @@
 */
 using System.Collections.Generic;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Public class TRexKingBurger contains price, calories, and ingredients
@@ -80,6 +80,10 @@ namespace DinoDiner.Menu.Entrees
         public void HoldMayo()
         {
             this.Ingredients.Remove("Mayo");
+        }
+        public override string ToString()
+        {
+            return ("TRex King Burger");
         }
     }
 }

@@ -3,7 +3,7 @@
 */
 using System.Collections.Generic;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Public class that holds the price, calories and ingredients of Brontowurst
@@ -43,6 +43,14 @@ namespace DinoDiner.Menu.Entrees
         public void HoldOnion()
         {
             this.Ingredients.Remove("Onion");
+        }
+        /// <summary>
+        /// Overides ToString method
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return ("Brontowurst");
         }
     }
 }

@@ -4,12 +4,12 @@
 using DinoDiner.Menu.Enums;
 using System.Collections.Generic;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Abstract class of Drink
     /// </summary>
-    public abstract class Drink
+    public abstract class Drink :IMenuItem
     {
         /// <summary>
         /// Gets and sets the price

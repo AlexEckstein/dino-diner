@@ -3,7 +3,7 @@
 */
 using System.Collections.Generic;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Public class holding Calories, Price, and Ingredients for DinoNuggets
@@ -32,6 +32,10 @@ namespace DinoDiner.Menu.Entrees
             this.Price += 0.25;
             this.Calories += 59;
             this.Ingredients.Add("Chicken Nugget");
+        }
+        public override string ToString()
+        {
+            return ("Dino-Nuggets");
         }
     }
 }

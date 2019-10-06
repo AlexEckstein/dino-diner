@@ -3,7 +3,7 @@
 */
 using DinoDiner.Menu.Enums;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Public Class holding Water
@@ -38,7 +38,14 @@ namespace DinoDiner.Menu.Drinks
         {
             this.Ingredients.Add("Lemon");
             this.Lemon = true;
-
+        }
+        /// <summary>
+        /// Overides ToString method
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return ($"{Size} Water");
         }
     }
 }

@@ -1,22 +1,19 @@
 ﻿/*  CretaceousCombo.cs
 *   Author: Alex Eckstein
 */
-using DinoDiner.Menu.Drinks;
-using DinoDiner.Menu.Entrees;
 using DinoDiner.Menu.Enums;
-using DinoDiner.Menu.Sides;
 using System.Collections.Generic;
 
 namespace DinoDiner.Menu
 {
-    public class CretaceousCombo
+    public class CretaceousCombo : IMenuItem
     {
-        private Entree Entree;
-        private Drink Drink;
-        private Side Side;
+        public Entree Entree;
+        public Drink Drink;
+        public Side Side;
 
-        public double Price { get; private set; }
-        public uint Calories { get; private set; }
+        public double Price { get; set; }
+        public uint Calories { get; set; }
         public List<string> Ingredients { get; private set; }
 
         /// <summary>
@@ -53,6 +50,14 @@ namespace DinoDiner.Menu
             this.Ingredients.AddRange(Drink.Ingredients);
             this.Ingredients.AddRange(Side.Ingredients);
         }
+
+        public CretaceousCombo(Entree e)
+        {
+            Entree = e;
+            Side = new Fryceritops();
+            Drink = new SodaSaurus();
+        }
+
         /// <summary>
         /// Override method that prints the items in the Combo
         /// </summary>
