@@ -9,7 +9,7 @@ namespace DinoDiner.Menu
     public class CretaceousCombo : IMenuItem
     {
         public Entree Entree;
-        public Drink Drink;
+        public ColdDrink Drink;
         public Side Side;
 
         public double Price { get; set; }
@@ -40,7 +40,7 @@ namespace DinoDiner.Menu
         /// <param name="e">Entree to pass in</param>
         /// <param name="d">Drink to pass in</param>
         /// <param name="s">Side to pass in</param>
-        public CretaceousCombo(Entree e, Drink d, Side s)
+        public CretaceousCombo(Entree e, ColdDrink d, Side s)
         {
             this.Entree = e;
             this.Drink = d;

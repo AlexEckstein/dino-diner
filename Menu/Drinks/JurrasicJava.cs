@@ -30,7 +30,7 @@ namespace DinoDiner.Menu
             }
         }
 
-        public bool Decaf { get; private set; }
+        public bool Decaf { get;  set; }
 
         /// <summary>
         /// Constructor for JurrasicJava
