@@ -10,7 +10,7 @@
         <Label x:Name="label" Content="Add To Order" HorizontalAlignment="Center" Margin="0,40,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.045,0.718"/>
         <StackPanel HorizontalAlignment="Center" Height="150" Margin="0,117,0,0" VerticalAlignment="Top" Width="150">
             <StackPanel Height="150">
-                <Button Height="150">
+                <Button Height="150" FontSize="14">BrontoWurst Combo 
                     <Button.Background>
                         <ImageBrush ImageSource="Assets/DinoDIner-02.png"/>
                     </Button.Background>
