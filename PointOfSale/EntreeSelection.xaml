@@ -1,91 +1,84 @@
-﻿<Page x:Class="PointOfSale.ComboSelection"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+﻿<Page x:Class="PointOfSale.EntreeSelection"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PointOfSale"
-        mc:Ignorable="d"
-        Title="ComboSelection" Height="450" Width="800">
+      mc:Ignorable="d"
+      Title="EntreesPage" Height="754.387" Width="1013.825">
 
-    <WrapPanel Margin="0,0,-8,-6">
+    <WrapPanel>
         <WrapPanel.Resources>
             <Style TargetType="Button">
-                <Setter Property="Width" Value="200"/>
-                <Setter Property="Height" Value="200"/>
+                <Setter Property="Width" Value="250"/>
+                <Setter Property="Height" Value="250"/>
             </Style>
         </WrapPanel.Resources>
-        <Button Click="BrontowurstCombo_Click" VerticalContentAlignment="Bottom">
+        <Button Click="Brontowurst_Click" VerticalContentAlignment="Bottom">
             <StackPanel VerticalAlignment="Bottom">
                 <TextBlock VerticalAlignment="Bottom" TextWrapping="Wrap">
                     <TextBlock.Inlines>
-                        <Run FontWeight="Bold" FontSize="16" Text="Brontowurst Combo" />
+                        <Run FontWeight="Bold" FontSize="14" Text="Brontowurst" />
                     </TextBlock.Inlines></TextBlock>
             </StackPanel>
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-01.png"/>
             </Button.Background>
         </Button>
-        <Button Click="DinoNuggetsCombo_Click" VerticalContentAlignment="Bottom">
-            <DockPanel>
-                <TextBlock DockPanel.Dock="Bottom">
-                    <TextBlock.Inlines>
-                        <Run FontWeight="Bold" FontSize="16" Text="Dino-Nuggets Combo" />
-                    </TextBlock.Inlines>
-                </TextBlock>
-            </DockPanel>
+        <Button Click="DinoNuggets_Click" VerticalContentAlignment="Bottom">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-02.png"/>
             </Button.Background>
+            <DockPanel>
+                <TextBlock DockPanel.Dock="Bottom"><Run FontWeight="Bold" FontSize="14" Text="Dino-Nuggets" /></TextBlock>
+            </DockPanel>
         </Button>
-        <Button Click="SteakosaurusCombo_Click" VerticalContentAlignment="Bottom">
+        <Button Click="Steakosaurus_Click" VerticalContentAlignment="Bottom">
             <StackPanel VerticalAlignment="Bottom">
                 <TextBlock VerticalAlignment="Bottom" TextWrapping="Wrap">
                     <TextBlock.Inlines>
-                        <Run FontWeight="Bold" FontSize="16" Text="Steakosaurus Combo" />
+                        <Run FontWeight="Bold" FontSize="14" Text="Steakosaurus" />
                     </TextBlock.Inlines></TextBlock>
             </StackPanel>
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-05.png"/>
             </Button.Background>
         </Button>
-        <Button Click="TRexKingBurgerCombo_Click" VerticalContentAlignment="Bottom">
+        <Button Click="TRexKingBurger_Click" VerticalContentAlignment="Bottom">
             <StackPanel VerticalAlignment="Bottom">
                 <TextBlock VerticalAlignment="Bottom" TextWrapping="Wrap">
                     <TextBlock.Inlines>
-                        <Run FontWeight="Bold" FontSize="16" Text="T-Rex King Burger Combo" />
+                        <Run FontWeight="Bold" FontSize="14" Text="T-Rex King Burger" />
                     </TextBlock.Inlines></TextBlock>
             </StackPanel>
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-06.png"/>
             </Button.Background>
         </Button>
-        <Button Click="PrehistoricPBJCombo_Click" VerticalContentAlignment="Bottom">
+        <Button Click="PrehistoricPBJ_Click" VerticalContentAlignment="Bottom">
             <StackPanel VerticalAlignment="Bottom">
                 <TextBlock VerticalAlignment="Bottom" TextWrapping="Wrap">
                     <TextBlock.Inlines>
-                        <Run FontWeight="Bold" FontSize="16" Text="Prehistoric PB&amp;J Combo" />
+                        <Run FontWeight="Bold" FontSize="14" Text="Prehistoric PB&amp;J" />
                     </TextBlock.Inlines></TextBlock>
             </StackPanel>
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-03.png"/>
             </Button.Background>
         </Button>
-        <Button Click="PterodactylWingsCombo_Click" VerticalContentAlignment="Bottom">
-            <StackPanel VerticalAlignment="Bottom">
-                <TextBlock VerticalAlignment="Bottom" TextWrapping="Wrap" Width="143" Height="39">
-                    <TextBlock.Inlines>
-                        <Run FontWeight="Bold" FontSize="16" Text="Pterodactyl Wings Combo" />
-                    </TextBlock.Inlines></TextBlock>
-            </StackPanel>
+        <Button Click="PterodactylWings_Click" VerticalContentAlignment="Bottom">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-04.png"/>
             </Button.Background>
+            <StackPanel VerticalAlignment="Bottom">
+                <TextBlock VerticalAlignment="Bottom" TextWrapping="Wrap"><Run FontWeight="Bold" FontSize="14" Text="Pterodactyl Wings" /></TextBlock>
+            </StackPanel>
         </Button>
-        <Button Click="VelociWrapCombo_Click" VerticalContentAlignment="Bottom">
+        <Button Click="VelociWrap_Click" VerticalContentAlignment="Bottom">
             <StackPanel VerticalAlignment="Bottom">
                 <TextBlock VerticalAlignment="Bottom" TextWrapping="Wrap">
                     <TextBlock.Inlines>
-                        <Run FontWeight="Bold" FontSize="16" Text="Veloci-Wrap Combo" />
+                        <Run FontWeight="Bold" FontSize="14" Text="Veloci-Wrap" />
                     </TextBlock.Inlines></TextBlock>
             </StackPanel>
             <Button.Background>
