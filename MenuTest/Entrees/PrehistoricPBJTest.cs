@@ -56,6 +56,33 @@ namespace MenuTest.Entrees
                 pbj.HoldPeanutButter();
             });
         }
+
+        [Fact]
+        public void HoldJellyShouldNotifySpecialProperty()
+        {
+            PrehistoricPBJ pbj = new PrehistoricPBJ();
+            Assert.PropertyChanged(pbj, "Special", () =>
+            {
+                pbj.HoldJelly();
+            });
+        }
+
+        [Fact]
+        public void ShouldHaveEmptySpecialListByDefault()
+        {
+            PrehistoricPBJ pbj = new PrehistoricPBJ();
+            Assert.Empty(pbj.Special);
+        }
+
+        [Fact]
+        public void SpecialShouldHoldPeanutButter()
+        {
+            PrehistoricPBJ pbj = new PrehistoricPBJ();
+            Assert.Collection<string>(pbj.Special, item =>
+            {
+                Assert.Equal("Hold Peanut Butter", item);
+            });
+        }
     }
 
 }
