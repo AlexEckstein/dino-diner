@@ -78,11 +78,36 @@ namespace MenuTest.Entrees
         public void SpecialShouldHoldPeanutButter()
         {
             PrehistoricPBJ pbj = new PrehistoricPBJ();
+            pbj.HoldPeanutButter();
             Assert.Collection<string>(pbj.Special, item =>
             {
                 Assert.Equal("Hold Peanut Butter", item);
             });
         }
+
+
+        [Fact]
+        public void SpecialShouldHoldJelly()
+        {
+            PrehistoricPBJ pbj = new PrehistoricPBJ();
+            pbj.HoldJelly();
+            Assert.Collection<string>(pbj.Special, item =>
+            {
+                Assert.Equal("Hold Jelly", item);
+            });
+        }
+        [Fact]
+        public void SpecialShouldHoldPBAndJ()
+        {
+            PrehistoricPBJ pbj = new PrehistoricPBJ();
+            pbj.HoldPeanutButter();
+            pbj.HoldJelly();
+            Assert.Contains<string>("Hold Jelly", pbj.Special); 
+            //needs an and symbol
+            Assert.Contains<string>("Hold Peanut Butter", pbj.Special);
+        }
+
+
     }
 
 }
