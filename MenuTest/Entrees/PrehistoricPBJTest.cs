@@ -46,6 +46,16 @@ namespace MenuTest.Entrees
             pbj.HoldJelly();
             Assert.DoesNotContain<string>("Jelly", pbj.Ingredients);
         }
+
+        [Fact]
+        public void HoldPeanutButterShouldNotifySpecialProperty()
+        {
+            PrehistoricPBJ pbj = new PrehistoricPBJ();
+            Assert.PropertyChanged( pbj, "Special", () =>
+            {
+                pbj.HoldPeanutButter();
+            });
+        }
     }
 
 }
