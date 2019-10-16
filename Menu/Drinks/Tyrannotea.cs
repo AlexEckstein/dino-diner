@@ -2,6 +2,7 @@
 *   Author: Alex Eckstein
 */
 using DinoDiner.Menu.Enums;
+using System.Collections.Generic;
 
 namespace DinoDiner.Menu
 {
@@ -54,8 +55,11 @@ namespace DinoDiner.Menu
             this.Sweet = false;
             this.Lemon = false;
             this.Size = Size.Small;
-            this.Ingredients.Add("Water");
-            this.Ingredients.Add("Tea");
+            this.Ice = true;
+            this.Ingredients = new List<string>()
+            {
+                "Water", "Tea"
+            };
         }
 
         /// <summary>

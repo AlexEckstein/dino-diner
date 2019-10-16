@@ -16,6 +16,7 @@ namespace DinoDiner.Menu
         public void HoldIce()
         {
             this.Ice = false;
+            this.Ingredients.Remove("Ice");
         }
 
         /// <summary>

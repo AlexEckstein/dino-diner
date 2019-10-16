@@ -100,7 +100,7 @@ namespace MenuTest.Drinks
             Assert.False(ss.Ice);
         }
         [Fact]
-        public void ShouldBeAbleToAd0dSugar()
+        public void ShouldBeAbleToAddSugar()
         {
             Tyrannotea ss = new Tyrannotea();
             ss.Sweet = true;
