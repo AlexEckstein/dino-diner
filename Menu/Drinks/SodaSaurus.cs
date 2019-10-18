@@ -11,13 +11,23 @@ namespace DinoDiner.Menu
     public class SodaSaurus : ColdDrink
     {
         
+
+        /// <summary>
+        /// Constructor for SodaSaurus
+        /// </summary>
+        public SodaSaurus()
+        {
+            this.Size = Size.Small;
+            this.Ice = true;
+            this.Flavor = SodaSaurusFlavor.Cola;
+        }
         /// <summary>
         /// Public enum that holds the Flavor
         /// </summary>
         public SodaSaurusFlavor Flavor { get; set; }
 
         /// <summary>
-        /// Override method that changes price and calories based upon size
+        /// Override Property that changes price and calories based upon size
         /// </summary>
         public override Size Size
         {
@@ -32,16 +42,6 @@ namespace DinoDiner.Menu
                 if (this.Size == Size.Medium) { this.Calories = 365; this.Price = 1.45; }
                 if (this.Size == Size.Large) { this.Calories = 480; this.Price = 1.95; }
             }
-        }
-
-        /// <summary>
-        /// Constructor for SodaSaurus
-        /// </summary>
-        public SodaSaurus()
-        {
-            this.Size = Size.Small;
-            this.Ice = true;
-            this.Flavor = SodaSaurusFlavor.Cola;
         }
         /// <summary>
         /// Overides ToString method

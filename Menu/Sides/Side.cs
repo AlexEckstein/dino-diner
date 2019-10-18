@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace DinoDiner.Menu
 {
-    public abstract class Side : IMenuItem
+    public abstract class Side : IMenuItem, IOrderItem
     {
         /// <summary>
         /// Gets and sets the price
@@ -27,6 +27,7 @@ namespace DinoDiner.Menu
         /// Gets or sets the size
         /// </summary>
         public abstract Size Size { get; set; }
-
+        public abstract string Description { get; }
+        public abstract string[] Special { get; }
     }
 }

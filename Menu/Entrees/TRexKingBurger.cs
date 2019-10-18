@@ -81,6 +81,10 @@ namespace DinoDiner.Menu
         {
             this.Ingredients.Remove("Mayo");
         }
+        /// <summary>
+        /// Public Method that returns an override of ToString()
+        /// </summary>
+        /// <returns>"TRex King Burger"</returns>
         public override string ToString()
         {
             return ("TRex King Burger");

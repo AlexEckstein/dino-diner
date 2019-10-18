@@ -12,28 +12,7 @@ namespace DinoDiner.Menu
         public ColdDrink Drink;
         public Side Side;
 
-        public double Price { get; set; }
-        public uint Calories { get; set; }
-        public List<string> Ingredients { get; private set; }
-
-        /// <summary>
-        /// Public Size that changes the size of drink and side
-        /// </summary>
-        public Size Size
-        {
-            get
-            {
-                return this.Size;
-            }
-            set
-            {
-                this.Size = value;
-                Drink.Size = value;
-                Side.Size = value;
-                this.Calories = Entree.Calories + Drink.Calories + Side.Calories;
-                this.Price = Entree.Price + Drink.Price + Side.Price - 0.25;
-            }
-        }
+       
         /// <summary>
         /// Constructor for Combo Class
         /// </summary>
@@ -57,7 +36,28 @@ namespace DinoDiner.Menu
             Side = new Fryceritops();
             Drink = new SodaSaurus();
         }
+        public double Price { get; set; }
+        public uint Calories { get; set; }
+        public List<string> Ingredients { get; private set; }
 
+        /// <summary>
+        /// Public Size that changes the size of drink and side
+        /// </summary>
+        public Size Size
+        {
+            get
+            {
+                return this.Size;
+            }
+            set
+            {
+                this.Size = value;
+                Drink.Size = value;
+                Side.Size = value;
+                this.Calories = Entree.Calories + Drink.Calories + Side.Calories;
+                this.Price = Entree.Price + Drink.Price + Side.Price - 0.25;
+            }
+        }
         /// <summary>
         /// Override method that prints the items in the Combo
         /// </summary>

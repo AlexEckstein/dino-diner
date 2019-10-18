@@ -11,11 +11,22 @@ namespace DinoDiner.Menu
     /// </summary>
     public class Tyrannotea : ColdDrink
     {
+    
         /// <summary>
-        /// Public bool holding Sweet
+        /// Constructor for Tyrannotea
         /// </summary>
-        public bool Sweet { get; set; }
-
+        public Tyrannotea()
+        {
+            this.Sweet = false;
+            this.Lemon = false;
+            this.Size = Size.Small;
+            this.Ice = true;
+            this.Ingredients = new List<string>()
+            {
+                "Water", "Tea"
+            };
+        }
+        
         /// <summary>
         /// Public bool holding Lemon
         /// </summary>
@@ -48,20 +59,10 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
-        /// Constructor for Tyrannotea
+        /// Public bool Property holding Sweet
         /// </summary>
-        public Tyrannotea()
-        {
-            this.Sweet = false;
-            this.Lemon = false;
-            this.Size = Size.Small;
-            this.Ice = true;
-            this.Ingredients = new List<string>()
-            {
-                "Water", "Tea"
-            };
-        }
-
+        public bool Sweet { get; set; }
+        
         /// <summary>
         /// Void method that changes Lemon to true
         /// </summary>

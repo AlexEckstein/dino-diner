@@ -60,10 +60,17 @@ namespace DinoDiner.Menu
         {
             this.Ice = true;
         }
+        /// <summary>
+        /// Void method that sets private Property Decaf to true
+        /// </summary>
         public void MakeDecaf()
         {
             this.Decaf = true;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>Regular Jurassic Java or Decaf</returns>
         public override string ToString()
         {
             if (!Decaf)

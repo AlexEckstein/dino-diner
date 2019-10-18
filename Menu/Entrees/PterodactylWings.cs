@@ -23,6 +23,10 @@ namespace DinoDiner.Menu
             };
 
         }
+        /// <summary>
+        /// Public Method that returns an override of ToString()
+        /// </summary>
+        /// <returns>"Pterodactyl Wings"</returns>
         public override string ToString()
         {
             return ("Pterodactyl Wings");

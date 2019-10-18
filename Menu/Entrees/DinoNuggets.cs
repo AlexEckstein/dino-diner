@@ -9,7 +9,8 @@ namespace DinoDiner.Menu
     /// Public class holding Calories, Price, and Ingredients for DinoNuggets
     /// </summary>
     public class DinoNuggets : Entree
-    {
+    {   
+
         /// <summary>
         /// Constructor for DinoNuggets
         /// </summary>
@@ -24,6 +25,17 @@ namespace DinoDiner.Menu
                 "Chicken Nugget","Chicken Nugget"
             };
         }
+        
+        /// <summary>
+        /// Public Property that returns the ToString() method.
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        public override string[] Special => throw new System.NotImplementedException();
+
         /// <summary>
         /// Public method for adding nuggets. Increments Price and Calories
         /// </summary>
@@ -33,9 +45,15 @@ namespace DinoDiner.Menu
             this.Calories += 59;
             this.Ingredients.Add("Chicken Nugget");
         }
+
+        /// <summary>
+        /// Public Method that returns an override of ToString()
+        /// </summary>
+        /// <returns>"Dino-Nuggets"</returns>
         public override string ToString()
         {
             return ("Dino-Nuggets");
         }
+        
     }
 }

@@ -2,6 +2,7 @@
 *   Author: Alex Eckstein
 */
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -10,6 +11,11 @@ namespace DinoDiner.Menu
     /// </summary>
     public class Brontowurst : Entree
     {
+        /// <summary>
+        /// The event handler notified is Price, Description, and Special properties
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// Constructor of the class, adds ingredients to list if not held
         /// </summary>
@@ -23,6 +29,18 @@ namespace DinoDiner.Menu
                 "Peppers","Onion"
             };
         }
+
+
+        /// <summary>
+        /// Public Property that returns the ToString() method.
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        public override string[] Special => throw new System.NotImplementedException();
+
         /// <summary>
         /// Void method that removes Bun from ingredients list 
         /// </summary>
@@ -45,9 +63,9 @@ namespace DinoDiner.Menu
             this.Ingredients.Remove("Onion");
         }
         /// <summary>
-        /// Overides ToString method
+        /// Public Method that returns an override of ToString()
         /// </summary>
-        /// <returns></returns>
+        /// <returns>"Brontowurst"</returns>
         public override string ToString()
         {
             return ("Brontowurst");

@@ -11,16 +11,7 @@ namespace DinoDiner.Menu
     /// </summary>
     public class Water : ColdDrink
     {
-        /// <summary>
-        /// Override for selecting size
-        /// </summary>
-        public override Size Size { get; set; }
-
-        /// <summary>
-        /// Bool for Lemon
-        /// </summary>
-        public bool Lemon { get; protected set; }
-
+        
         /// <summary>
         /// Constructor for Water
         /// </summary>
@@ -36,6 +27,16 @@ namespace DinoDiner.Menu
             this.Calories = 0;
             this.Lemon = false;
         }
+        
+        /// <summary>
+        /// Override for selecting size
+        /// </summary>
+        public override Size Size { get; set; }
+
+        /// <summary>
+        /// Bool for Lemon
+        /// </summary>
+        public bool Lemon { get; protected set; }
 
         /// <summary>
         /// Void method that changes Lemon to true
@@ -45,10 +46,11 @@ namespace DinoDiner.Menu
             this.Ingredients.Add("Lemon");
             this.Lemon = true;
         }
+
         /// <summary>
-        /// Overides ToString method
+        /// Public Method that returns an override of ToString()
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Size & Water</returns>
         public override string ToString()
         {
             return ($"{Size} Water");

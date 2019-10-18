@@ -43,6 +43,10 @@ namespace DinoDiner.Menu
         {
             this.Ingredients.Remove("Parmesan Cheese");
         }
+        /// <summary>
+        /// Public Method that returns an override of ToString()
+        /// </summary>
+        /// <returns>"Veloci-Wrap"</returns>
         public override string ToString()
         {
             return ("Veloci-Wrap");
