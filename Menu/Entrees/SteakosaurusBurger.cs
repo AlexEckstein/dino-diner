@@ -2,6 +2,7 @@
 *   Author: Alex Eckstein
 */
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -10,6 +11,11 @@ namespace DinoDiner.Menu
     /// </summary>
     public class SteakosaurusBurger : Entree
     {
+        /// <summary>
+        /// The event handler notified is Price, Description, and Special properties.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// Constructor for SteakosaurusBurger
         /// </summary>
@@ -25,11 +31,42 @@ namespace DinoDiner.Menu
                 "Ketchup",
                 "Mustard"
             };
-        }
+        } 
+        
         /// <summary>
-        /// Void method that removes Bun from ingredients list
+        /// Void private method that is called when an event happens.
         /// </summary>
-        public void HoldBun()
+        /// <param name="propertyName"></param>
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        /// <summary>
+        /// Public Property that returns the ToString() method.
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!Ingredients.Contains("Whole Wheat Bun")) special.Add("Hold Whole Wheat Bun");
+                if (!Ingredients.Contains("Pickle")) special.Add("Hold Pickle");
+                if (!Ingredients.Contains("Ketchup")) special.Add("Hold Ketchup");
+                if (!Ingredients.Contains("Mustard")) special.Add("Hold Mustard");
+                return special.ToArray();
+            }
+        }
+
+    /// <summary>
+    /// Void method that removes Bun from ingredients list
+    /// </summary>
+    public void HoldBun()
         {
             this.Ingredients.Remove("Whole Wheat Bun");
         }

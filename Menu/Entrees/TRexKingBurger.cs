@@ -25,6 +25,32 @@ namespace DinoDiner.Menu
                 "Ketchup","Mustard","Mayo"
             };
         }
+
+        /// <summary>
+        /// Public Property that returns the ToString() method.
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!Ingredients.Contains("Whole Wheat Bun")) special.Add("Hold Whole Wheat Bun");
+                if (!Ingredients.Contains("Pickle")) special.Add("Hold Pickle");
+                if (!Ingredients.Contains("Ketchup")) special.Add("Hold Ketchup");
+                if (!Ingredients.Contains("Mustard")) special.Add("Hold Mustard");
+                if (!Ingredients.Contains("Lettuce")) special.Add("Hold Lettuce");
+                if (!Ingredients.Contains("Tomato")) special.Add("Hold Tomato");
+                if (!Ingredients.Contains("Onion")) special.Add("Hold Onion");
+                if (!Ingredients.Contains("Mayo")) special.Add("Hold Mayo");
+                return special.ToArray();
+            }
+        }
+
         /// <summary>
         /// Void method that removes Bun from ingredients list
         /// </summary>

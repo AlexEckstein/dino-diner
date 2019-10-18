@@ -3,6 +3,7 @@
 */
 using DinoDiner.Menu.Enums;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -11,7 +12,11 @@ namespace DinoDiner.Menu
     /// </summary>
     public class Water : ColdDrink
     {
-        
+        /// <summary>
+        /// The event handler notified is Price, Description, and Special properties.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// Constructor for Water
         /// </summary>
@@ -27,7 +32,26 @@ namespace DinoDiner.Menu
             this.Calories = 0;
             this.Lemon = false;
         }
-        
+
+        /// <summary>
+        /// Override public method for holding ice
+        /// </summary>
+        public override void HoldIce()
+        {
+            this.Ice = false;
+            this.Ingredients.Remove("Ice");
+        }
+
+        /// <summary>
+        /// Public Property that returns the ToString() method.
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        public override string[] Special => throw new System.NotImplementedException();
+
         /// <summary>
         /// Override for selecting size
         /// </summary>
@@ -37,7 +61,15 @@ namespace DinoDiner.Menu
         /// Bool for Lemon
         /// </summary>
         public bool Lemon { get; protected set; }
-
+        
+        /// <summary>
+        /// Void private method that is called when an event happens.
+        /// </summary>
+        /// <param name="propertyName"></param>
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
         /// <summary>
         /// Void method that changes Lemon to true
         /// </summary>

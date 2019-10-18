@@ -12,7 +12,7 @@ namespace DinoDiner.Menu
     public class Brontowurst : Entree
     {
         /// <summary>
-        /// The event handler notified is Price, Description, and Special properties
+        /// The event handler notified is Price, Description, and Special properties.
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -30,7 +30,6 @@ namespace DinoDiner.Menu
             };
         }
 
-
         /// <summary>
         /// Public Property that returns the ToString() method.
         /// </summary>
@@ -39,8 +38,28 @@ namespace DinoDiner.Menu
             get { return this.ToString(); }
         }
 
-        public override string[] Special => throw new System.NotImplementedException();
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!Ingredients.Contains("Whole Wheat Bun")) { special.Add("Hold Whole Wheat Bun"); }
+                if (!Ingredients.Contains("Peppers")) { special.Add("Hold Peppers"); }
+                if (!Ingredients.Contains("Onion")) { special.Add("Hold Onion"); }
+                return special.ToArray();
+            }
 
+
+        }
+        
+        /// <summary>
+        /// Void private method that is called when an event happens.
+        /// </summary>
+        /// <param name="propertyName"></param>
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
         /// <summary>
         /// Void method that removes Bun from ingredients list 
         /// </summary>

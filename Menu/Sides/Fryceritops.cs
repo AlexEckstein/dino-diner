@@ -26,6 +26,16 @@ namespace DinoDiner.Menu
 
         }
         /// <summary>
+        /// Public Property that returns the ToString() method.
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        public override string[] Special => throw new System.NotImplementedException();
+
+        /// <summary>
         /// Changes Calories and Price according to size
         /// </summary>
         public override Size Size

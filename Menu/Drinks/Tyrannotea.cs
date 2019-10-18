@@ -3,6 +3,7 @@
 */
 using DinoDiner.Menu.Enums;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -11,7 +12,11 @@ namespace DinoDiner.Menu
     /// </summary>
     public class Tyrannotea : ColdDrink
     {
-    
+        /// <summary>
+        /// The event handler notified is Price, Description, and Special properties.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// Constructor for Tyrannotea
         /// </summary>
@@ -27,6 +32,15 @@ namespace DinoDiner.Menu
             };
         }
         
+        /// <summary>
+        /// Public Property that returns the ToString() method.
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        public override string[] Special => throw new System.NotImplementedException();
         /// <summary>
         /// Public bool holding Lemon
         /// </summary>
@@ -64,6 +78,23 @@ namespace DinoDiner.Menu
         public bool Sweet { get; set; }
         
         /// <summary>
+        /// Void private method that is called when an event happens.
+        /// </summary>
+        /// <param name="propertyName"></param>
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        /// <summary>
+        /// Override public method for holding ice
+        /// </summary>
+        public override void HoldIce()
+        {
+            this.Ice = false;
+            this.Ingredients.Remove("Ice");
+        }
+        /// <summary>
         /// Void method that changes Lemon to true
         /// </summary>
         public void AddLemon()
@@ -72,7 +103,7 @@ namespace DinoDiner.Menu
             this.Ingredients.Add("Lemon");
         }
         /// <summary>
-        /// Overides ToString method
+        /// Public Method that returns an override of ToString()
         /// </summary>
         /// <returns></returns>
         public override string ToString()

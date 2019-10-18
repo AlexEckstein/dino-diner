@@ -12,13 +12,7 @@ namespace DinoDiner.Menu
     public abstract class ColdDrink : IMenuItem , IOrderItem
     {
         public bool Ice { get; protected set; }
-
-        public void HoldIce()
-        {
-            this.Ice = false;
-            this.Ingredients.Remove("Ice");
-        }
-
+  
         /// <summary>
         /// Gets and sets the price
         /// </summary>
@@ -40,5 +34,6 @@ namespace DinoDiner.Menu
         public abstract Size Size { get; set; }
         public abstract string Description { get; }
         public abstract string[] Special { get; }
+        public abstract void HoldIce();
     }
 }

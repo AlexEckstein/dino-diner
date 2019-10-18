@@ -2,6 +2,7 @@
 *   Author: Alex Eckstein
 */
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -10,6 +11,10 @@ namespace DinoDiner.Menu
     /// </summary>
     public class VelociWrap : Entree
     {
+        /// <summary>
+        /// The event handler notified is Price, Description, and Special properties.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public VelociWrap()
         {
@@ -22,6 +27,37 @@ namespace DinoDiner.Menu
                 "Ceasar Dressing"
             };
         }
+        
+        /// <summary>
+        /// Public Property that returns the ToString() method.
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                
+                if (!Ingredients.Contains("Ceasar Dressing")) special.Add("Hold Ceasar Dressing");
+                if (!Ingredients.Contains("Romaine Lettuce")) special.Add("Hold Romaine Lettuce");
+                if (!Ingredients.Contains("Parmesan Cheese")) special.Add("Hold Parmesan Cheese");
+                return special.ToArray();
+            }
+        }
+
+        /// <summary>
+        /// Void private method that is called when an event happens.
+        /// </summary>
+        /// <param name="propertyName"></param>
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
         /// <summary>
         /// Void method that removes Ceasar Dressing from ingredients list
         /// </summary>

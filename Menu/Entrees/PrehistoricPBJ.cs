@@ -9,16 +9,7 @@ namespace DinoDiner.Menu
         /// The event handler notified is Price, Description, and Special properties.
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
-        
-        /// <summary>
-        /// Void private method that is called when an event happens.
-        /// </summary>
-        /// <param name="propertyName"></param>
-        private void NotifyOfPropertyChange(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
+ 
         /// <summary>
         /// Constructor for PBJ
         /// </summary>
@@ -33,6 +24,7 @@ namespace DinoDiner.Menu
                 "Jelly"
             };
         }
+
         /// <summary>
         /// Public Property that returns the ToString() method.
         /// </summary>
@@ -40,6 +32,7 @@ namespace DinoDiner.Menu
         {
             get { return this.ToString(); }
         }
+
         /// <summary>
         /// Public Property that returns the Special changes made to PBJ.
         /// </summary>
@@ -52,6 +45,15 @@ namespace DinoDiner.Menu
                 if (!Ingredients.Contains("Jelly")) special.Add("Hold Jelly");
                 return special.ToArray();
             }
+        }
+
+        /// <summary>
+        /// Void private method that is called when an event happens.
+        /// </summary>
+        /// <param name="propertyName"></param>
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         /// <summary>

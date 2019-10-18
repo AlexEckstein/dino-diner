@@ -3,10 +3,9 @@
 */
 using System.Collections.Generic;
 
-
 namespace DinoDiner.Menu
 {
-    public abstract class Entree :IMenuItem, IOrderItem, INotifyChanged
+    public abstract class Entree :IMenuItem, IOrderItem
     {
         /// <summary>
         /// Gets and sets the price

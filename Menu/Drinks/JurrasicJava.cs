@@ -3,6 +3,7 @@
 */
 using DinoDiner.Menu.Enums;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -12,9 +13,26 @@ namespace DinoDiner.Menu
     public class JurrasicJava : ColdDrink
     {
         /// <summary>
-        /// Public Bool for Leaving Room For Cream
+        /// The event handler notified is Price, Description, and Special properties.
         /// </summary>
-        public bool RoomForCream = false;
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// Constructor for JurrasicJava
+        /// </summary>
+        public JurrasicJava()
+        {
+            this.Ice = false;
+            this.Size = Size.Small;
+            this.Ingredients = new List<string>
+            {
+                "Water", "Coffee"
+            };
+        }
+
+        /// <summary>
+        /// Override method that holds the Size Property
+        /// </summary>
         public override Size Size
         {
             get
@@ -30,19 +48,50 @@ namespace DinoDiner.Menu
             }
         }
 
-        public bool Decaf { get;  set; }
+        /// <summary>
+        /// Public Property that holds the bool RoomForCream
+        /// </summary>
+        public bool RoomForCream { get; private set; }
 
         /// <summary>
-        /// Constructor for JurrasicJava
+        ///  Public Property that holds the bool Decaf
         /// </summary>
-        public JurrasicJava()
+        public bool Decaf { get;  private set; }
+
+        /// <summary>
+        /// Void private method that is called when an event happens.
+        /// </summary>
+        /// <param name="propertyName"></param>
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        /// <summary>
+        /// Override public method for holding ice
+        /// </summary>
+        public override void HoldIce()
         {
             this.Ice = false;
-            this.Size = Size.Small;
-            this.Ingredients = new List<string>
+            this.Ingredients.Remove("Ice");
+        }
+        /// <summary>
+        /// Public Property that returns the ToString() method.
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        public override string[] Special
+        {
+            get
             {
-                "Water", "Coffee"
-            };
+                List<string> special = new List<string>();
+                if (this.Ice) special.Add("Add Ice");
+                if (this.RoomForCream) special.Add("");
+                return special.ToArray();
+            }
         }
 
         /// <summary>
@@ -60,6 +109,7 @@ namespace DinoDiner.Menu
         {
             this.Ice = true;
         }
+
         /// <summary>
         /// Void method that sets private Property Decaf to true
         /// </summary>
@@ -67,8 +117,9 @@ namespace DinoDiner.Menu
         {
             this.Decaf = true;
         }
+
         /// <summary>
-        /// 
+        /// Public Method that returns an override of ToString()
         /// </summary>
         /// <returns>Regular Jurassic Java or Decaf</returns>
         public override string ToString()
@@ -77,7 +128,6 @@ namespace DinoDiner.Menu
                 return (Size.ToString() + " Jurassic Java");
             else
                 return (Size.ToString() + " Decaf Jurassic Java");
-
         }
     }
 }
