@@ -1,4 +1,4 @@
-﻿/*  TRexKingBurger.cs
+﻿/*  VelociWrap.cs
 *   Author: Alex Eckstein
 */
 using System.Collections.Generic;
@@ -64,6 +64,8 @@ namespace DinoDiner.Menu
         public void HoldDressing()
         {
             this.Ingredients.Remove("Ceasar Dressing");
+            NotifyOfPropertyChange("Ingredients");
+            NotifyOfPropertyChange("Special");
         }
         /// <summary>
         /// Void method that removes Romaine Lettuce from ingredients list
@@ -71,6 +73,8 @@ namespace DinoDiner.Menu
         public void HoldLettuce()
         {
             this.Ingredients.Remove("Romaine Lettuce");
+            NotifyOfPropertyChange("Ingredients");
+            NotifyOfPropertyChange("Special");
         }
         /// <summary>
         /// Void method that removes Parmesan Cheese from ingredients list 
@@ -78,6 +82,8 @@ namespace DinoDiner.Menu
         public void HoldCheese()
         {
             this.Ingredients.Remove("Parmesan Cheese");
+            NotifyOfPropertyChange("Ingredients");
+            NotifyOfPropertyChange("Special");
         }
         /// <summary>
         /// Public Method that returns an override of ToString()

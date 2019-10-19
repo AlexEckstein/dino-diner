@@ -48,8 +48,6 @@ namespace DinoDiner.Menu
                 if (!Ingredients.Contains("Onion")) { special.Add("Hold Onion"); }
                 return special.ToArray();
             }
-
-
         }
         
         /// <summary>
@@ -66,6 +64,8 @@ namespace DinoDiner.Menu
         public void HoldBun()
         {
             this.Ingredients.Remove("Whole Wheat Bun");
+            NotifyOfPropertyChange("Ingredients");
+            NotifyOfPropertyChange("Special");
         }
         /// <summary>
         /// Void method that removes Peppers from ingredients list
@@ -73,6 +73,8 @@ namespace DinoDiner.Menu
         public void HoldPeppers()
         {
             this.Ingredients.Remove("Peppers");
+            NotifyOfPropertyChange("Ingredients");
+            NotifyOfPropertyChange("Special");
         }
         /// <summary>
         /// Void method that removes Onions from ingredients list
@@ -80,6 +82,8 @@ namespace DinoDiner.Menu
         public void HoldOnion()
         {
             this.Ingredients.Remove("Onion");
+            NotifyOfPropertyChange("Ingredients");
+            NotifyOfPropertyChange("Special");
         }
         /// <summary>
         /// Public Method that returns an override of ToString()

@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿/*  IOrderItem.cs
+*   Author: Alex Eckstein
+*/
 
 namespace DinoDiner.Menu
 {

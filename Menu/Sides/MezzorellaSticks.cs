@@ -3,6 +3,7 @@
 */
 using DinoDiner.Menu.Enums;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -11,6 +12,11 @@ namespace DinoDiner.Menu
     /// </summary>
     public class MezzorellaSticks : Side
     {
+        /// <summary>
+        /// The event handler notified is Price, Description, and Special properties.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public MezzorellaSticks()
         {
             this.Size = Size.Small;
@@ -49,6 +55,16 @@ namespace DinoDiner.Menu
                 if (this.Size == Size.Large) { this.Calories = 720; this.Price = 1.95; }
             }
         }
+
+        /// <summary>
+        /// Void private method that is called when an event happens.
+        /// </summary>
+        /// <param name="propertyName"></param>
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
         /// <summary>
         /// Overrides the default ToString method
         /// </summary>

@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿/*  PrehistoricPBJ.cs
+*   Author: Alex Eckstein
+*/
+using System.Collections.Generic;
 using System.ComponentModel;
 
 namespace DinoDiner.Menu
@@ -62,6 +65,7 @@ namespace DinoDiner.Menu
         public void HoldPeanutButter()
         {
             this.Ingredients.Remove("Peanut Butter");
+            NotifyOfPropertyChange("Ingredients");
             NotifyOfPropertyChange("Special");
         }
 
@@ -71,6 +75,7 @@ namespace DinoDiner.Menu
         public void HoldJelly()
         {
             this.Ingredients.Remove("Jelly");
+            NotifyOfPropertyChange("Ingredients");
             NotifyOfPropertyChange("Special");
         }
         /// <summary>

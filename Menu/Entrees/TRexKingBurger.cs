@@ -2,6 +2,7 @@
 *   Author: Alex Eckstein
 */
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -10,6 +11,11 @@ namespace DinoDiner.Menu
     /// </summary>
     public class TRexKingBurger : Entree
     {
+        /// <summary>
+        /// The event handler notified is Price, Description, and Special properties.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// Constructor for TRexKingBurger
         /// </summary>
@@ -50,13 +56,22 @@ namespace DinoDiner.Menu
                 return special.ToArray();
             }
         }
-
+        /// <summary>
+        /// Void private method that is called when an event happens.
+        /// </summary>
+        /// <param name="propertyName"></param>
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
         /// <summary>
         /// Void method that removes Bun from ingredients list
         /// </summary>
         public void HoldBun()
         {
             this.Ingredients.Remove("Whole Wheat Bun");
+            NotifyOfPropertyChange("Ingredients");
+            NotifyOfPropertyChange("Special");
         }
         /// <summary>
         /// Void method that removes Lettuce from ingredients list
@@ -64,6 +79,8 @@ namespace DinoDiner.Menu
         public void HoldLettuce()
         {
             this.Ingredients.Remove("Lettuce");
+            NotifyOfPropertyChange("Ingredients");
+            NotifyOfPropertyChange("Special");
         }
         /// <summary>
         /// Void method that removes Tomato from ingredients list
@@ -71,6 +88,8 @@ namespace DinoDiner.Menu
         public void HoldTomato()
         {
             this.Ingredients.Remove("Tomato");
+            NotifyOfPropertyChange("Ingredients");
+            NotifyOfPropertyChange("Special");
         }
         /// <summary>
         /// Void method that removes Onion from ingredients list
@@ -78,6 +97,8 @@ namespace DinoDiner.Menu
         public void HoldOnion()
         {
             this.Ingredients.Remove("Onion");
+            NotifyOfPropertyChange("Ingredients");
+            NotifyOfPropertyChange("Special");
         }
         /// <summary>
         /// Void method that removes Pickele from ingredients list
@@ -85,6 +106,8 @@ namespace DinoDiner.Menu
         public void HoldPickle()
         {
             this.Ingredients.Remove("Pickle");
+            NotifyOfPropertyChange("Ingredients");
+            NotifyOfPropertyChange("Special");
         }
         /// <summary>
         /// Void method that removes Mustard from ingredients list
@@ -92,6 +115,8 @@ namespace DinoDiner.Menu
         public void HoldMustard()
         {
             this.Ingredients.Remove("Mustard");
+            NotifyOfPropertyChange("Ingredients");
+            NotifyOfPropertyChange("Special");
         }
         /// <summary>
         /// Void method that removes the Mustard from ingredients list 
@@ -99,6 +124,8 @@ namespace DinoDiner.Menu
         public void HoldKetchup()
         {
             this.Ingredients.Remove("Ketchup");
+            NotifyOfPropertyChange("Ingredients");
+            NotifyOfPropertyChange("Special");
         }
         /// <summary>
         /// Void method that removes Mayo from the ingredients list
@@ -106,6 +133,8 @@ namespace DinoDiner.Menu
         public void HoldMayo()
         {
             this.Ingredients.Remove("Mayo");
+            NotifyOfPropertyChange("Ingredients");
+            NotifyOfPropertyChange("Special");
         }
         /// <summary>
         /// Public Method that returns an override of ToString()

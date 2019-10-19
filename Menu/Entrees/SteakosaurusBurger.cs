@@ -69,6 +69,8 @@ namespace DinoDiner.Menu
     public void HoldBun()
         {
             this.Ingredients.Remove("Whole Wheat Bun");
+            NotifyOfPropertyChange("Ingredients");
+            NotifyOfPropertyChange("Special");
         }
         /// <summary>
         /// Void method that removes Pickle from ingredients list
@@ -76,6 +78,8 @@ namespace DinoDiner.Menu
         public void HoldPickle()
         {
             this.Ingredients.Remove("Pickle");
+            NotifyOfPropertyChange("Ingredients");
+            NotifyOfPropertyChange("Special");
         }
         /// <summary>
         /// Void method that removes Ketchup from ingredients list
@@ -83,6 +87,8 @@ namespace DinoDiner.Menu
         public void HoldKetchup()
         {
             this.Ingredients.Remove("Ketchup");
+            NotifyOfPropertyChange("Ingredients");
+            NotifyOfPropertyChange("Special");
         }
         /// <summary>
         /// Void method that removes Mustard from ingredients list
@@ -90,6 +96,8 @@ namespace DinoDiner.Menu
         public void HoldMustard()
         {
             this.Ingredients.Remove("Mustard");
+            NotifyOfPropertyChange("Ingredients");
+            NotifyOfPropertyChange("Special");
         }
         /// <summary>
         /// Public Method that returns an override of ToString()
