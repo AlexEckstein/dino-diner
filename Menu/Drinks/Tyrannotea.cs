@@ -40,12 +40,26 @@ namespace DinoDiner.Menu
             get { return this.ToString(); }
         }
 
-        public override string[] Special => throw new System.NotImplementedException();
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!Ice) { special.Add("Hold Ice"); }
+                if (Lemon) { special.Add("Add Lemon"); }
+                return special.ToArray();
+            }
+        }
         /// <summary>
         /// Public bool holding Lemon
         /// </summary>
         public bool Lemon { get; private set; }
         
+        /// <summary>
+        /// Public bool Property holding Sweet
+        /// </summary>
+        public bool Sweet { get; set; }
+
         /// <summary>
         /// Public override method that changes Calories and Price based upon size
         /// </summary>
@@ -67,15 +81,14 @@ namespace DinoDiner.Menu
                     if (!this.Ingredients.Contains("Cane Sugar"))
                     {
                         this.Ingredients.Add("Cane Sugar");
+                        NotifyOfPropertyChange("Ingredients");
                     }
                 }
+                NotifyOfPropertyChange("Size");
+                NotifyOfPropertyChange("Calories");
+                NotifyOfPropertyChange("Price");
             }
         }
-
-        /// <summary>
-        /// Public bool Property holding Sweet
-        /// </summary>
-        public bool Sweet { get; set; }
         
         /// <summary>
         /// Void private method that is called when an event happens.
@@ -93,7 +106,11 @@ namespace DinoDiner.Menu
         {
             this.Ice = false;
             this.Ingredients.Remove("Ice");
+            NotifyOfPropertyChange("Ingredients");
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ice");
         }
+
         /// <summary>
         /// Void method that changes Lemon to true
         /// </summary>
@@ -101,7 +118,11 @@ namespace DinoDiner.Menu
         {
             Lemon = true;
             this.Ingredients.Add("Lemon");
+            NotifyOfPropertyChange("Ingredients");
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Lemon");
         }
+
         /// <summary>
         /// Public Method that returns an override of ToString()
         /// </summary>

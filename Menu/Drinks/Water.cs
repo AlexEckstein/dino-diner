@@ -40,6 +40,9 @@ namespace DinoDiner.Menu
         {
             this.Ice = false;
             this.Ingredients.Remove("Ice");
+            NotifyOfPropertyChange("Ingredients");
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ice");
         }
 
         /// <summary>
@@ -50,7 +53,16 @@ namespace DinoDiner.Menu
             get { return this.ToString(); }
         }
 
-        public override string[] Special => throw new System.NotImplementedException();
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!Ice) { special.Add("Hold Ice"); }
+                if (Lemon) { special.Add("Add Lemon"); }
+                return special.ToArray();
+            }
+        }
 
         /// <summary>
         /// Override for selecting size
@@ -70,6 +82,7 @@ namespace DinoDiner.Menu
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
         /// <summary>
         /// Void method that changes Lemon to true
         /// </summary>
@@ -77,6 +90,9 @@ namespace DinoDiner.Menu
         {
             this.Ingredients.Add("Lemon");
             this.Lemon = true;
+            NotifyOfPropertyChange("Ingredients");
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Lemon");
         }
 
         /// <summary>

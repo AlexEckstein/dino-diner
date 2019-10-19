@@ -58,6 +58,7 @@ namespace DinoDiner.Menu
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
         /// <summary>
         /// Void method that removes Bun from ingredients list 
         /// </summary>
@@ -67,6 +68,7 @@ namespace DinoDiner.Menu
             NotifyOfPropertyChange("Ingredients");
             NotifyOfPropertyChange("Special");
         }
+
         /// <summary>
         /// Void method that removes Peppers from ingredients list
         /// </summary>
@@ -76,6 +78,7 @@ namespace DinoDiner.Menu
             NotifyOfPropertyChange("Ingredients");
             NotifyOfPropertyChange("Special");
         }
+
         /// <summary>
         /// Void method that removes Onions from ingredients list
         /// </summary>
@@ -85,6 +88,7 @@ namespace DinoDiner.Menu
             NotifyOfPropertyChange("Ingredients");
             NotifyOfPropertyChange("Special");
         }
+
         /// <summary>
         /// Public Method that returns an override of ToString()
         /// </summary>

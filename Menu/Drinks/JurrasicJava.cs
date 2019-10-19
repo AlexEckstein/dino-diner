@@ -45,6 +45,9 @@ namespace DinoDiner.Menu
                 if (this.Size == Size.Small) { this.Calories = 2; this.Price = 0.59; }
                 if (this.Size == Size.Medium) { this.Calories = 4; this.Price = 0.99; }
                 if (this.Size == Size.Large) { this.Calories = 8; this.Price = 1.49; }
+                NotifyOfPropertyChange("Size");
+                NotifyOfPropertyChange("Calories");
+                NotifyOfPropertyChange("Price");
             }
         }
 
@@ -74,6 +77,9 @@ namespace DinoDiner.Menu
         {
             this.Ice = false;
             this.Ingredients.Remove("Ice");
+            NotifyOfPropertyChange("Ingredients");
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ice");
         }
         /// <summary>
         /// Public Property that returns the ToString() method.
@@ -100,6 +106,7 @@ namespace DinoDiner.Menu
         public void LeaveRoomForCream()
         {
             RoomForCream = true;
+            NotifyOfPropertyChange("Special");
         }
 
         /// <summary>
@@ -108,6 +115,9 @@ namespace DinoDiner.Menu
         public void AddIce()
         {
             this.Ice = true;
+            NotifyOfPropertyChange("Ingredients");
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ice");
         }
 
         /// <summary>
@@ -116,6 +126,7 @@ namespace DinoDiner.Menu
         public void MakeDecaf()
         {
             this.Decaf = true;
+            NotifyOfPropertyChange("Decaf");
         }
 
         /// <summary>
