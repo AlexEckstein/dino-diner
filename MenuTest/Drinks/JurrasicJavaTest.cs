@@ -1,6 +1,7 @@
 ﻿using DinoDiner.Menu;
 using DinoDiner.Menu.Enums;
 using Xunit;
+
 namespace MenuTest.Drinks
 {
     public class JurrasicJavaTest
@@ -116,6 +117,123 @@ namespace MenuTest.Drinks
             JurrasicJava ss = new JurrasicJava();
             ss.LeaveRoomForCream();
             Assert.True(ss.RoomForCream);
+        }
+        [Fact]
+        public void SpecialShouldBeCorrectAfterAddingIce()
+        {
+            JurrasicJava ss = new JurrasicJava();
+            ss.AddIce();
+            Assert.Collection<string>(ss.Special, item =>
+            {
+                Assert.Equal("Add Ice", item);
+            });
+        }
+
+        [Fact]
+        public void SpecialShouldBeCorrectAfterAddingRoomForCreamAndIce()
+        {
+            JurrasicJava ss = new JurrasicJava();
+            ss.LeaveRoomForCream();
+            ss.AddIce();
+            Assert.Collection<string>(ss.Special, item =>
+            {
+                Assert.Equal("Add Ice", item);
+            },
+            item =>
+            {
+                Assert.Equal("Leave Room For Cream", item);
+            });
+        }
+
+        [Fact]
+        public void SpecialShouldBeCorrectAfterAddingRoomForCream()
+        {
+            JurrasicJava ss = new JurrasicJava();
+            ss.LeaveRoomForCream();
+            Assert.Collection<string>(ss.Special, item =>
+            {
+                Assert.Equal("Leave Room For Cream", item);
+            });
+        }
+
+        [Fact]
+        public void AddingIceShouldNotifySpecialChange()
+        {
+            JurrasicJava ss = new JurrasicJava();
+            Assert.PropertyChanged(ss, "Special", () =>
+            {
+                ss.AddIce();
+            });
+        }
+
+        [Fact]
+        public void LeavingRoomShouldNotifySpecialChange()
+        {
+            JurrasicJava ss = new JurrasicJava();
+            Assert.PropertyChanged(ss, "Special", () =>
+            {
+                ss.LeaveRoomForCream();
+            });
+        }
+
+        [Fact]
+        public void AddingIceShouldNotifyIngredientsChange()
+        {
+            JurrasicJava ss = new JurrasicJava();
+            Assert.PropertyChanged(ss, "Ingredients", () =>
+            {
+                ss.AddIce();
+            });
+        }
+
+        [Fact]
+        public void LeavingRoomShouldNotifyIngredientsChange()
+        {
+            JurrasicJava ss = new JurrasicJava();
+            Assert.PropertyChanged(ss, "Ingredients", () =>
+            {
+                ss.LeaveRoomForCream();
+            });
+        }
+
+        [Fact]
+        public void ChangingSizeShouldNotifySpecialChange()
+        {
+            JurrasicJava ss = new JurrasicJava();
+            Assert.PropertyChanged(ss, "Special", () =>
+            {
+                ss.Size = Size.Medium;
+            });
+        }
+
+        [Fact]
+        public void ChangingSizeShouldNotifyPriceChange()
+        {
+            JurrasicJava ss = new JurrasicJava();
+            Assert.PropertyChanged(ss, "Price", () =>
+            {
+                ss.Size = Size.Medium;
+            });
+        }
+
+        [Fact]
+        public void ChangingSizeShouldNotifySizeChange()
+        {
+            JurrasicJava ss = new JurrasicJava();
+            Assert.PropertyChanged(ss, "Size", () =>
+            {
+                ss.Size = Size.Medium;
+            });
+        }
+
+        [Fact]
+        public void ChangingSizeShouldNotifyCaloriesChange()
+        {
+            JurrasicJava ss = new JurrasicJava();
+            Assert.PropertyChanged(ss, "Calories", () =>
+            {
+                ss.Size = Size.Medium;
+            });
         }
     }
 }

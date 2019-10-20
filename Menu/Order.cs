@@ -10,7 +10,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Public property holding Items for order.
         /// </summary>
-        public ObservableCollection<IOrderItem> Items{ get; set;} 
+        public ObservableCollection<IOrderItem> Items{ get; set; } = new ObservableCollection<IOrderItem>();
 
         /// <summary>
         /// Constructor for Order

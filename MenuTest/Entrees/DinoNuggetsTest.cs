@@ -85,5 +85,12 @@ namespace MenuTest.Entrees
             dn.AddNugget();
             Assert.Equal<uint>(dn.Calories, 59*9);
         }
+
+        [Fact]
+        public void DescriptionMatchesToString()
+        {
+            Brontowurst b = new Brontowurst();
+            Assert.Equal(b.Description, b.ToString());
+        }
     }
 }

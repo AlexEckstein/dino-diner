@@ -89,5 +89,13 @@ namespace MenuTest.Drinks
             Water ss = new Water();
             Assert.False(ss.Lemon);
         }
+
+        [Fact]
+        public void ShouldBeAbleToRemoveIce()
+        {
+            Water water = new Water();
+            water.HoldIce();
+            Assert.False(water.Ice);
+        }
     }
 }

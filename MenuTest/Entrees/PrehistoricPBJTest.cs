@@ -107,7 +107,12 @@ namespace MenuTest.Entrees
             Assert.Contains<string>("Hold Peanut Butter", pbj.Special);
         }
 
-
+        [Fact]
+        public void DescriptionMatchesToString()
+        {
+            Brontowurst b = new Brontowurst();
+            Assert.Equal(b.Description, b.ToString());
+        }
     }
 
 }
