@@ -1,5 +1,6 @@
 ﻿using DinoDiner.Menu;
 using System.Windows;
+using System.Windows.Navigation;
 
 namespace PointOfSale
 {
@@ -28,7 +29,7 @@ namespace PointOfSale
 
         private void SetFrameDataContext()
         {
-            FrameworkElement content = OrderInterface.Content as FrameworkElement;
+            //FrameworkElement content = OrderInterface.Content as FrameworkElement;
         }
     }
 }
