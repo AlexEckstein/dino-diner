@@ -42,11 +42,11 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> special = new List<string>();
-                
+
                 return special.ToArray();
             }
         }
-        
+
         /// <summary>
         /// Void private method that is called when an event happens.
         /// </summary>

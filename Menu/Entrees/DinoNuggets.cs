@@ -30,7 +30,7 @@ namespace DinoDiner.Menu
                 "Chicken Nugget","Chicken Nugget"
             };
         }
-        
+
         /// <summary>
         /// Public Property that returns the ToString() method.
         /// </summary>
@@ -50,10 +50,10 @@ namespace DinoDiner.Menu
                 int x = 0;
                 foreach (string value in Ingredients)
                 {
-                    if(value == "Chicken Nugget") { x++; }
+                    if (value == "Chicken Nugget") { x++; }
                 }
                 x -= 6;
-                if(x > 0)
+                if (x > 0)
                 {
                     special.Add($"{x} Extra Nuggets");
                 }

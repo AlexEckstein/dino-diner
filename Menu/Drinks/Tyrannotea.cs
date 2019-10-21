@@ -31,7 +31,7 @@ namespace DinoDiner.Menu
                 "Water", "Tea"
             };
         }
-        
+
         /// <summary>
         /// Public Property that returns the ToString() method.
         /// </summary>
@@ -54,7 +54,7 @@ namespace DinoDiner.Menu
         /// Public bool holding Lemon
         /// </summary>
         public bool Lemon { get; private set; }
-        
+
         /// <summary>
         /// Public bool Property holding Sweet
         /// </summary>
@@ -89,7 +89,7 @@ namespace DinoDiner.Menu
                 NotifyOfPropertyChange("Price");
             }
         }
-        
+
         /// <summary>
         /// Void private method that is called when an event happens.
         /// </summary>

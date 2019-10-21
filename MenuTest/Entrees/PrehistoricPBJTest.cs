@@ -1,6 +1,6 @@
+using DinoDiner.Menu;
 using System.Collections.Generic;
 using Xunit;
-using DinoDiner.Menu;
 
 namespace MenuTest.Entrees
 {
@@ -51,10 +51,10 @@ namespace MenuTest.Entrees
         public void HoldPeanutButterShouldNotifySpecialProperty()
         {
             PrehistoricPBJ pbj = new PrehistoricPBJ();
-            Assert.PropertyChanged( pbj, "Special", () =>
-            {
-                pbj.HoldPeanutButter();
-            });
+            Assert.PropertyChanged(pbj, "Special", () =>
+           {
+               pbj.HoldPeanutButter();
+           });
         }
 
         [Fact]
@@ -102,7 +102,7 @@ namespace MenuTest.Entrees
             PrehistoricPBJ pbj = new PrehistoricPBJ();
             pbj.HoldPeanutButter();
             pbj.HoldJelly();
-            Assert.Contains<string>("Hold Jelly", pbj.Special); 
+            Assert.Contains<string>("Hold Jelly", pbj.Special);
             //needs an and symbol
             Assert.Contains<string>("Hold Peanut Butter", pbj.Special);
         }

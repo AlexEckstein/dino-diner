@@ -31,8 +31,8 @@ namespace DinoDiner.Menu
                 "Ketchup",
                 "Mustard"
             };
-        } 
-        
+        }
+
         /// <summary>
         /// Void private method that is called when an event happens.
         /// </summary>
@@ -63,10 +63,10 @@ namespace DinoDiner.Menu
             }
         }
 
-    /// <summary>
-    /// Void method that removes Bun from ingredients list
-    /// </summary>
-    public void HoldBun()
+        /// <summary>
+        /// Void method that removes Bun from ingredients list
+        /// </summary>
+        public void HoldBun()
         {
             this.Ingredients.Remove("Whole Wheat Bun");
             NotifyOfPropertyChange("Ingredients");

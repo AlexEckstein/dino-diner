@@ -112,9 +112,9 @@ namespace MenuTest.Drinks
         {
             Tyrannotea tea = new Tyrannotea();
             tea.Size = Size.Medium;
-            Assert.PropertyChanged(tea, "Price", () => 
+            Assert.PropertyChanged(tea, "Price", () =>
             {
-                tea.Size = Size.Small; 
+                tea.Size = Size.Small;
             });
         }
 
@@ -123,9 +123,9 @@ namespace MenuTest.Drinks
         {
             Tyrannotea tea = new Tyrannotea();
             tea.Size = Size.Medium;
-            Assert.PropertyChanged(tea, "Description", () => 
+            Assert.PropertyChanged(tea, "Description", () =>
             {
-                tea.Size = Size.Small; 
+                tea.Size = Size.Small;
             });
         }
 
@@ -133,9 +133,9 @@ namespace MenuTest.Drinks
         public void ChangingToMediumShouldNotifyOfPricePropertyChange()
         {
             Tyrannotea tea = new Tyrannotea();
-            Assert.PropertyChanged(tea, "Price", () => 
+            Assert.PropertyChanged(tea, "Price", () =>
             {
-                tea.Size = Size.Medium; 
+                tea.Size = Size.Medium;
             });
         }
 
@@ -143,9 +143,9 @@ namespace MenuTest.Drinks
         public void ChangingToMediumShouldNotifyOfDescriptionPropertyChange()
         {
             Tyrannotea tea = new Tyrannotea();
-            Assert.PropertyChanged(tea, "Description", () => 
+            Assert.PropertyChanged(tea, "Description", () =>
             {
-                tea.Size = Size.Medium; 
+                tea.Size = Size.Medium;
             });
         }
 
@@ -153,9 +153,9 @@ namespace MenuTest.Drinks
         public void ChangingToLargeShouldNotifyOfPricePropertyChange()
         {
             Tyrannotea tea = new Tyrannotea();
-            Assert.PropertyChanged(tea, "Price", () => 
+            Assert.PropertyChanged(tea, "Price", () =>
             {
-                tea.Size = Size.Large; 
+                tea.Size = Size.Large;
             });
         }
 
@@ -163,9 +163,9 @@ namespace MenuTest.Drinks
         public void ChangingToLargeShouldNotifyOfDescriptionPropertyChange()
         {
             Tyrannotea tea = new Tyrannotea();
-            Assert.PropertyChanged(tea, "Description", () => 
+            Assert.PropertyChanged(tea, "Description", () =>
             {
-                tea.Size = Size.Large; 
+                tea.Size = Size.Large;
             });
         }
 
@@ -208,9 +208,9 @@ namespace MenuTest.Drinks
         public void AddingLemonShouldNotifyOfSpecialPropertyChange()
         {
             Tyrannotea tea = new Tyrannotea();
-            Assert.PropertyChanged(tea, "Special", () => 
+            Assert.PropertyChanged(tea, "Special", () =>
             {
-                tea.AddLemon(); 
+                tea.AddLemon();
             });
         }
 
@@ -219,9 +219,9 @@ namespace MenuTest.Drinks
         {
             Tyrannotea tea = new Tyrannotea();
             tea.HoldIce();
-            Assert.Collection<string>(tea.Special, item => 
+            Assert.Collection<string>(tea.Special, item =>
             {
-                Assert.Equal("Hold Ice", item); 
+                Assert.Equal("Hold Ice", item);
             });
         }
 
@@ -230,7 +230,7 @@ namespace MenuTest.Drinks
         {
             Tyrannotea tea = new Tyrannotea();
             tea.AddLemon();
-            Assert.Collection<string>(tea.Special, item => 
+            Assert.Collection<string>(tea.Special, item =>
             {
                 Assert.Equal("Add Lemon", item);
             });

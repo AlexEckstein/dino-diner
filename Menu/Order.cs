@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Text;
+﻿using System.Collections.ObjectModel;
 
 namespace DinoDiner.Menu
 {
@@ -10,15 +7,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Public property holding Items for order.
         /// </summary>
-        public ObservableCollection<IOrderItem> Items{ get; set; } = new ObservableCollection<IOrderItem>();
-
-        /// <summary>
-        /// Constructor for Order
-        /// </summary>
-        public Order()
-        {
-
-        }
+        public ObservableCollection<IOrderItem> Items { get; set; } = new ObservableCollection<IOrderItem>();
 
         /// <summary>
         /// Holds the summed cost of the items in the order without tax.
@@ -63,6 +52,14 @@ namespace DinoDiner.Menu
             {
                 return SubtotalCost + SalesTaxCost;
             }
+        }
+
+        /// <summary>
+        /// Constructor for Order
+        /// </summary>
+        public Order()
+        {
+
         }
     }
 }

@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Xunit;
-using DinoDiner.Menu;
+﻿using DinoDiner.Menu;
 using DinoDiner.Menu.Enums;
+using System;
+using Xunit;
 
 namespace MenuTest
 {
@@ -126,7 +124,7 @@ namespace MenuTest
         {
             JurrasicJava java = new JurrasicJava();
             java.Size = size;
-            java.Decaf = decaf;
+            java.MakeDecaf();
             if (decaf) Assert.Equal($"{size} Decaf Jurassic Java", java.ToString());
             else Assert.Equal($"{size} Jurassic Java", java.ToString());
         }

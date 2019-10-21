@@ -26,7 +26,7 @@ namespace DinoDiner.Menu
             this.Ice = true;
             this.Flavor = SodaSaurusFlavor.Cola;
         }
-        
+
         /// <summary>
         /// Public Property that returns the ToString() method.
         /// </summary>
@@ -51,7 +51,7 @@ namespace DinoDiner.Menu
                 return special.ToArray();
             }
         }
-       
+
         /// <summary>
         /// Public enum that holds the Flavor
         /// </summary>

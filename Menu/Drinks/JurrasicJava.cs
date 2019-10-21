@@ -59,7 +59,7 @@ namespace DinoDiner.Menu
         /// <summary>
         ///  Public Property that holds the bool Decaf
         /// </summary>
-        public bool Decaf { get;  private set; }
+        public bool Decaf { get; private set; }
 
         /// <summary>
         /// Void private method that is called when an event happens.

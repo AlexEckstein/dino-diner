@@ -73,7 +73,7 @@ namespace DinoDiner.Menu
         /// Bool for Lemon
         /// </summary>
         public bool Lemon { get; protected set; }
-        
+
         /// <summary>
         /// Void private method that is called when an event happens.
         /// </summary>

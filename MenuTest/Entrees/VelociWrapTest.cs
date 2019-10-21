@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using DinoDiner.Menu;
+using System.Collections.Generic;
 using Xunit;
-using DinoDiner.Menu;
 
 namespace MenuTest.Entrees
 {
@@ -65,7 +65,7 @@ namespace MenuTest.Entrees
                 vw.HoldCheese();
             });
         }
-   
+
         [Fact]
         public void HoldingDressingShouldNotifySpecialChange()
         {
@@ -92,7 +92,7 @@ namespace MenuTest.Entrees
             VelociWrap vw = new VelociWrap();
             vw.HoldLettuce();
             vw.HoldDressing();
-       
+
             vw.HoldCheese();
             Assert.Collection<string>(vw.Special, item =>
             {
@@ -107,4 +107,5 @@ namespace MenuTest.Entrees
                 Assert.Equal("Hold Parmesan Cheese", item);
             });
         }
+    }
 }

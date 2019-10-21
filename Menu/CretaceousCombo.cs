@@ -12,7 +12,7 @@ namespace DinoDiner.Menu
         public ColdDrink Drink;
         public Side Side;
 
-       
+
         /// <summary>
         /// Constructor for Combo Class
         /// </summary>

@@ -1,5 +1,4 @@
-﻿using DinoDiner.Menu.Enums;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace DinoDiner.Menu
 {

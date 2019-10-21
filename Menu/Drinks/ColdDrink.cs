@@ -9,10 +9,10 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Abstract class that inherits from Drink and includes Ice and HoldIce
     /// </summary>
-    public abstract class ColdDrink : IMenuItem , IOrderItem
+    public abstract class ColdDrink : IMenuItem, IOrderItem
     {
         public bool Ice { get; protected set; }
-  
+
         /// <summary>
         /// Gets and sets the price
         /// </summary>

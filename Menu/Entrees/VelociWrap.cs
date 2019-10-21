@@ -27,7 +27,7 @@ namespace DinoDiner.Menu
                 "Ceasar Dressing"
             };
         }
-        
+
         /// <summary>
         /// Public Property that returns the ToString() method.
         /// </summary>
@@ -41,7 +41,7 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> special = new List<string>();
-                
+
                 if (!Ingredients.Contains("Ceasar Dressing")) special.Add("Hold Ceasar Dressing");
                 if (!Ingredients.Contains("Romaine Lettuce")) special.Add("Hold Romaine Lettuce");
                 if (!Ingredients.Contains("Parmesan Cheese")) special.Add("Hold Parmesan Cheese");

@@ -1,6 +1,6 @@
+using DinoDiner.Menu;
 using System.Collections.Generic;
 using Xunit;
-using DinoDiner.Menu;
 
 namespace MenuTest.Entrees
 {
@@ -28,7 +28,7 @@ namespace MenuTest.Entrees
             Assert.Contains<string>("Whole Wheat Bun", ingredients);
             // Should be three patties
             int count = 0;
-            foreach(string ingredient in ingredients)
+            foreach (string ingredient in ingredients)
             {
                 if (ingredient.Equals("Steakburger Pattie")) count++;
             }
@@ -181,7 +181,7 @@ namespace MenuTest.Entrees
             });
         }
 
-        
+
 
         [Fact]
         public void SpecialShouldBeCorrectAfterHoldingOnion()
@@ -206,7 +206,7 @@ namespace MenuTest.Entrees
             trex.HoldTomato();
             trex.HoldOnion();
             trex.HoldMayo();
-            Assert.Collection<string>(trex.Special, 
+            Assert.Collection<string>(trex.Special,
             item =>
             {
                 Assert.Equal("Hold Pickle", item);
@@ -371,7 +371,7 @@ namespace MenuTest.Entrees
             });
         }
 
-        
+
 
         [Fact]
         public void HoldingMayoShouldNotifyIngredientsChange()
@@ -391,7 +391,7 @@ namespace MenuTest.Entrees
                 trex.HoldOnion();
             });
         }
-        
+
         [Fact]
         public void HoldingTomatoShouldNotifyIngredientsChange()
         {
@@ -401,7 +401,7 @@ namespace MenuTest.Entrees
                 trex.HoldTomato();
             });
         }
-        
+
 
     }
 

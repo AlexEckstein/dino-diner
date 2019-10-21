@@ -43,16 +43,16 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> special = new List<string>();
-               
+
                 return special.ToArray();
             }
         }
-             
 
-    /// <summary>
-    /// Changes Calories and Price according to size
-    /// </summary>
-    public override Size Size
+
+        /// <summary>
+        /// Changes Calories and Price according to size
+        /// </summary>
+        public override Size Size
         {
             get
             {

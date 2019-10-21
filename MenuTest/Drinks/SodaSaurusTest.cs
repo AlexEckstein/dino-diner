@@ -109,9 +109,9 @@ namespace MenuTest.Drinks
         {
             SodaSaurus ss = new SodaSaurus();
             ss.Size = Size.Medium;
-            Assert.PropertyChanged(ss, "Price", () => 
-            { 
-                ss.Size = Size.Small; 
+            Assert.PropertyChanged(ss, "Price", () =>
+            {
+                ss.Size = Size.Small;
             });
         }
 
@@ -120,9 +120,9 @@ namespace MenuTest.Drinks
         {
             SodaSaurus ss = new SodaSaurus();
             ss.Size = Size.Medium;
-            Assert.PropertyChanged(ss, "Description", () => 
-            { 
-                ss.Size = Size.Small; 
+            Assert.PropertyChanged(ss, "Description", () =>
+            {
+                ss.Size = Size.Small;
             });
         }
 
@@ -130,9 +130,9 @@ namespace MenuTest.Drinks
         public void ChangingToMediumShouldNotifyOfPricePropertyChange()
         {
             SodaSaurus ss = new SodaSaurus();
-            Assert.PropertyChanged(ss, "Price", () => 
+            Assert.PropertyChanged(ss, "Price", () =>
             {
-                ss.Size = Size.Medium; 
+                ss.Size = Size.Medium;
             });
         }
 
@@ -140,7 +140,7 @@ namespace MenuTest.Drinks
         public void ChangingToMediumShouldNotifyOfDescriptionPropertyChange()
         {
             SodaSaurus ss = new SodaSaurus();
-            Assert.PropertyChanged(ss, "Description", () => 
+            Assert.PropertyChanged(ss, "Description", () =>
             {
                 ss.Size = Size.Medium;
             });
@@ -150,7 +150,7 @@ namespace MenuTest.Drinks
         public void ChangingToLargeShouldNotifyOfPricePropertyChange()
         {
             SodaSaurus ss = new SodaSaurus();
-            Assert.PropertyChanged(ss, "Price", () => 
+            Assert.PropertyChanged(ss, "Price", () =>
             {
                 ss.Size = Size.Large;
             });
@@ -160,9 +160,9 @@ namespace MenuTest.Drinks
         public void ChangingToLargeShouldNotifyOfDescriptionPropertyChange()
         {
             SodaSaurus ss = new SodaSaurus();
-            Assert.PropertyChanged(ss, "Description", () => 
+            Assert.PropertyChanged(ss, "Description", () =>
             {
-                ss.Size = Size.Large; 
+                ss.Size = Size.Large;
             });
         }
 
@@ -171,7 +171,7 @@ namespace MenuTest.Drinks
         {
             SodaSaurus ss = new SodaSaurus();
             ss.Flavor = SodaSaurusFlavor.Lime;
-            Assert.PropertyChanged(ss, "Description", () => 
+            Assert.PropertyChanged(ss, "Description", () =>
             {
                 ss.Flavor = SodaSaurusFlavor.Cola;
             });
@@ -181,7 +181,7 @@ namespace MenuTest.Drinks
         public void SettingFlavorToRootBeerShouldNotifyOfDescriptionPropertyChange()
         {
             SodaSaurus ss = new SodaSaurus();
-            Assert.PropertyChanged(ss, "Description", () => 
+            Assert.PropertyChanged(ss, "Description", () =>
             {
                 ss.Flavor = SodaSaurusFlavor.RootBeer;
             });
@@ -190,17 +190,17 @@ namespace MenuTest.Drinks
         public void SettingFlavorToCherryShouldNotifyOfDescriptionPropertyChange()
         {
             SodaSaurus ss = new SodaSaurus();
-            Assert.PropertyChanged(ss, "Description", () => 
-            { 
-                ss.Flavor = SodaSaurusFlavor.Cherry; 
+            Assert.PropertyChanged(ss, "Description", () =>
+            {
+                ss.Flavor = SodaSaurusFlavor.Cherry;
             });
         }
         [Fact]
         public void SettingFlavorToVanillaShouldNotifyOfDescriptionPropertyChange()
         {
             SodaSaurus ss = new SodaSaurus();
-            Assert.PropertyChanged(ss, "Description", () => 
-            { 
+            Assert.PropertyChanged(ss, "Description", () =>
+            {
                 ss.Flavor = SodaSaurusFlavor.Vanilla;
             });
         }
@@ -209,15 +209,15 @@ namespace MenuTest.Drinks
         {
             SodaSaurus ss = new SodaSaurus();
             Assert.PropertyChanged(ss, "Description", () =>
-            { 
-                ss.Flavor = SodaSaurusFlavor.Chocolate; 
+            {
+                ss.Flavor = SodaSaurusFlavor.Chocolate;
             });
         }
         [Fact]
         public void SettingFlavorToOrangeShouldNotifyOfDescriptionPropertyChange()
         {
             SodaSaurus ss = new SodaSaurus();
-            Assert.PropertyChanged(ss, "Description", () => 
+            Assert.PropertyChanged(ss, "Description", () =>
             {
                 ss.Flavor = SodaSaurusFlavor.Orange;
             });
@@ -228,7 +228,7 @@ namespace MenuTest.Drinks
             SodaSaurus ss = new SodaSaurus();
             Assert.PropertyChanged(ss, "Description", () =>
             {
-                ss.Flavor = SodaSaurusFlavor.Lime; 
+                ss.Flavor = SodaSaurusFlavor.Lime;
             });
         }
         [Fact]

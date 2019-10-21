@@ -12,7 +12,7 @@ namespace DinoDiner.Menu
         /// The event handler notified is Price, Description, and Special properties.
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
- 
+
         /// <summary>
         /// Constructor for PBJ
         /// </summary>

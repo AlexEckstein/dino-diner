@@ -1,6 +1,6 @@
-﻿using System;
+﻿using DinoDiner.Menu;
+using System;
 using Xunit;
-using DinoDiner.Menu;
 
 namespace MenuTest
 {
