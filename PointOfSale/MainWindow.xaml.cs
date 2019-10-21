@@ -15,5 +15,20 @@ namespace PointOfSale
             
             order.Items.Add(new Tyrannotea());
         }
+
+        public void OnLoadCompleted(object sender, NavigationEventArgs args)
+        {
+
+        }
+        
+        public void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs args)
+        {
+
+        }
+
+        private void SetFrameDataContext()
+        {
+            FrameworkElement content = OrderInterface.Content as FrameworkElement;
+        }
     }
 }
