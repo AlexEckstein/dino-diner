@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using DinoDiner.Menu;
+using System.Windows;
 
 namespace PointOfSale
 {
@@ -10,6 +11,9 @@ namespace PointOfSale
         public MainWindow()
         {
             InitializeComponent();
+            Order order = (Order)DataContext;
+            order.Items.Add(new Fryceritops());
+            order.Items.Add(new Tyrannotea());
         }
     }
 }
