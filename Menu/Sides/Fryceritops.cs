@@ -28,7 +28,6 @@ namespace DinoDiner.Menu
                 "Salt",
                 "Vegtable Oil"
             };
-
         }
         /// <summary>
         /// Public Property that returns the ToString() method.

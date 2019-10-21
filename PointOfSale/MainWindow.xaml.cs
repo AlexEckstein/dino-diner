@@ -12,7 +12,7 @@ namespace PointOfSale
         {
             InitializeComponent();
             Order order = (Order)DataContext;
-            order.Items.Add(new Fryceritops());
+            
             order.Items.Add(new Tyrannotea());
         }
     }

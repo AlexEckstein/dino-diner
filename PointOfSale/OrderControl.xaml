@@ -14,12 +14,8 @@
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <TextBlock Text="Order" Grid.Row="0" HorizontalAlignment="Center"/>
-        <ListBox Grid.Row="1" ItemsSource="{Binding Path=Items}">
-            <ListBox.ItemTemplate>
-                
-            </ListBox.ItemTemplate>
-
-            <<Border>
+        <ListBox Grid.Row="1" ItemsSource="{Binding Path=Items}"/>
+        <Border>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Price:"/>
                 <TextBlock Text="$____"/>
