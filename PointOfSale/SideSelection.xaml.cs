@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using DinoDiner.Menu;
 
 namespace PointOfSale
 {
@@ -15,22 +16,46 @@ namespace PointOfSale
 
         private void Fryceritops_Click(object sender, RoutedEventArgs e)
         {
+            Order order = (Order)DataContext;
+            order.Items.Add(new Fryceritops());
+            BtnFryceritops.IsEnabled = false;
+            BtnMezzSticks.IsEnabled = false;
+            BtnTriceritots.IsEnabled = false;
+            BtnMac.IsEnabled = false;
 
         }
 
         private void Mac_Click(object sender, RoutedEventArgs e)
         {
 
+            Order order = (Order)DataContext;
+            order.Items.Add(new MeteorMacAndCheese());
+            BtnFryceritops.IsEnabled = false;
+            BtnMezzSticks.IsEnabled = false;
+            BtnTriceritots.IsEnabled = false;
+            BtnMac.IsEnabled = false;
         }
 
         private void Mezzorella_Click(object sender, RoutedEventArgs e)
         {
 
+            Order order = (Order)DataContext;
+            order.Items.Add(new MezzorellaSticks());
+            BtnFryceritops.IsEnabled = false;
+            BtnMezzSticks.IsEnabled = false;
+            BtnTriceritots.IsEnabled = false;
+            BtnMac.IsEnabled = false;
         }
 
         private void Triceritots_Click(object sender, RoutedEventArgs e)
         {
 
+            Order order = (Order)DataContext;
+            order.Items.Add(new Triceritots());
+            BtnFryceritops.IsEnabled = false;
+            BtnMezzSticks.IsEnabled = false;
+            BtnTriceritots.IsEnabled = false;
+            BtnMac.IsEnabled = false;
         }
 
         private void Small_Click(object sender, RoutedEventArgs e)

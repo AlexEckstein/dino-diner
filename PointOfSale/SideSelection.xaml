@@ -24,25 +24,25 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button Background="WhiteSmoke" Grid.Row="1" Grid.Column="0" Click="Fryceritops_Click">
+        <Button x:Name="BtnFryceritops" Background="WhiteSmoke" Grid.Row="1" Grid.Column="0" Click="Fryceritops_Click">
             <TextBlock FontSize="16" FontWeight="Bold" TextWrapping="Wrap" Text="Fryceritops"/>
         </Button>
-        <Button Background="WhiteSmoke" Grid.Row="2" Grid.Column="0" Click="Mac_Click">
+        <Button x:Name="BtnMac" Background="WhiteSmoke" Grid.Row="2" Grid.Column="0" Click="Mac_Click">
             <TextBlock FontSize="16" FontWeight="Bold" TextWrapping="Wrap" Text="Meteor Mac &amp; Cheese"/>
         </Button>
-        <Button Background="WhiteSmoke" Grid.Row="3" Grid.Column="0" Click="Mezzorella_Click">
+        <Button x:Name="BtnMezzSticks" Background="WhiteSmoke" Grid.Row="3" Grid.Column="0" Click="Mezzorella_Click">
             <TextBlock FontSize="16" FontWeight="Bold" TextWrapping="Wrap" Text="Mezzorella Sticks"/>
         </Button>
-        <Button Background="WhiteSmoke" Grid.Row="4" Grid.Column="0" Click="Triceritots_Click">
+        <Button x:Name="BtnTriceritots" Background="WhiteSmoke" Grid.Row="4" Grid.Column="0" Click="Triceritots_Click">
             <TextBlock FontSize="16" FontWeight="Bold" TextWrapping="Wrap" Text="Triceritots"/>
         </Button>
-        <Button Background="WhiteSmoke" Grid.Row="1" Grid.Column="2" Click="Small_Click">
+        <Button x:Name="BtnSmall" Background="WhiteSmoke" Grid.Row="1" Grid.Column="2" Click="Small_Click">
             <TextBlock FontSize="16" FontWeight="Bold" TextWrapping="Wrap" Text="Small"/>
         </Button>
-        <Button Background="WhiteSmoke" Grid.Row="2" Grid.Column="2" Click="Medium_Click">
+        <Button x:Name="BtnMedium" Background="WhiteSmoke" Grid.Row="2" Grid.Column="2" Click="Medium_Click">
             <TextBlock FontSize="16" FontWeight="Bold" TextWrapping="Wrap" Text="Medium"/>
         </Button>
-        <Button Background="WhiteSmoke" Grid.Row="3" Grid.Column="2" Click="Large_Click">
+        <Button x:Name="BtnLarge" Background="WhiteSmoke" Grid.Row="3" Grid.Column="2" Click="Large_Click">
             <TextBlock FontSize="16" FontWeight="Bold" TextWrapping="Wrap" Text="Large"/>
         </Button>
         <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0" FontSize="18" FontWeight="Bold" TextWrapping="Wrap" Text="Side"/>
