@@ -58,19 +58,25 @@ namespace PointOfSale
             BtnMac.IsEnabled = false;
         }
 
+        protected void SelectSize(DinoDiner.Menu.Size size)
+        {
+            if (Side != null)
+                this.Side.Size = size;
+        }
+
         private void Small_Click(object sender, RoutedEventArgs e)
         {
-
+            SelectSize(DinoDiner.Menu.Size.Small);
         }
 
         private void Medium_Click(object sender, RoutedEventArgs e)
         {
-
+            SelectSize(DinoDiner.Menu.Size.Medium);
         }
 
         private void Large_Click(object sender, RoutedEventArgs e)
         {
-
+            SelectSize(DinoDiner.Menu.Size.Large);
         }
     }
 }
