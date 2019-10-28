@@ -12,6 +12,6 @@
     </Window.DataContext>
     <DockPanel>
         <local:OrderControl HorizontalAlignment="Right"  x:Name="OrderList" Width="200" DockPanel.Dock="Right"  Background="LightSteelBlue"/>
-        <Frame Source="MenuCategorySelection.xaml"></Frame>
+        <Frame x:Name="UXOrder" Source="MenuCategorySelection.xaml"></Frame>
     </DockPanel>
 </Window>

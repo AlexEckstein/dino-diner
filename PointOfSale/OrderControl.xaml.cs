@@ -11,6 +11,7 @@ namespace PointOfSale
     public partial class OrderControl : UserControl
     {
         public NavigationService Navigation { get; set; }
+        public static NavigationService NavigationService { get; internal set; }
 
         public OrderControl()
         {

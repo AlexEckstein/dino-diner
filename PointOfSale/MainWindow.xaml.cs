@@ -14,6 +14,8 @@ namespace PointOfSale
             InitializeComponent();
             Order order = new Order();
             DataContext = order;
+            UXOrder.Navigate(new MenuCategorySelection());
+            OrderControl.NavigationService = UXOrder.NavigationService;
         }
 
         public void OnLoadCompleted(object sender, NavigationEventArgs args)
