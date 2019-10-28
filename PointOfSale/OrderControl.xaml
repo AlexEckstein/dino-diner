@@ -14,7 +14,7 @@
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <TextBlock Text="Order" Grid.Row="0" HorizontalAlignment="Center"/>
-        <ListBox Grid.Row="1" ItemsSource="{Binding Path=Items}"/>
+        <ListBox Grid.Row="1" ItemsSource="{Binding Path=Items}" Name="OrderItems" SelectionChanged="OnSelectionChanged"/>
         <Border>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Price:"/>

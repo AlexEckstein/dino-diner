@@ -3,6 +3,7 @@
 */
 using DinoDiner.Menu.Enums;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -11,6 +12,7 @@ namespace DinoDiner.Menu
     /// </summary>
     public abstract class ColdDrink : IMenuItem, IOrderItem
     {
+
         public bool Ice { get; protected set; }
 
         /// <summary>
@@ -34,6 +36,10 @@ namespace DinoDiner.Menu
         public abstract Size Size { get; set; }
         public abstract string Description { get; }
         public abstract string[] Special { get; }
+
+        public abstract event PropertyChangedEventHandler PropertyChanged;
+
         public abstract void HoldIce();
+
     }
 }

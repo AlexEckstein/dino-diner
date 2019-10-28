@@ -1,4 +1,5 @@
 ﻿
+using DinoDiner.Menu;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
@@ -10,6 +11,7 @@ namespace PointOfSale
     /// </summary>
     public partial class ComboSelection : Page
     {
+
         public ComboSelection()
         {
             InitializeComponent();
@@ -17,37 +19,65 @@ namespace PointOfSale
 
         private void BrontowurstCombo_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new CustomizeCombo("Brontowurst"));
+            if (DataContext is Order order)
+            {
+                order.Add(new Brontowurst());
+                NavigationService.Navigate(new CustomizeCombo());
+            }
         }
 
         private void DinoNuggetsCombo_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new CustomizeCombo("Dino-Nuggets"));
+            if (DataContext is Order order)
+            {
+                order.Add(new DinoNuggets());
+                NavigationService.Navigate(new CustomizeCombo());
+            }
         }
 
         private void SteakosaurusCombo_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new CustomizeCombo("Steakosaurus"));
+            if (DataContext is Order order)
+            {
+                order.Add(new SteakosaurusBurger());
+                NavigationService.Navigate(new CustomizeCombo());
+            }
         }
 
         private void TRexKingBurgerCombo_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new CustomizeCombo("T-Rex King Burger"));
+            if (DataContext is Order order)
+            {
+                order.Add(new TRexKingBurger());
+                NavigationService.Navigate(new CustomizeCombo());
+            }
         }
 
         private void PrehistoricPBJCombo_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new CustomizeCombo("Prehistoric PB&J"));
+            if (DataContext is Order order)
+            {
+                order.Add(new PrehistoricPBJ());
+                NavigationService.Navigate(new CustomizeCombo());
+            }
         }
 
         private void PterodactylWingsCombo_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new CustomizeCombo("Pterodactyl Wings"));
+            if (DataContext is Order order)
+            {
+                order.Add(new PterodactylWings());
+                NavigationService.Navigate(new CustomizeCombo());
+            }
         }
 
         private void VelociWrapCombo_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new CustomizeCombo("Veloci-Wrap"));
+            if (DataContext is Order order)
+            {
+                order.Add(new VelociWrap());
+                NavigationService.Navigate(new CustomizeCombo());
+            }
         }
     }
 }

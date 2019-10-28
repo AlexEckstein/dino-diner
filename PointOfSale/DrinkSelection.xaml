@@ -37,6 +37,13 @@
             <TextBlock FontSize="16" FontWeight="Bold" TextWrapping="Wrap" Text="Jurassic Java"/>
         </Button>
 
+        <Button   Click="Done_Click" Margin="16,30,34,0" Grid.Row="5" Grid.Column="1">
+            <StackPanel>
+
+                <TextBlock TextAlignment="Center" FontWeight="Bold"><Run Text="Done"/></TextBlock>
+            </StackPanel>
+
+        </Button>
         <Button Background="WhiteSmoke" Click="Water_Click" Grid.Row="4" Grid.Column="0">
             <TextBlock FontSize="16" FontWeight="Bold" TextWrapping="Wrap" Text="Water"/>
         </Button>

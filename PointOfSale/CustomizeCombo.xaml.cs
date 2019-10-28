@@ -8,7 +8,7 @@ namespace PointOfSale
 
     public partial class CustomizeCombo : Page
     {
-        public CustomizeCombo(string v)
+        public CustomizeCombo()
         {
             InitializeComponent();
         }

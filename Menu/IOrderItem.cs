@@ -1,10 +1,11 @@
 ﻿/*  IOrderItem.cs
 *   Author: Alex Eckstein
 */
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public interface IOrderItem
+    public interface IOrderItem : INotifyPropertyChanged
     {
         double Price { get; }
 

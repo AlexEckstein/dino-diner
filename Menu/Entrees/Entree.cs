@@ -2,6 +2,7 @@
 *   Author: Alex Eckstein
 */
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -23,5 +24,7 @@ namespace DinoDiner.Menu
         public List<string> Ingredients { get; protected set; }
         public abstract string Description { get; }
         public abstract string[] Special { get; }
+
+        public abstract event PropertyChangedEventHandler PropertyChanged;
     }
 }

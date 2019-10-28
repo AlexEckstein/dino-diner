@@ -3,15 +3,56 @@
 */
 using DinoDiner.Menu.Enums;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public class CretaceousCombo : IMenuItem
+    public class CretaceousCombo : IMenuItem, IOrderItem
     {
-        public Entree Entree;
-        public ColdDrink Drink;
-        public Side Side;
+        private ColdDrink drink;
+        private Side side;
+        private Entree entree;
 
+        public Entree Entree
+        {
+            get { return entree; }
+            set
+            {
+                this.entree = value;
+                NotifyOfPropertyChanged("Ingredients");
+                NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Drink");
+            }
+        }
+
+        public ColdDrink Drink
+        {
+            get { return drink; }
+            set
+            {
+                this.drink = value;
+                NotifyOfPropertyChanged("Ingredients");
+                NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Drink");
+            }
+        }
+
+        public Side Side
+        {
+            get { return side; }
+            set
+            {
+                this.side = value;
+                NotifyOfPropertyChanged("Ingredients");
+                NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Drink");
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// Constructor for Combo Class
@@ -36,6 +77,34 @@ namespace DinoDiner.Menu
             Side = new Fryceritops();
             Drink = new SodaSaurus();
         }
+
+        public void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public string Description 
+        {
+            get 
+            {
+                return this.ToString();
+            } 
+        }
+        
+        public string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                special.Add(Entree.Description);
+                special.Add(Side.Description);
+                special.Add(Drink.Description);
+                special.AddRange(Entree.Special);
+                special.AddRange(Side.Special);
+                special.AddRange(Drink.Special);
+                return special.ToArray();
+            }
+        }
         public double Price { get; set; }
         public uint Calories { get; set; }
         public List<string> Ingredients { get; private set; }
@@ -56,6 +125,10 @@ namespace DinoDiner.Menu
                 Side.Size = value;
                 this.Calories = Entree.Calories + Drink.Calories + Side.Calories;
                 this.Price = Entree.Price + Drink.Price + Side.Price - 0.25;
+                NotifyOfPropertyChanged("Size");
+                NotifyOfPropertyChanged("Special");
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
             }
         }
         /// <summary>

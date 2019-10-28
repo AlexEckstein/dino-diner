@@ -12,9 +12,8 @@ namespace PointOfSale
         public MainWindow()
         {
             InitializeComponent();
-            Order order = (Order)DataContext;
-            
-            order.Items.Add(new Tyrannotea());
+            Order order = new Order();
+            DataContext = order;
         }
 
         public void OnLoadCompleted(object sender, NavigationEventArgs args)

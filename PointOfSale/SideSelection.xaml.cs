@@ -1,6 +1,9 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using DinoDiner.Menu;
+using DinoDiner.Menu.Enums;
+using System.Collections.Generic;
+using System;
 
 namespace PointOfSale
 {
@@ -9,15 +12,24 @@ namespace PointOfSale
     /// </summary>
     public partial class SideSelection : Page
     {
+        Side side;
         public SideSelection()
         {
             InitializeComponent();
         }
 
+        public SideSelection(Side side)
+        {
+            this.side = side;
+        }
+
         private void Fryceritops_Click(object sender, RoutedEventArgs e)
         {
-            Order order = (Order)DataContext;
-            order.Items.Add(new Fryceritops());
+            if (DataContext is Order order)
+            {
+                side = new Fryceritops();
+                order.Add(side);
+            }
             BtnFryceritops.IsEnabled = false;
             BtnMezzSticks.IsEnabled = false;
             BtnTriceritots.IsEnabled = false;
@@ -28,55 +40,75 @@ namespace PointOfSale
         private void Mac_Click(object sender, RoutedEventArgs e)
         {
 
-            Order order = (Order)DataContext;
-            order.Items.Add(new MeteorMacAndCheese());
-            BtnFryceritops.IsEnabled = false;
-            BtnMezzSticks.IsEnabled = false;
-            BtnTriceritots.IsEnabled = false;
-            BtnMac.IsEnabled = false;
+            if (DataContext is Order order)
+            {
+                side = new MeteorMacAndCheese();
+                order.Add(side);
+                BtnFryceritops.IsEnabled = false;
+                BtnMezzSticks.IsEnabled = false;
+                BtnTriceritots.IsEnabled = false;
+                BtnMac.IsEnabled = false;
+            }
         }
 
         private void Mezzorella_Click(object sender, RoutedEventArgs e)
         {
 
-            Order order = (Order)DataContext;
-            order.Items.Add(new MezzorellaSticks());
-            BtnFryceritops.IsEnabled = false;
-            BtnMezzSticks.IsEnabled = false;
-            BtnTriceritots.IsEnabled = false;
-            BtnMac.IsEnabled = false;
+            if (DataContext is Order order)
+            {
+                side = new MezzorellaSticks();
+                order.Add(side);
+                BtnFryceritops.IsEnabled = false;
+                BtnMezzSticks.IsEnabled = false;
+                BtnTriceritots.IsEnabled = false;
+                BtnMac.IsEnabled = false;
+            }
         }
 
         private void Triceritots_Click(object sender, RoutedEventArgs e)
         {
 
-            Order order = (Order)DataContext;
-            order.Items.Add(new Triceritots());
-            BtnFryceritops.IsEnabled = false;
-            BtnMezzSticks.IsEnabled = false;
-            BtnTriceritots.IsEnabled = false;
-            BtnMac.IsEnabled = false;
+            if (DataContext is Order order)
+            {
+                side = new Triceritots();
+                order.Add(side);
+                BtnFryceritops.IsEnabled = false;
+                BtnMezzSticks.IsEnabled = false;
+                BtnTriceritots.IsEnabled = false;
+                BtnMac.IsEnabled = false;
+            }
         }
 
-        protected void SelectSize(DinoDiner.Menu.Size size)
+        protected void SelectSize(DinoDiner.Menu.Enums.Size size)
         {
-            if (Side != null)
-                this.Side.Size = size;
+            
         }
 
         private void Small_Click(object sender, RoutedEventArgs e)
         {
-            SelectSize(DinoDiner.Menu.Size.Small);
+            if (sender is FrameworkElement element)
+            {
+                side.Size = DinoDiner.Menu.Enums.Size.Small;
+                NavigationService.Navigate(new MenuCategorySelection());
+            }
         }
 
         private void Medium_Click(object sender, RoutedEventArgs e)
         {
-            SelectSize(DinoDiner.Menu.Size.Medium);
+            if (sender is FrameworkElement element)
+            {
+                side.Size = DinoDiner.Menu.Enums.Size.Medium;
+                NavigationService.Navigate(new MenuCategorySelection());
+            }
         }
 
         private void Large_Click(object sender, RoutedEventArgs e)
         {
-            SelectSize(DinoDiner.Menu.Size.Large);
+            if (sender is FrameworkElement element)
+            {
+                side.Size = DinoDiner.Menu.Enums.Size.Large;
+                NavigationService.Navigate(new MenuCategorySelection());
+            }
         }
     }
 }
