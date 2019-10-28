@@ -12,6 +12,8 @@ namespace DinoDiner.Menu
     /// </summary>
     public class Triceritots : Side
     {
+        private Size size;
+
         /// <summary>
         /// The event handler notified is Price, Description, and Special properties.
         /// </summary>
@@ -22,7 +24,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public Triceritots()
         {
-            this.Size = Size.Small;
+            this.size = Size.Small;
             this.Calories = 352;
             this.Price = 0.99;
             this.Ingredients = new List<string>()
@@ -58,14 +60,14 @@ namespace DinoDiner.Menu
         {
             get
             {
-                return this.Size;
+                return this.size;
             }
             set
             {
-                this.Size = value;
-                if (this.Size == Size.Small) { this.Calories = 352; this.Price = 0.99; }
-                if (this.Size == Size.Medium) { this.Calories = 410; this.Price = 1.45; }
-                if (this.Size == Size.Large) { this.Calories = 590; this.Price = 1.95; }
+                this.size = value;
+                if (this.size == Size.Small) { this.Calories = 352; this.Price = 0.99; }
+                if (this.size == Size.Medium) { this.Calories = 410; this.Price = 1.45; }
+                if (this.size == Size.Large) { this.Calories = 590; this.Price = 1.95; }
                 NotifyOfPropertyChange("Size");
                 NotifyOfPropertyChange("Calories");
                 NotifyOfPropertyChange("Price");

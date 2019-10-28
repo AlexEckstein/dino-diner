@@ -25,14 +25,17 @@ namespace PointOfSale
 
         public DrinkSelection(Entree entree)
         {
+            InitializeComponent();
         }
 
         public DrinkSelection(Drink drink1)
         {
+            InitializeComponent();
         }
 
         public DrinkSelection()
         {
+            InitializeComponent();
         }
 
         private void Flavor_Click(object sender, RoutedEventArgs e)

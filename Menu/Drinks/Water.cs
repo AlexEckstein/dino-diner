@@ -12,6 +12,8 @@ namespace DinoDiner.Menu
     /// </summary>
     public class Water : ColdDrink
     {
+        private Size size;
+
         /// <summary>
         /// The event handler notified is Price, Description, and Special properties.
         /// </summary>
@@ -22,7 +24,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public Water()
         {
-            this.Size = Size.Small;
+            this.size = Size.Small;
             this.Ice = true;
             this.Price = 0.10;
             this.Ingredients = new List<string>()
@@ -67,7 +69,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Override for selecting size
         /// </summary>
-        public override Size Size { get; set; }
+        public override Size Size { get { return size; }  set { this.size = value; } }
 
         /// <summary>
         /// Bool for Lemon

@@ -12,6 +12,8 @@ namespace DinoDiner.Menu
     /// </summary>
     public class JurrasicJava : ColdDrink
     {
+        private Size size;
+
         /// <summary>
         /// The event handler notified is Price, Description, and Special properties.
         /// </summary>
@@ -23,7 +25,7 @@ namespace DinoDiner.Menu
         public JurrasicJava()
         {
             this.Ice = false;
-            this.Size = Size.Small;
+            this.size = Size.Small;
             this.Ingredients = new List<string>
             {
                 "Water", "Coffee"
@@ -37,14 +39,14 @@ namespace DinoDiner.Menu
         {
             get
             {
-                return this.Size;
+                return this.size;
             }
             set
             {
-                this.Size = value;
-                if (this.Size == Size.Small) { this.Calories = 2; this.Price = 0.59; }
-                if (this.Size == Size.Medium) { this.Calories = 4; this.Price = 0.99; }
-                if (this.Size == Size.Large) { this.Calories = 8; this.Price = 1.49; }
+                this.size = value;
+                if (this.size == Size.Small) { this.Calories = 2; this.Price = 0.59; }
+                if (this.size == Size.Medium) { this.Calories = 4; this.Price = 0.99; }
+                if (this.size == Size.Large) { this.Calories = 8; this.Price = 1.49; }
                 NotifyOfPropertyChange("Size");
                 NotifyOfPropertyChange("Calories");
                 NotifyOfPropertyChange("Price");

@@ -12,6 +12,8 @@ namespace DinoDiner.Menu
     /// </summary>
     public class Tyrannotea : ColdDrink
     {
+        private Size size;
+
         /// <summary>
         /// The event handler notified is Price, Description, and Special properties.
         /// </summary>
@@ -24,7 +26,7 @@ namespace DinoDiner.Menu
         {
             this.Sweet = false;
             this.Lemon = false;
-            this.Size = Size.Small;
+            this.size = Size.Small;
             this.Ice = true;
             this.Ingredients = new List<string>()
             {
@@ -67,14 +69,14 @@ namespace DinoDiner.Menu
         {
             get
             {
-                return this.Size;
+                return this.size;
             }
             set
             {
-                this.Size = value;
-                if (this.Size == Size.Small) { this.Calories = 8; this.Price = 0.99; }
-                if (this.Size == Size.Medium) { this.Calories = 16; this.Price = 1.49; }
-                if (this.Size == Size.Large) { this.Calories = 32; this.Price = 1.99; }
+                this.size = value;
+                if (this.size == Size.Small) { this.Calories = 8; this.Price = 0.99; }
+                if (this.size == Size.Medium) { this.Calories = 16; this.Price = 1.49; }
+                if (this.size == Size.Large) { this.Calories = 32; this.Price = 1.99; }
                 if (Sweet)
                 {
                     this.Calories = this.Calories * 2;

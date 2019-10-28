@@ -12,6 +12,7 @@ namespace DinoDiner.Menu
     /// </summary>
     public class SodaSaurus : ColdDrink
     {
+        private Size size;
         /// <summary>
         /// The event handler notified is Price, Description, and Special properties.
         /// </summary>
@@ -22,7 +23,8 @@ namespace DinoDiner.Menu
         /// </summary>
         public SodaSaurus()
         {
-            this.Size = Size.Small;
+            
+            this.size = Size.Small;
             this.Ice = true;
             this.Flavor = SodaSaurusFlavor.Cola;
         }
@@ -64,14 +66,14 @@ namespace DinoDiner.Menu
         {
             get
             {
-                return this.Size;
+                return this.size;
             }
             set
             {
-                this.Size = value;
-                if (this.Size == Size.Small) { this.Calories = 222; this.Price = 0.99; }
-                if (this.Size == Size.Medium) { this.Calories = 365; this.Price = 1.45; }
-                if (this.Size == Size.Large) { this.Calories = 480; this.Price = 1.95; }
+                this.size = value;
+                if (this.size == Size.Small) { this.Calories = 222; this.Price = 0.99; }
+                if (this.size == Size.Medium) { this.Calories = 365; this.Price = 1.45; }
+                if (this.size == Size.Large) { this.Calories = 480; this.Price = 1.95; }
                 NotifyOfPropertyChange("Size");
                 NotifyOfPropertyChange("Calories");
                 NotifyOfPropertyChange("Price");

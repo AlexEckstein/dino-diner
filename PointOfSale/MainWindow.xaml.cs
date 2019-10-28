@@ -1,5 +1,6 @@
 ﻿using DinoDiner.Menu;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Navigation;
 
 namespace PointOfSale
@@ -20,17 +21,20 @@ namespace PointOfSale
 
         public void OnLoadCompleted(object sender, NavigationEventArgs args)
         {
-
+            SetFrameDataContext();
         }
         
         public void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs args)
         {
-
+            SetFrameDataContext();
         }
 
         private void SetFrameDataContext()
         {
-            //FrameworkElement content = OrderInterface.Content as FrameworkElement;
+            if(UXOrder.Content is Page page)
+            {
+                page.DataContext = UXOrder.DataContext;
+            }
         }
     }
 }
