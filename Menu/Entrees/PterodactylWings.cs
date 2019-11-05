@@ -1,6 +1,7 @@
 ﻿/*  PterodactylWings.cs
 *   Author: Alex Eckstein
 */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 
@@ -45,6 +46,11 @@ namespace DinoDiner.Menu
 
                 return special.ToArray();
             }
+        }
+
+        public void HoldSauce()
+        {
+            throw new NotImplementedException();
         }
 
         /// <summary>
