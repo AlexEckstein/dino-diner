@@ -43,14 +43,17 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> special = new List<string>();
-
+                if (!Ingredients.Contains("Wing Sauce")) special.Add("Hold sauce");
                 return special.ToArray();
             }
         }
 
         public void HoldSauce()
         {
-            throw new NotImplementedException();
+            this.Ingredients.Remove("Wing Sauce");
+            NotifyOfPropertyChange("Ingredients");
+            NotifyOfPropertyChange("Special");
+
         }
 
         /// <summary>

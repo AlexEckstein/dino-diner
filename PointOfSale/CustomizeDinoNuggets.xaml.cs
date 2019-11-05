@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
 
 namespace PointOfSale
 {
@@ -20,14 +21,32 @@ namespace PointOfSale
     /// </summary>
     public partial class CustomizeDinoNuggets : Page
     {
-        public CustomizeDinoNuggets()
+        DinoNuggets nugs;
+        CretaceousCombo combo;
+        public CustomizeDinoNuggets(DinoNuggets nuggets)
         {
             InitializeComponent();
+            this.nugs = nuggets;
         }
 
         private void DoneButton_Click(object sender, RoutedEventArgs e)
         {
+            NavigationService.GoBack();
+        }
 
+        private void AddNuggetButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (combo == null)
+            {
+                this.nugs.AddNugget();
+            }
+            else
+            {
+                if (combo.Entree is DinoNuggets nugs)
+                {
+                    nugs.AddNugget();
+                }
+            }
         }
     }
 }

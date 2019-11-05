@@ -8,7 +8,24 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="CustomizeDinoNuggets">
 
+
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button Name="AddNuggetButton" Click="AddNuggetButton_Click" Background="white" Grid.Row="1" Grid.Column="1">
+            <TextBlock Text="Add Nugget" FontWeight="Bold"/>
+        </Button>
+        <Button Name="DoneButton" Click="DoneButton_Click" Background="Green" Grid.Row="2" Grid.Column="1">
+            <TextBlock Text="Done" FontWeight="Bold" FontSize="20"/>
+        </Button>
+        <TextBlock Text="Customize Dino Nuggets" Grid.Column="0" Grid.Row="0" FontWeight="Bold" FontSize="24" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="3"/>
     </Grid>
 </Page>

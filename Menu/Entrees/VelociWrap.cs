@@ -1,6 +1,7 @@
 ﻿/*  VelociWrap.cs
 *   Author: Alex Eckstein
 */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 
@@ -45,9 +46,12 @@ namespace DinoDiner.Menu
                 if (!Ingredients.Contains("Ceasar Dressing")) special.Add("Hold Ceasar Dressing");
                 if (!Ingredients.Contains("Romaine Lettuce")) special.Add("Hold Romaine Lettuce");
                 if (!Ingredients.Contains("Parmesan Cheese")) special.Add("Hold Parmesan Cheese");
+                if (!Ingredients.Contains("Flour Tortilla")) special.Add("Hold Tortilla");
                 return special.ToArray();
             }
         }
+
+        
 
         /// <summary>
         /// Void private method that is called when an event happens.
@@ -58,6 +62,15 @@ namespace DinoDiner.Menu
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        /// <summary>
+        /// Void method that removes Tortilla shell from ingredients list
+        /// </summary>
+        public void HoldTortilla()
+        {
+            this.Ingredients.Remove("Flour Tortilla");
+            NotifyOfPropertyChange("Ingredients");
+            NotifyOfPropertyChange("Special");
+        }
         /// <summary>
         /// Void method that removes Ceasar Dressing from ingredients list
         /// </summary>

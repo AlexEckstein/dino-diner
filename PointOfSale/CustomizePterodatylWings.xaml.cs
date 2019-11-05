@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
 
 namespace PointOfSale
 {
@@ -20,14 +21,37 @@ namespace PointOfSale
     /// </summary>
     public partial class CustomizePterodatylWings : Page
     {
-        public CustomizePterodatylWings()
+        PterodactylWings wings;
+        CretaceousCombo combo;
+        public CustomizePterodatylWings(PterodactylWings wings)
         {
             InitializeComponent();
+            this.wings = wings;
+        }
+        public CustomizePterodatylWings(CretaceousCombo combo)
+        {
+            InitializeComponent();
+            this.combo = combo;
         }
 
         private void DoneButton_Click(object sender, RoutedEventArgs e)
         {
+            NavigationService.GoBack();
+        }
 
+        private void HoldWingSauceButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (combo == null)
+            {
+                this.wings.HoldSauce();
+            }
+            else
+            {
+                if (combo.Entree is PterodactylWings w)
+                {
+                    w.HoldSauce();
+                }
+            }
         }
     }
 }
