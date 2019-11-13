@@ -1,7 +1,6 @@
 ﻿/*  SodaSaurus.cs
 *   Author: Alex Eckstein
 */
-using DinoDiner.Menu.Enums;
 using System.Collections.Generic;
 using System.ComponentModel;
 
@@ -12,7 +11,12 @@ namespace DinoDiner.Menu
     /// </summary>
     public class SodaSaurus : ColdDrink
     {
+        /// <summary>
+        /// Private Backing variables
+        /// </summary>
         private Size size;
+        private SodaSaurusFlavor flavor;
+
         /// <summary>
         /// The event handler notified is Price, Description, and Special properties.
         /// </summary>
@@ -23,10 +27,10 @@ namespace DinoDiner.Menu
         /// </summary>
         public SodaSaurus()
         {
-            
             this.size = Size.Small;
             this.Ice = true;
             this.Flavor = SodaSaurusFlavor.Cola;
+            this.Ingredients = new List<string>{ "Ice","Sugar", "Water"};
         }
 
         /// <summary>
@@ -42,14 +46,7 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> special = new List<string>();
-                if (!Ingredients.Contains("Whole Wheat Bun")) special.Add("Hold Whole Wheat Bun");
-                if (!Ingredients.Contains("Pickle")) special.Add("Hold Pickle");
-                if (!Ingredients.Contains("Ketchup")) special.Add("Hold Ketchup");
-                if (!Ingredients.Contains("Mustard")) special.Add("Hold Mustard");
-                if (!Ingredients.Contains("Lettuce")) special.Add("Hold Lettuce");
-                if (!Ingredients.Contains("Tomato")) special.Add("Hold Tomato");
-                if (!Ingredients.Contains("Onion")) special.Add("Hold Onion");
-                if (!Ingredients.Contains("Mayo")) special.Add("Hold Mayo");
+                if (Ice) { special.Add("Hold Ice"); }
                 return special.ToArray();
             }
         }
@@ -57,7 +54,16 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Public enum that holds the Flavor
         /// </summary>
-        public SodaSaurusFlavor Flavor { get; set; }
+        public SodaSaurusFlavor Flavor 
+        { 
+            get { 
+                return flavor; 
+            } 
+            set { 
+                flavor = value;
+                NotifyOfPropertyChange("Description");
+            } 
+        }
 
         /// <summary>
         /// Override Property that changes price and calories based upon size
@@ -79,6 +85,7 @@ namespace DinoDiner.Menu
                 NotifyOfPropertyChange("Price");
             }
         }
+
         /// <summary>
         /// Void private method that is called when an event happens.
         /// </summary>
@@ -87,6 +94,7 @@ namespace DinoDiner.Menu
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
         /// <summary>
         /// Override public method for holding ice
         /// </summary>
@@ -94,7 +102,10 @@ namespace DinoDiner.Menu
         {
             this.Ice = false;
             this.Ingredients.Remove("Ice");
+            NotifyOfPropertyChange("Ice");
+            NotifyOfPropertyChange("Special");
         }
+
         /// <summary>
         /// Overides ToString method
         /// </summary>

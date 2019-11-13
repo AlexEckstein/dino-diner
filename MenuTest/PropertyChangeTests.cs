@@ -4,6 +4,7 @@ using System.Text;
 using System.ComponentModel;
 using DinoDiner.Menu;
 using Xunit;
+using DinoDiner.Menu;
 
 namespace MenuTest
 {

@@ -1,4 +1,4 @@
-﻿namespace DinoDiner.Menu.Enums
+﻿namespace DinoDiner.Menu
 {
     public enum Size
     {

@@ -1,7 +1,7 @@
 ﻿/*  Side.cs
 *   Author: Alex Eckstein
 */
-using DinoDiner.Menu.Enums;
+using DinoDiner.Menu;
 using System.Collections.Generic;
 using System.ComponentModel;
 

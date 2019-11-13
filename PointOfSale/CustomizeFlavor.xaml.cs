@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using DinoDiner.Menu;
-using DinoDiner.Menu.Enums;
+using DinoDiner.Menu;
 
 namespace PointOfSale
 {

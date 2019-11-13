@@ -25,15 +25,15 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Button Background="WhiteSmoke" Click="Sodasaurus_Click" Grid.Row="1" Grid.Column="0">
+        <Button x:Name="sodaButton"  Background="WhiteSmoke" Click="Sodasaurus_Click" Grid.Row="1" Grid.Column="0">
             <TextBlock FontSize="16" FontWeight="Bold" TextWrapping="Wrap" Text="SodaSaurus"/>
         </Button>
 
-        <Button Background="WhiteSmoke" Click="Tyrannotea_Click" Grid.Row="2" Grid.Column="0">
+        <Button x:Name="TeaButton" Background="WhiteSmoke" Click="Tyrannotea_Click" Grid.Row="2" Grid.Column="0">
             <TextBlock FontSize="16" FontWeight="Bold" TextWrapping="Wrap" Text="Tyrannotea"/>
         </Button>
 
-        <Button Background="WhiteSmoke" Click="Jurassicjava_Click" Grid.Row="3" Grid.Column="0">
+        <Button x:Name="JavaButton" Background="WhiteSmoke" Click="Jurassicjava_Click" Grid.Row="3" Grid.Column="0">
             <TextBlock FontSize="16" FontWeight="Bold" TextWrapping="Wrap" Text="Jurassic Java"/>
         </Button>
 
@@ -44,7 +44,7 @@
             </StackPanel>
 
         </Button>
-        <Button Background="WhiteSmoke" Click="Water_Click" Grid.Row="4" Grid.Column="0">
+        <Button x:Name="WaterButton" Background="WhiteSmoke" Click="Water_Click" Grid.Row="4" Grid.Column="0">
             <TextBlock FontSize="16" FontWeight="Bold" TextWrapping="Wrap" Text="Water"/>
         </Button>
 

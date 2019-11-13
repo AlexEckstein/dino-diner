@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using DinoDiner.Menu;
-using DinoDiner.Menu.Enums;
+using DinoDiner.Menu;
 using System.Collections.Generic;
 using System;
 
@@ -79,7 +79,7 @@ namespace PointOfSale
             }
         }
 
-        protected void SelectSize(DinoDiner.Menu.Enums.Size size)
+        protected void SelectSize(DinoDiner.Menu.Size size)
         {
             
         }
@@ -88,7 +88,7 @@ namespace PointOfSale
         {
             if (sender is FrameworkElement element)
             {
-                side.Size = DinoDiner.Menu.Enums.Size.Small;
+                side.Size = DinoDiner.Menu.Size.Small;
                 NavigationService.Navigate(new MenuCategorySelection());
             }
         }
@@ -97,7 +97,7 @@ namespace PointOfSale
         {
             if (sender is FrameworkElement element)
             {
-                side.Size = DinoDiner.Menu.Enums.Size.Medium;
+                side.Size = DinoDiner.Menu.Size.Medium;
                 NavigationService.Navigate(new MenuCategorySelection());
             }
         }
@@ -106,7 +106,7 @@ namespace PointOfSale
         {
             if (sender is FrameworkElement element)
             {
-                side.Size = DinoDiner.Menu.Enums.Size.Large;
+                side.Size = DinoDiner.Menu.Size.Large;
                 NavigationService.Navigate(new MenuCategorySelection());
             }
         }

@@ -38,7 +38,7 @@ namespace PointOfSale
             {
                 Navigation?.Navigate(new SideSelection(side));
             }
-            else if (OrderItems.SelectedItem is Drink drink)
+            else if (OrderItems.SelectedItem is ColdDrink drink)
             {
                 Navigation?.Navigate(new DrinkSelection(drink));
             }

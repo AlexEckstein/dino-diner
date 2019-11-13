@@ -12,15 +12,13 @@ namespace PointOfSale
     public partial class DrinkSelection : Page
     {
         private ColdDrink drink;
-        public DrinkSelection(SodaSaurus sodasaurus)
+        public DrinkSelection(SodaSaurus soda)
         {
             InitializeComponent();
-
-            FlavorButton.IsEnabled = false;
-            IceButton.IsEnabled = false;
             DecafButton.IsEnabled = false;
             SweetButton.IsEnabled = false;
             LemonButton.IsEnabled = false;
+            drink = soda;
         }
 
         public DrinkSelection(Entree entree)
@@ -28,14 +26,24 @@ namespace PointOfSale
             InitializeComponent();
         }
 
-        public DrinkSelection(Drink drink1)
+        public DrinkSelection(ColdDrink d)
         {
             InitializeComponent();
+            this.drink = d;
         }
 
+        /// <summary>
+        /// Constructor used when user is selecting a drink
+        /// </summary>
         public DrinkSelection()
         {
             InitializeComponent();
+
+
+            //Handles button states
+            SmallButton.IsEnabled = false;
+            MediumButton.IsEnabled = false;
+            LargeButton.IsEnabled = false;
         }
 
         private void Flavor_Click(object sender, RoutedEventArgs e)
@@ -50,6 +58,12 @@ namespace PointOfSale
                 drink = new SodaSaurus();
                 order.Add(drink);
                 FlavorButton.IsEnabled = true;
+                sodaButton.IsEnabled = false;
+
+                //Handles button states
+                SmallButton.IsEnabled = false;
+                MediumButton.IsEnabled = true;
+                LargeButton.IsEnabled = true;
             }
         }
 
@@ -62,6 +76,11 @@ namespace PointOfSale
                 SweetButton.IsEnabled = true;
                 LemonButton.IsEnabled = true;
                 IceButton.IsEnabled = true;
+
+                //Handles button states
+                SmallButton.IsEnabled = false;
+                MediumButton.IsEnabled = true;
+                LargeButton.IsEnabled = true;
             }
         }
 
@@ -72,6 +91,12 @@ namespace PointOfSale
                 drink = new JurrasicJava();
                 order.Add(drink);
                 DecafButton.IsEnabled = true;
+                JavaButton.IsEnabled = false;
+
+                //Handles button states
+                SmallButton.IsEnabled = false;
+                MediumButton.IsEnabled = true;
+                LargeButton.IsEnabled = true;
             }
         }
 
@@ -83,22 +108,33 @@ namespace PointOfSale
                 SweetButton.IsEnabled = true;
                 LemonButton.IsEnabled = true;
                 IceButton.IsEnabled = true;
+                WaterButton.IsEnabled = false;
             }
         }
 
         private void SmallButton_Click(object sender, RoutedEventArgs e)
         {
-            drink.Size = DinoDiner.Menu.Enums.Size.Small;
+            drink.Size = DinoDiner.Menu.Size.Small;
+            SmallButton.IsEnabled = false;
+            MediumButton.IsEnabled = true;
+            LargeButton.IsEnabled = true;
         }
 
         private void MediumButton_Click(object sender, RoutedEventArgs e)
         {
-            drink.Size = DinoDiner.Menu.Enums.Size.Medium;
+            drink.Size = DinoDiner.Menu.Size.Medium;
+            MediumButton.IsEnabled = false;
+            SmallButton.IsEnabled = true;
+            LargeButton.IsEnabled = true;
         }
 
         private void LargeButton_Click(object sender, RoutedEventArgs e)
         {
-            drink.Size = DinoDiner.Menu.Enums.Size.Large;
+            drink.Size = DinoDiner.Menu.Size.Large;
+            SmallButton.IsEnabled = true;
+            MediumButton.IsEnabled = true;
+            LargeButton.IsEnabled = false;
+
         }
 
         private void LemonButton_Click(object sender, RoutedEventArgs e)
