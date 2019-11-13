@@ -27,6 +27,8 @@ namespace DinoDiner.Menu
             this.Lemon = false;
             this.size = Size.Small;
             this.Ice = true;
+            this.Price = 0.99;
+            this.Calories = 8;
             this.Ingredients = new List<string>()
             {
                 "Water", "Tea"
@@ -88,6 +90,7 @@ namespace DinoDiner.Menu
                 NotifyOfPropertyChange("Size");
                 NotifyOfPropertyChange("Calories");
                 NotifyOfPropertyChange("Price");
+                NotifyOfPropertyChange("Description");
             }
         }
 
@@ -130,7 +133,9 @@ namespace DinoDiner.Menu
         /// <returns></returns>
         public override string ToString()
         {
-            return ($" Tyrannotea");
+            string name = $"{size}";
+            if (Sweet) name += " Sweet";
+            return (name + " Tyrannotea");
         }
     }
 }

@@ -27,10 +27,12 @@ namespace DinoDiner.Menu
         /// </summary>
         public SodaSaurus()
         {
+            this.Price = 1.5;
+            this.Calories = 112;
             this.size = Size.Small;
             this.Ice = true;
             this.Flavor = SodasaurusFlavor.Cola;
-            this.Ingredients = new List<string> { "Ice", "Sugar", "Water" };
+            this.Ingredients = new List<string> {"Cane Sugar", "Water", "Natural Flavors"};
         }
 
         /// <summary>
@@ -46,7 +48,7 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> special = new List<string>();
-                if (Ice) { special.Add("Hold Ice"); }
+                if (!Ice) { special.Add("Hold Ice"); }
                 return special.ToArray();
             }
         }
@@ -79,12 +81,13 @@ namespace DinoDiner.Menu
             set
             {
                 this.size = value;
-                if (this.size == Size.Small) { this.Calories = 222; this.Price = 0.99; }
-                if (this.size == Size.Medium) { this.Calories = 365; this.Price = 1.45; }
-                if (this.size == Size.Large) { this.Calories = 480; this.Price = 1.95; }
+                if (this.size == Size.Small) { this.Calories = 222; this.Price = 1.5; }
+                if (this.size == Size.Medium) { this.Calories = 156; this.Price = 2; }
+                if (this.size == Size.Large) { this.Calories = 208; this.Price = 2.5; }
                 NotifyOfPropertyChange("Size");
                 NotifyOfPropertyChange("Calories");
                 NotifyOfPropertyChange("Price");
+                NotifyOfPropertyChange("Description");
             }
         }
 

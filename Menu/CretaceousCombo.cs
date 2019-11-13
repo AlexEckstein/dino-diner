@@ -136,7 +136,8 @@ namespace DinoDiner.Menu
         /// <returns></returns>
         public override string ToString()
         {
-            return "Hello World";
+            return this.entree.ToString() + " Combo";
+           
         }
     }
 }

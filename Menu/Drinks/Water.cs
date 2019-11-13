@@ -68,7 +68,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Override for selecting size
         /// </summary>
-        public override Size Size { get { return size; } set { this.size = value; } }
+        public override Size Size { get { return size; } set { this.size = value; NotifyOfPropertyChange("Description"); NotifyOfPropertyChange("Price"); } }
 
         /// <summary>
         /// Bool for Lemon

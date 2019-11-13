@@ -24,7 +24,7 @@ namespace DinoDiner.Menu
         public JurassicJava()
         {
             this.Ice = false;
-            this.size = Size.Small;
+            this.Size = Size.Small;
             this.Decaf = false;
             this.Ingredients = new List<string>
             {
@@ -50,6 +50,8 @@ namespace DinoDiner.Menu
                 NotifyOfPropertyChange("Size");
                 NotifyOfPropertyChange("Calories");
                 NotifyOfPropertyChange("Price");
+                NotifyOfPropertyChange("Description");
+                NotifyOfPropertyChange("Special");
             }
         }
 
@@ -97,7 +99,7 @@ namespace DinoDiner.Menu
             {
                 List<string> special = new List<string>();
                 if (this.Ice) special.Add("Add Ice");
-                if (this.RoomForCream) special.Add("");
+                if (this.RoomForCream) special.Add("Leave Room For Cream");
                 return special.ToArray();
             }
         }
@@ -109,6 +111,7 @@ namespace DinoDiner.Menu
         {
             RoomForCream = true;
             NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
 
         /// <summary>
