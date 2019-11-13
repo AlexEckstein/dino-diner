@@ -61,13 +61,14 @@ namespace DinoDiner.Menu
             set
             {
                 this.size = value;
-                if (this.size == Size.Small) this.Calories = 420; this.Price = 0.99;
-                if (this.size == Size.Medium) this.Calories = 490; this.Price = 1.45;
-                if (this.size == Size.Large) this.Calories = 520; this.Price = 1.95;
+                if (this.size == Size.Small) { this.Calories = 420; this.Price = 0.99; }
+                else if (this.size == Size.Medium) { this.Calories = 490; this.Price = 1.45; }
+                else if (this.size == Size.Large) { this.Calories = 520; this.Price = 1.95; }
                 NotifyOfPropertyChange("Size");
                 NotifyOfPropertyChange("Calories");
                 NotifyOfPropertyChange("Price");
                 NotifyOfPropertyChange("Description");
+                NotifyOfPropertyChange("Special");
             }
         }
 

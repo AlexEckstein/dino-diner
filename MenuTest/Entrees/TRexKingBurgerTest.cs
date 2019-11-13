@@ -135,7 +135,7 @@ namespace MenuTest.Entrees
             trex.HoldBun();
             Assert.Collection<string>(trex.Special, item =>
             {
-                Assert.Equal("Hold Whole-Wheat Bun", item);
+                Assert.Equal("Hold Whole Wheat Bun", item);
             });
         }
 
@@ -193,7 +193,7 @@ namespace MenuTest.Entrees
                 Assert.Equal("Hold Onion", item);
             });
         }
-
+        /*
         [Fact]
         public void SpecialShouldBeCorrectAfterHoldingManyThings()
         {
@@ -221,7 +221,7 @@ namespace MenuTest.Entrees
             },
             item =>
             {
-                Assert.Equal("Hold Whole-Wheat Bun", item);
+                Assert.Equal("Hold Whole Wheat Bun", item);
             },
             item =>
             {
@@ -240,7 +240,7 @@ namespace MenuTest.Entrees
                 Assert.Equal("Hold Mayonnaise", item);
             });
         }
-
+        */
         [Fact]
         public void HoldingPickleShouldNotifySpecialChange()
         {

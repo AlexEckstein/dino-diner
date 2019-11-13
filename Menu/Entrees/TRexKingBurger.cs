@@ -52,7 +52,7 @@ namespace DinoDiner.Menu
                 if (!Ingredients.Contains("Lettuce")) special.Add("Hold Lettuce");
                 if (!Ingredients.Contains("Tomato")) special.Add("Hold Tomato");
                 if (!Ingredients.Contains("Onion")) special.Add("Hold Onion");
-                if (!Ingredients.Contains("Mayo")) special.Add("Hold Mayo");
+                if (!Ingredients.Contains("Mayo")) special.Add("Hold Mayonnaise");
                 return special.ToArray();
             }
         }

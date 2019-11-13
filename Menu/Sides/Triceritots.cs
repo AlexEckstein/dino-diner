@@ -28,9 +28,9 @@ namespace DinoDiner.Menu
             this.Price = 0.99;
             this.Ingredients = new List<string>()
             {
-                "Potatoes",
+                "Potato",
                 "Salt",
-                "Vegtable Oil"
+                "Vegetable Oil"
             };
         }
 
@@ -70,6 +70,10 @@ namespace DinoDiner.Menu
                 NotifyOfPropertyChange("Size");
                 NotifyOfPropertyChange("Calories");
                 NotifyOfPropertyChange("Price");
+                NotifyOfPropertyChange("Special");
+                NotifyOfPropertyChange("Description");
+
+
 
             }
         }

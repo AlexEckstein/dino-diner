@@ -27,7 +27,7 @@ namespace DinoDiner.Menu
             {
                 "Potato",
                 "Salt",
-                "Vegtable Oil"
+                "Vegetable Oil"
             };
         }
         /// <summary>
@@ -68,6 +68,8 @@ namespace DinoDiner.Menu
                 NotifyOfPropertyChange("Calories");
                 NotifyOfPropertyChange("Price");
                 NotifyOfPropertyChange("Description");
+                NotifyOfPropertyChange("Special");
+
             }
         }
 

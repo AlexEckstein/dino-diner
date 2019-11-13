@@ -20,12 +20,13 @@ namespace DinoDiner.Menu
 
         public MezzorellaSticks()
         {
-            this.size = Size.Small;
+            this.Size = Size.Small;
+
             this.Ingredients = new List<string>()
             {
                 "Cheese Product",
                 "Breading",
-                "Vegtable Oil"
+                "Vegetable Oil"
             };
         }
 
@@ -66,6 +67,7 @@ namespace DinoDiner.Menu
                 NotifyOfPropertyChange("Calories");
                 NotifyOfPropertyChange("Price");
                 NotifyOfPropertyChange("Description");
+                NotifyOfPropertyChange("Special");
             }
         }
 

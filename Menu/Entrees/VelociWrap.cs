@@ -42,7 +42,7 @@ namespace DinoDiner.Menu
             {
                 List<string> special = new List<string>();
 
-                if (!Ingredients.Contains("Ceasar Dressing")) special.Add("Hold Ceasar Dressing");
+                if (!Ingredients.Contains("Ceasar Dressing")) special.Add("Hold Caesar Dressing");
                 if (!Ingredients.Contains("Romaine Lettuce")) special.Add("Hold Romaine Lettuce");
                 if (!Ingredients.Contains("Parmesan Cheese")) special.Add("Hold Parmesan Cheese");
                 if (!Ingredients.Contains("Flour Tortilla")) special.Add("Hold Tortilla");
