@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using DinoDiner.Menu;
+using System;
 using System.ComponentModel;
-using DinoDiner.Menu;
 using Xunit;
-using DinoDiner.Menu;
 
 namespace MenuTest
 {
@@ -410,7 +407,7 @@ namespace MenuTest
         [InlineData(Size.Large, "Description")]
         public void SodasaurusChangeSizeShouldNotifyProperty(Size size, string property)
         {
-            Sodasaurus soda = new Sodasaurus();
+            SodaSaurus soda = new SodaSaurus();
             Assert.PropertyChanged(soda, property, () =>
             {
                 soda.Size = size;
@@ -420,7 +417,7 @@ namespace MenuTest
         [Fact]
         public void SodasaurusHoldIceShouldNotifyPropertySpecial()
         {
-            Sodasaurus soda = new Sodasaurus();
+            SodaSaurus soda = new SodaSaurus();
             Assert.PropertyChanged(soda, "Special", () =>
             {
                 soda.HoldIce();
@@ -437,7 +434,7 @@ namespace MenuTest
         [InlineData(SodasaurusFlavor.Vanilla)]
         public void SodasaurusChangeFlavorShouldNotifyPropertyDescription(SodasaurusFlavor flavor)
         {
-            Sodasaurus soda = new Sodasaurus();
+            SodaSaurus soda = new SodaSaurus();
             Assert.PropertyChanged(soda, "Description", () =>
             {
                 soda.Flavor = flavor;

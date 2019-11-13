@@ -26,7 +26,7 @@
         </Grid.RowDefinitions>
 
         <Button x:Name="sodaButton"  Background="WhiteSmoke" Click="Sodasaurus_Click" Grid.Row="1" Grid.Column="0">
-            <TextBlock FontSize="16" FontWeight="Bold" TextWrapping="Wrap" Text="SodaSaurus"/>
+            <TextBlock FontSize="16" FontWeight="Bold" TextWrapping="Wrap" Text="Sodasaurus"/>
         </Button>
 
         <Button x:Name="TeaButton" Background="WhiteSmoke" Click="Tyrannotea_Click" Grid.Row="2" Grid.Column="0">

@@ -7,7 +7,7 @@
         Large
     }
 
-    public enum SodaSaurusFlavor
+    public enum SodasaurusFlavor
     {
         Cola,
         Orange,

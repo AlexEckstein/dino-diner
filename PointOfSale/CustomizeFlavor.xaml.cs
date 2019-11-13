@@ -1,7 +1,6 @@
-﻿using System.Windows;
+﻿using DinoDiner.Menu;
+using System.Windows;
 using System.Windows.Controls;
-using DinoDiner.Menu;
-using DinoDiner.Menu;
 
 namespace PointOfSale
 {
@@ -21,7 +20,7 @@ namespace PointOfSale
             {
                 if (order.Items[order.Items.Length - 1] is SodaSaurus sodasaurus)
                 {
-                    sodasaurus.Flavor = SodaSaurusFlavor.Lime;
+                    sodasaurus.Flavor = SodasaurusFlavor.Lime;
                     NavigationService.Navigate(new DrinkSelection(sodasaurus));
                 }
             }
@@ -33,7 +32,7 @@ namespace PointOfSale
             {
                 if (order.Items[order.Items.Length - 1] is SodaSaurus sodasaurus)
                 {
-                    sodasaurus.Flavor = SodaSaurusFlavor.Orange;
+                    sodasaurus.Flavor = SodasaurusFlavor.Orange;
                     NavigationService.Navigate(new DrinkSelection(sodasaurus));
                 }
             }
@@ -45,7 +44,7 @@ namespace PointOfSale
             {
                 if (order.Items[order.Items.Length - 1] is SodaSaurus sodasaurus)
                 {
-                    sodasaurus.Flavor = SodaSaurusFlavor.Cola;
+                    sodasaurus.Flavor = SodasaurusFlavor.Cola;
                     NavigationService.Navigate(new DrinkSelection(sodasaurus));
                 }
             }
@@ -57,7 +56,7 @@ namespace PointOfSale
             {
                 if (order.Items[order.Items.Length - 1] is SodaSaurus sodasaurus)
                 {
-                    sodasaurus.Flavor = SodaSaurusFlavor.RootBeer;
+                    sodasaurus.Flavor = SodasaurusFlavor.RootBeer;
                     NavigationService.Navigate(new DrinkSelection(sodasaurus));
                 }
             }
@@ -69,7 +68,7 @@ namespace PointOfSale
             {
                 if (order.Items[order.Items.Length - 1] is SodaSaurus sodasaurus)
                 {
-                    sodasaurus.Flavor = SodaSaurusFlavor.Cherry;
+                    sodasaurus.Flavor = SodasaurusFlavor.Cherry;
                     NavigationService.Navigate(new DrinkSelection(sodasaurus));
                 }
             }
@@ -81,7 +80,7 @@ namespace PointOfSale
             {
                 if (order.Items[order.Items.Length - 1] is SodaSaurus sodasaurus)
                 {
-                    sodasaurus.Flavor = SodaSaurusFlavor.Vanilla;
+                    sodasaurus.Flavor = SodasaurusFlavor.Vanilla;
                     NavigationService.Navigate(new DrinkSelection(sodasaurus));
                 }
             }
@@ -93,7 +92,7 @@ namespace PointOfSale
             {
                 if (order.Items[order.Items.Length - 1] is SodaSaurus sodasaurus)
                 {
-                    sodasaurus.Flavor = SodaSaurusFlavor.Chocolate;
+                    sodasaurus.Flavor = SodasaurusFlavor.Chocolate;
                     NavigationService.Navigate(new DrinkSelection(sodasaurus));
                 }
             }

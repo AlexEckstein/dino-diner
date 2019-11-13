@@ -1,7 +1,6 @@
 ﻿/*  VelociWrap.cs
 *   Author: Alex Eckstein
 */
-using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 
@@ -51,7 +50,7 @@ namespace DinoDiner.Menu
             }
         }
 
-        
+
 
         /// <summary>
         /// Void private method that is called when an event happens.

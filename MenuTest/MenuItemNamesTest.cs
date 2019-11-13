@@ -1,5 +1,4 @@
 ﻿using DinoDiner.Menu;
-using DinoDiner.Menu;
 using System;
 using Xunit;
 
@@ -122,42 +121,42 @@ namespace MenuTest
         [InlineData(Size.Large, true)]
         public void JurrasicJavaToStringShouldGiveNameForSizeAndDecaf(Size size, bool decaf)
         {
-            JurrasicJava java = new JurrasicJava();
+            JurassicJava java = new JurassicJava();
             java.Size = size;
             java.MakeDecaf();
-            if (decaf) Assert.Equal($"{size} Decaf Jurassic Java", java.ToString());
+            if (java.Decaf) Assert.Equal($"{size} Decaf Jurassic Java", java.ToString());
             else Assert.Equal($"{size} Jurassic Java", java.ToString());
         }
 
 
         [Theory]
-        [InlineData(Size.Small, SodaSaurusFlavor.Cherry)]
-        [InlineData(Size.Small, SodaSaurusFlavor.Chocolate)]
-        [InlineData(Size.Small, SodaSaurusFlavor.Cola)]
-        [InlineData(Size.Small, SodaSaurusFlavor.Lime)]
-        [InlineData(Size.Small, SodaSaurusFlavor.Orange)]
-        [InlineData(Size.Small, SodaSaurusFlavor.RootBeer)]
-        [InlineData(Size.Small, SodaSaurusFlavor.Vanilla)]
-        [InlineData(Size.Medium, SodaSaurusFlavor.Cherry)]
-        [InlineData(Size.Medium, SodaSaurusFlavor.Chocolate)]
-        [InlineData(Size.Medium, SodaSaurusFlavor.Cola)]
-        [InlineData(Size.Medium, SodaSaurusFlavor.Lime)]
-        [InlineData(Size.Medium, SodaSaurusFlavor.Orange)]
-        [InlineData(Size.Medium, SodaSaurusFlavor.RootBeer)]
-        [InlineData(Size.Medium, SodaSaurusFlavor.Vanilla)]
-        [InlineData(Size.Large, SodaSaurusFlavor.Cherry)]
-        [InlineData(Size.Large, SodaSaurusFlavor.Chocolate)]
-        [InlineData(Size.Large, SodaSaurusFlavor.Cola)]
-        [InlineData(Size.Large, SodaSaurusFlavor.Lime)]
-        [InlineData(Size.Large, SodaSaurusFlavor.Orange)]
-        [InlineData(Size.Large, SodaSaurusFlavor.RootBeer)]
-        [InlineData(Size.Large, SodaSaurusFlavor.Vanilla)]
-        public void SodaSaurusToStringShouldGiveNameForSizeAndFlavor(Size size, SodaSaurusFlavor flavor)
+        [InlineData(Size.Small, SodasaurusFlavor.Cherry)]
+        [InlineData(Size.Small, SodasaurusFlavor.Chocolate)]
+        [InlineData(Size.Small, SodasaurusFlavor.Cola)]
+        [InlineData(Size.Small, SodasaurusFlavor.Lime)]
+        [InlineData(Size.Small, SodasaurusFlavor.Orange)]
+        [InlineData(Size.Small, SodasaurusFlavor.RootBeer)]
+        [InlineData(Size.Small, SodasaurusFlavor.Vanilla)]
+        [InlineData(Size.Medium, SodasaurusFlavor.Cherry)]
+        [InlineData(Size.Medium, SodasaurusFlavor.Chocolate)]
+        [InlineData(Size.Medium, SodasaurusFlavor.Cola)]
+        [InlineData(Size.Medium, SodasaurusFlavor.Lime)]
+        [InlineData(Size.Medium, SodasaurusFlavor.Orange)]
+        [InlineData(Size.Medium, SodasaurusFlavor.RootBeer)]
+        [InlineData(Size.Medium, SodasaurusFlavor.Vanilla)]
+        [InlineData(Size.Large, SodasaurusFlavor.Cherry)]
+        [InlineData(Size.Large, SodasaurusFlavor.Chocolate)]
+        [InlineData(Size.Large, SodasaurusFlavor.Cola)]
+        [InlineData(Size.Large, SodasaurusFlavor.Lime)]
+        [InlineData(Size.Large, SodasaurusFlavor.Orange)]
+        [InlineData(Size.Large, SodasaurusFlavor.RootBeer)]
+        [InlineData(Size.Large, SodasaurusFlavor.Vanilla)]
+        public void SodaSaurusToStringShouldGiveNameForSizeAndFlavor(Size size, SodasaurusFlavor flavor)
         {
             SodaSaurus soda = new SodaSaurus();
             soda.Size = size;
             soda.Flavor = flavor;
-            Assert.Equal($"{size} {flavor} SodaSaurus", soda.ToString());
+            Assert.Equal($"{size} {flavor} Sodasaurus", soda.ToString());
         }
 
         [Theory]

@@ -23,7 +23,7 @@ namespace PointOfSale
         {
             SetFrameDataContext();
         }
-        
+
         public void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs args)
         {
             SetFrameDataContext();
@@ -31,7 +31,7 @@ namespace PointOfSale
 
         private void SetFrameDataContext()
         {
-            if(UXOrder.Content is Page page)
+            if (UXOrder.Content is Page page)
             {
                 page.DataContext = UXOrder.DataContext;
             }

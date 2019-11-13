@@ -1,5 +1,4 @@
 ﻿using DinoDiner.Menu;
-using DinoDiner.Menu;
 using Xunit;
 
 namespace MenuTest.Drinks
@@ -88,11 +87,11 @@ namespace MenuTest.Drinks
           [Fact]
         public void ShouldBeAbleToSelectAnyFlavor()
         {
-            SodaSaurus ss = new SodaSaurus();
-            foreach (SodaSaurusFlavor f in (SodaSaurusFlavor[]))
+            Sodasaurus ss = new Sodasaurus();
+            foreach (SodasaurusFlavor f in (SodasaurusFlavor[]))
             {
                 ss.Flavor = f;
-                Assert.Equal<SodaSaurusFlavor>(f, ss.Flavor);
+                Assert.Equal<SodasaurusFlavor>(f, ss.Flavor);
             }
         }
         */
@@ -170,10 +169,10 @@ namespace MenuTest.Drinks
         public void SettingFlavorToColaShouldNotifyOfDescriptionPropertyChange()
         {
             SodaSaurus ss = new SodaSaurus();
-            ss.Flavor = SodaSaurusFlavor.Lime;
+            ss.Flavor = SodasaurusFlavor.Lime;
             Assert.PropertyChanged(ss, "Description", () =>
             {
-                ss.Flavor = SodaSaurusFlavor.Cola;
+                ss.Flavor = SodasaurusFlavor.Cola;
             });
         }
 
@@ -183,7 +182,7 @@ namespace MenuTest.Drinks
             SodaSaurus ss = new SodaSaurus();
             Assert.PropertyChanged(ss, "Description", () =>
             {
-                ss.Flavor = SodaSaurusFlavor.RootBeer;
+                ss.Flavor = SodasaurusFlavor.RootBeer;
             });
         }
         [Fact]
@@ -192,7 +191,7 @@ namespace MenuTest.Drinks
             SodaSaurus ss = new SodaSaurus();
             Assert.PropertyChanged(ss, "Description", () =>
             {
-                ss.Flavor = SodaSaurusFlavor.Cherry;
+                ss.Flavor = SodasaurusFlavor.Cherry;
             });
         }
         [Fact]
@@ -201,7 +200,7 @@ namespace MenuTest.Drinks
             SodaSaurus ss = new SodaSaurus();
             Assert.PropertyChanged(ss, "Description", () =>
             {
-                ss.Flavor = SodaSaurusFlavor.Vanilla;
+                ss.Flavor = SodasaurusFlavor.Vanilla;
             });
         }
         [Fact]
@@ -210,7 +209,7 @@ namespace MenuTest.Drinks
             SodaSaurus ss = new SodaSaurus();
             Assert.PropertyChanged(ss, "Description", () =>
             {
-                ss.Flavor = SodaSaurusFlavor.Chocolate;
+                ss.Flavor = SodasaurusFlavor.Chocolate;
             });
         }
         [Fact]
@@ -219,7 +218,7 @@ namespace MenuTest.Drinks
             SodaSaurus ss = new SodaSaurus();
             Assert.PropertyChanged(ss, "Description", () =>
             {
-                ss.Flavor = SodaSaurusFlavor.Orange;
+                ss.Flavor = SodasaurusFlavor.Orange;
             });
         }
         [Fact]
@@ -228,7 +227,7 @@ namespace MenuTest.Drinks
             SodaSaurus ss = new SodaSaurus();
             Assert.PropertyChanged(ss, "Description", () =>
             {
-                ss.Flavor = SodaSaurusFlavor.Lime;
+                ss.Flavor = SodasaurusFlavor.Lime;
             });
         }
         [Fact]

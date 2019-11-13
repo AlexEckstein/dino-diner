@@ -1,5 +1,6 @@
 ﻿using DinoDiner.Menu;
 using System;
+using System.ComponentModel;
 using Xunit;
 
 namespace MenuTest
@@ -10,8 +11,8 @@ namespace MenuTest
         public void SubtotalCantBeNegative()
         {
             Order order = new Order();
-            order.Items.Add(new MeteorMacAndCheese());
-            order.Items.Add(new Test());
+            order.Add(new MeteorMacAndCheese());
+            order.Add(new Test());
             Assert.True(order.SubtotalCost >= 0);
         }
 
@@ -20,9 +21,9 @@ namespace MenuTest
         public void ShouldGiveCorrectSubTotalPrice()
         {
             Order o = new Order();
-            o.Items.Add(new Brontowurst());
-            o.Items.Add(new JurrasicJava());
-            o.Items.Add(new Fryceritops());
+            o.Add(new Brontowurst());
+            o.Add(new JurassicJava());
+            o.Add(new Fryceritops());
             Assert.Equal<double>(6.94, o.TotalCost);
         }
 
@@ -32,6 +33,8 @@ namespace MenuTest
             public string Description => throw new NotImplementedException();
 
             public string[] Special => throw new NotImplementedException();
+
+            public event PropertyChangedEventHandler PropertyChanged;
         }
     }
 }

@@ -1,7 +1,6 @@
 ﻿/*  Water.cs
 *   Author: Alex Eckstein
 */
-using DinoDiner.Menu;
 using System.Collections.Generic;
 using System.ComponentModel;
 
@@ -69,7 +68,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Override for selecting size
         /// </summary>
-        public override Size Size { get { return size; }  set { this.size = value; } }
+        public override Size Size { get { return size; } set { this.size = value; } }
 
         /// <summary>
         /// Bool for Lemon

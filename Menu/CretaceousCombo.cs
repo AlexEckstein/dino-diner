@@ -1,7 +1,6 @@
 ﻿/*  CretaceousCombo.cs
 *   Author: Alex Eckstein
 */
-using DinoDiner.Menu;
 using System.Collections.Generic;
 using System.ComponentModel;
 
@@ -83,14 +82,14 @@ namespace DinoDiner.Menu
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public string Description 
+        public string Description
         {
-            get 
+            get
             {
                 return this.ToString();
-            } 
+            }
         }
-        
+
         public string[] Special
         {
             get

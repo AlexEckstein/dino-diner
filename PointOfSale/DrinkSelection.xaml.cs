@@ -1,5 +1,4 @@
 ﻿using DinoDiner.Menu;
-using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
@@ -88,7 +87,7 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                drink = new JurrasicJava();
+                drink = new JurassicJava();
                 order.Add(drink);
                 DecafButton.IsEnabled = true;
                 JavaButton.IsEnabled = false;
@@ -159,7 +158,7 @@ namespace PointOfSale
             {
                 water.HoldIce();
             }
-            else if (drink is JurrasicJava jurrasicJava)
+            else if (drink is JurassicJava jurrasicJava)
             {
                 jurrasicJava.HoldIce();
             }
@@ -171,7 +170,7 @@ namespace PointOfSale
 
         private void Decaf_Click(object sender, RoutedEventArgs e)
         {
-            if (drink is JurrasicJava jurrassicJava)
+            if (drink is JurassicJava jurrassicJava)
             {
                 jurrassicJava.MakeDecaf();
             }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
 
 namespace DinoDiner.Menu
@@ -12,7 +11,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Public property holding Items for order.
         /// </summary>
-        public IOrderItem[] Items { get { return items.ToArray(); }  } 
+        public IOrderItem[] Items { get { return items.ToArray(); } }
 
         private List<IOrderItem> items;
 
@@ -56,7 +55,7 @@ namespace DinoDiner.Menu
         {
             items = new List<IOrderItem>();
         }
-        
+
         private void OnPriceChanged(object sender, EventArgs args)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));

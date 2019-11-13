@@ -1,18 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DinoDiner.Menu;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
-using DinoDiner.Menu;
 
 namespace PointOfSale
 {
@@ -21,27 +10,27 @@ namespace PointOfSale
     /// </summary>
     public partial class CustomizeSteakosaurusBurger : Page
     {
-       
+
         private SteakosaurusBurger burger;
 
-    
+
         private CretaceousCombo combo;
 
-        
+
         public CustomizeSteakosaurusBurger(SteakosaurusBurger burger)
         {
             InitializeComponent();
             this.burger = burger;
         }
 
-        
+
         public CustomizeSteakosaurusBurger(CretaceousCombo combo)
         {
             InitializeComponent();
             this.combo = combo;
         }
 
-       
+
         private void HoldPickleButton_Click(object sender, RoutedEventArgs e)
         {
             if (combo == null)
@@ -57,7 +46,7 @@ namespace PointOfSale
             }
         }
 
-       
+
         private void HoldBunButton_Click(object sender, RoutedEventArgs e)
         {
             if (combo == null)
@@ -73,7 +62,7 @@ namespace PointOfSale
             }
         }
 
-        
+
         private void HoldKetchupButton_Click(object sender, RoutedEventArgs e)
         {
             if (combo == null)
@@ -89,7 +78,7 @@ namespace PointOfSale
             }
         }
 
-       
+
         private void HoldMustardButton_Click(object sender, RoutedEventArgs e)
         {
             if (combo == null)

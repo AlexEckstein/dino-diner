@@ -1,9 +1,6 @@
-﻿using System.Windows;
+﻿using DinoDiner.Menu;
+using System.Windows;
 using System.Windows.Controls;
-using DinoDiner.Menu;
-using DinoDiner.Menu;
-using System.Collections.Generic;
-using System;
 
 namespace PointOfSale
 {
@@ -81,7 +78,7 @@ namespace PointOfSale
 
         protected void SelectSize(DinoDiner.Menu.Size size)
         {
-            
+
         }
 
         private void Small_Click(object sender, RoutedEventArgs e)

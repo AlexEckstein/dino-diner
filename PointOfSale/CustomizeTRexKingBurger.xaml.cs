@@ -1,18 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DinoDiner.Menu;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
-using DinoDiner.Menu;
 
 namespace PointOfSale
 {
@@ -21,27 +10,27 @@ namespace PointOfSale
     /// </summary>
     public partial class CustomizeTRexKingBurger : Page
     {
-        
+
         private TRexKingBurger burger;
 
-        
+
         private CretaceousCombo combo;
 
-        
+
         public CustomizeTRexKingBurger(TRexKingBurger b)
         {
             InitializeComponent();
             this.burger = b;
         }
 
-        
+
         public CustomizeTRexKingBurger(CretaceousCombo c)
         {
             InitializeComponent();
             this.combo = c;
         }
 
-        
+
         private void HoldKetchupButton_Click(object sender, RoutedEventArgs e)
         {
             if (combo == null)
@@ -57,7 +46,7 @@ namespace PointOfSale
             }
         }
 
-        
+
         private void HoldMustardButton_Click(object sender, RoutedEventArgs e)
         {
             if (combo == null)
@@ -73,13 +62,13 @@ namespace PointOfSale
             }
         }
 
-        
+
         private void DoneButton_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
         }
 
-        
+
         private void HoldBunButton_Click(object sender, RoutedEventArgs e)
         {
             if (combo == null)
@@ -95,7 +84,7 @@ namespace PointOfSale
             }
         }
 
-        
+
         private void HoldPickleButton_Click(object sender, RoutedEventArgs e)
         {
             if (combo == null)
@@ -111,8 +100,8 @@ namespace PointOfSale
             }
         }
 
-        
-        
+
+
         private void HoldLettuceButton_Click(object sender, RoutedEventArgs e)
         {
             if (combo == null)
@@ -128,7 +117,7 @@ namespace PointOfSale
             }
         }
 
-        
+
         private void HoldOnionButton_Click(object sender, RoutedEventArgs e)
         {
             if (combo == null)
@@ -144,7 +133,7 @@ namespace PointOfSale
             }
         }
 
-        
+
         private void HoldMayoButton_Click(object sender, RoutedEventArgs e)
         {
             if (combo == null)

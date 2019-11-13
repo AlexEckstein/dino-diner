@@ -1,7 +1,6 @@
 ﻿/*  Drink.cs
 *   Author: Alex Eckstein
 */
-using DinoDiner.Menu;
 using System.Collections.Generic;
 
 namespace DinoDiner.Menu

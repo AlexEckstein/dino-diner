@@ -12,5 +12,7 @@ namespace DinoDiner.Menu
         string Description { get; }
 
         string[] Special { get; }
+
+        
     }
 }

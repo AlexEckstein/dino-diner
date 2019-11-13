@@ -1,16 +1,15 @@
-﻿/*  JurrasicJava.cs
+﻿/*  JurassicJava.cs
 *   Author: Alex Eckstein
 */
-using DinoDiner.Menu;
 using System.Collections.Generic;
 using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
-    /// Public Class holding JurrasicJava
+    /// Public Class holding JurassicJava
     /// </summary>
-    public class JurrasicJava : ColdDrink
+    public class JurassicJava : ColdDrink
     {
         private Size size;
 
@@ -20,12 +19,13 @@ namespace DinoDiner.Menu
         public override event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
-        /// Constructor for JurrasicJava
+        /// Constructor for JurassicJava
         /// </summary>
-        public JurrasicJava()
+        public JurassicJava()
         {
             this.Ice = false;
             this.size = Size.Small;
+            this.Decaf = false;
             this.Ingredients = new List<string>
             {
                 "Water", "Coffee"
@@ -137,10 +137,10 @@ namespace DinoDiner.Menu
         /// <returns>Regular Jurassic Java or Decaf</returns>
         public override string ToString()
         {
-            if (!Decaf)
-                return (Size.ToString() + " Jurassic Java");
-            else
+            if (Decaf)
                 return (Size.ToString() + " Decaf Jurassic Java");
+            else
+                return (Size.ToString() + " Jurassic Java");
         }
     }
 }

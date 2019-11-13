@@ -1,4 +1,4 @@
-﻿/*  SodaSaurus.cs
+﻿/*  Sodasaurus.cs
 *   Author: Alex Eckstein
 */
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.ComponentModel;
 namespace DinoDiner.Menu
 {
     /// <summary>
-    /// Public class for SodaSaurus
+    /// Public class for Sodasaurus
     /// </summary>
     public class SodaSaurus : ColdDrink
     {
@@ -15,7 +15,7 @@ namespace DinoDiner.Menu
         /// Private Backing variables
         /// </summary>
         private Size size;
-        private SodaSaurusFlavor flavor;
+        private SodasaurusFlavor flavor;
 
         /// <summary>
         /// The event handler notified is Price, Description, and Special properties.
@@ -23,14 +23,14 @@ namespace DinoDiner.Menu
         public override event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
-        /// Constructor for SodaSaurus
+        /// Constructor for Sodasaurus
         /// </summary>
         public SodaSaurus()
         {
             this.size = Size.Small;
             this.Ice = true;
-            this.Flavor = SodaSaurusFlavor.Cola;
-            this.Ingredients = new List<string>{ "Ice","Sugar", "Water"};
+            this.Flavor = SodasaurusFlavor.Cola;
+            this.Ingredients = new List<string> { "Ice", "Sugar", "Water" };
         }
 
         /// <summary>
@@ -54,15 +54,17 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Public enum that holds the Flavor
         /// </summary>
-        public SodaSaurusFlavor Flavor 
-        { 
-            get { 
-                return flavor; 
-            } 
-            set { 
+        public SodasaurusFlavor Flavor
+        {
+            get
+            {
+                return flavor;
+            }
+            set
+            {
                 flavor = value;
                 NotifyOfPropertyChange("Description");
-            } 
+            }
         }
 
         /// <summary>

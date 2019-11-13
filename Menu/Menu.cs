@@ -23,7 +23,7 @@ namespace DinoDiner.Menu
             new MeteorMacAndCheese(),
             new MezzorellaSticks(),
             new Triceritots(),
-            new JurrasicJava(),
+            new JurassicJava(),
             new SodaSaurus(),
             new Tyrannotea(),
             new Water(),
@@ -66,7 +66,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public List<IMenuItem> AvailableDrinks { get; } = new List<IMenuItem>()
         {
-            new JurrasicJava(),
+            new JurassicJava(),
             new SodaSaurus(),
             new Tyrannotea(),
             new Water()
