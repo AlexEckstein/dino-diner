@@ -1,0 +1,35 @@
+﻿<Page x:Class="PointOfSale.CustomizePrehistoricPBJ"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PointOfSale"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CustomizePrehistoricPBJ">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button Name="HoldPeanutButterButton" Click="HoldPeanutButterButton_Click" Background="WhiteSmoke" Grid.Row="1">
+            <TextBlock Text="Hold Peanut Butter" FontWeight="Bold" FontSize="25"/>
+        </Button>
+        <Button Name="HoldJellyButton" Click="HoldJellyButton_Click" Background="WhiteSmoke" Grid.Row="1" Grid.Column="2">
+            <TextBlock Text="Hold Jelly" FontWeight="Bold" FontSize="25"/>
+        </Button>
+        <Button Name="DoneButton" Click="DoneButton_Click" Background="WhiteSmoke" Grid.Row="2" Grid.Column="1">
+            <TextBlock Text="Done" FontWeight="Bold" FontSize="25"/>
+        </Button>
+        <Popup Name="cantGoBack">
+            <TextBlock Text="No page to return to."/>
+        </Popup>
+    </Grid>
+</Page>

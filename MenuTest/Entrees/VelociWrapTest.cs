@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using DinoDiner.Menu;
+using System.Collections.Generic;
 using Xunit;
-using DinoDiner.Menu.Entrees;
 
 namespace MenuTest.Entrees
 {
@@ -55,6 +55,57 @@ namespace MenuTest.Entrees
             VelociWrap vw = new VelociWrap();
             vw.HoldCheese();
             Assert.DoesNotContain<string>("Parmesan Cheese", vw.Ingredients);
+        }
+        [Fact]
+        public void HoldingCheeseShouldNotifySpecialChange()
+        {
+            VelociWrap vw = new VelociWrap();
+            Assert.PropertyChanged(vw, "Special", () =>
+            {
+                vw.HoldCheese();
+            });
+        }
+
+        [Fact]
+        public void HoldingDressingShouldNotifySpecialChange()
+        {
+            VelociWrap vw = new VelociWrap();
+            Assert.PropertyChanged(vw, "Special", () =>
+            {
+                vw.HoldDressing();
+            });
+        }
+
+        [Fact]
+        public void HoldingLettuceShouldNotifySpecialChange()
+        {
+            VelociWrap vw = new VelociWrap();
+            Assert.PropertyChanged(vw, "Special", () =>
+            {
+                vw.HoldLettuce();
+            });
+        }
+
+        [Fact]
+        public void SpecialShouldBeCorrectAfterHoldingManyThings()
+        {
+            VelociWrap vw = new VelociWrap();
+            vw.HoldLettuce();
+            vw.HoldDressing();
+
+            vw.HoldCheese();
+            Assert.Collection<string>(vw.Special, item =>
+            {
+                Assert.Equal("Hold Caesar Dressing", item);
+            },
+            item =>
+            {
+                Assert.Equal("Hold Romaine Lettuce", item);
+            },
+            item =>
+            {
+                Assert.Equal("Hold Parmesan Cheese", item);
+            });
         }
     }
 }

@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using DinoDiner.Menu;
+using System.Collections.Generic;
 using Xunit;
-using DinoDiner.Menu.Entrees;
 
 namespace MenuTest.Entrees
 {
@@ -28,6 +28,13 @@ namespace MenuTest.Entrees
             Assert.Contains<string>("Chicken", ingredients);
             Assert.Contains<string>("Wing Sauce", ingredients);
             Assert.Equal<int>(2, ingredients.Count);
+        }
+
+        [Fact]
+        public void DescriptionMatchesToString()
+        {
+            Brontowurst b = new Brontowurst();
+            Assert.Equal(b.Description, b.ToString());
         }
 
     }

@@ -1,6 +1,6 @@
+using DinoDiner.Menu;
 using System.Collections.Generic;
 using Xunit;
-using DinoDiner.Menu.Entrees;
 
 namespace MenuTest.Entrees
 {
@@ -63,6 +63,107 @@ namespace MenuTest.Entrees
             SteakosaurusBurger sb = new SteakosaurusBurger();
             sb.HoldMustard();
             Assert.DoesNotContain<string>("Mustard", sb.Ingredients);
+        }
+        [Fact]
+        public void HoldBunShouldNotifyOfSpecialPropertyChange()
+        {
+            SteakosaurusBurger sb = new SteakosaurusBurger();
+            Assert.PropertyChanged(sb, "Special", () =>
+            {
+                sb.HoldBun();
+            });
+        }
+        [Fact]
+        public void HoldKetchupShouldNotifyOfSpecialPropertyChange()
+        {
+            SteakosaurusBurger sb = new SteakosaurusBurger();
+            Assert.PropertyChanged(sb, "Special", () =>
+            {
+                sb.HoldKetchup();
+            });
+        }
+
+        [Fact]
+        public void HoldPickleShouldNotifyOfSpecialPropertyChange()
+        {
+            SteakosaurusBurger sb = new SteakosaurusBurger();
+            Assert.PropertyChanged(sb, "Special", () =>
+            {
+                sb.HoldPickle();
+            });
+        }
+
+        [Fact]
+        public void HoldMustardShouldNotifyOfSpecialPropertyChange()
+        {
+            SteakosaurusBurger sb = new SteakosaurusBurger();
+            Assert.PropertyChanged(sb, "Special", () =>
+            {
+                sb.HoldMustard();
+            });
+        }
+
+        [Fact]
+        public void SpecialShouldHoldBun()
+        {
+            SteakosaurusBurger sb = new SteakosaurusBurger();
+            sb.HoldBun();
+            Assert.Collection<string>(sb.Special, item =>
+            {
+                Assert.Equal("Hold Bun", item);
+            });
+        }
+
+        [Fact]
+        public void SpecialShouldHoldMustard()
+        {
+            SteakosaurusBurger sb = new SteakosaurusBurger();
+            sb.HoldMustard();
+            Assert.Collection<string>(sb.Special, item =>
+            {
+                Assert.Equal("Hold Mustard", item);
+            });
+        }
+        [Fact]
+        public void SpecialShouldHoldKetchup()
+        {
+            SteakosaurusBurger sb = new SteakosaurusBurger();
+            sb.HoldKetchup();
+            Assert.Collection<string>(sb.Special, item =>
+            {
+                Assert.Equal("Hold Ketchup", item);
+            });
+        }
+        [Fact]
+        public void SpecialShouldHoldPickle()
+        {
+            SteakosaurusBurger sb = new SteakosaurusBurger();
+            sb.HoldPickle();
+            Assert.Collection<string>(sb.Special, item =>
+            {
+                Assert.Equal("Hold Pickle", item);
+            });
+        }
+
+        [Fact]
+        public void SpecialShouldHoldAllItems()
+        {
+            SteakosaurusBurger sb = new SteakosaurusBurger();
+            sb.HoldBun();
+            sb.HoldKetchup();
+            sb.HoldMustard();
+            sb.HoldPickle();
+            Assert.Contains<string>("Hold Ketchup", sb.Special);
+            Assert.Contains<string>("Hold Mustard", sb.Special);
+            Assert.Contains<string>("Hold Bun", sb.Special);
+            Assert.Contains<string>("Hold Pickle", sb.Special);
+            Assert.Equal<int>(4, sb.Special.Length);
+        }
+        [Fact]
+        public void DescriptionMatchesToString()
+        {
+            Brontowurst b = new Brontowurst();
+            Assert.Equal(b.Description, b.ToString());
         }
     }
 

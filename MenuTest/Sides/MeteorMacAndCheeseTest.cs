@@ -1,5 +1,6 @@
-﻿using Xunit;
-using DinoDiner.Menu.Sides;
+﻿using DinoDiner.Menu;
+using DinoDiner.Menu.Enums;
+using Xunit;
 
 namespace MenuTest.Sides
 {
@@ -82,6 +83,46 @@ namespace MenuTest.Sides
             MeteorMacAndCheese mmc = new MeteorMacAndCheese();
             mmc.Size = Size.Large;
             Assert.Equal<Size>(Size.Large, mmc.Size);
+        }
+
+        [Fact]
+        public void ChangingSizeShouldNotifySpecialChange()
+        {
+            MeteorMacAndCheese mmc = new MeteorMacAndCheese();
+            Assert.PropertyChanged(mmc, "Special", () =>
+            {
+                mmc.Size = Size.Medium;
+            });
+        }
+
+        [Fact]
+        public void ChangingSizeShouldNotifyPriceChange()
+        {
+            MeteorMacAndCheese mmc = new MeteorMacAndCheese();
+            Assert.PropertyChanged(mmc, "Price", () =>
+            {
+                mmc.Size = Size.Medium;
+            });
+        }
+
+        [Fact]
+        public void ChangingSizeShouldNotifySizeChange()
+        {
+            MeteorMacAndCheese mmc = new MeteorMacAndCheese();
+            Assert.PropertyChanged(mmc, "Size", () =>
+            {
+                mmc.Size = Size.Medium;
+            });
+        }
+
+        [Fact]
+        public void ChangingSizeShouldNotifyCaloriesChange()
+        {
+            MeteorMacAndCheese mmc = new MeteorMacAndCheese();
+            Assert.PropertyChanged(mmc, "Calories", () =>
+            {
+                mmc.Size = Size.Medium;
+            });
         }
     }
 }

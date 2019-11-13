@@ -1,5 +1,6 @@
-﻿using Xunit;
-using DinoDiner.Menu.Sides;
+﻿using DinoDiner.Menu;
+using DinoDiner.Menu.Enums;
+using Xunit;
 
 namespace MenuTest.Sides
 {
@@ -82,6 +83,46 @@ namespace MenuTest.Sides
             Triceritots tt = new Triceritots();
             tt.Size = Size.Large;
             Assert.Equal<Size>(Size.Large, tt.Size);
+        }
+
+        [Fact]
+        public void ChangingSizeShouldNotifySpecialChange()
+        {
+            Triceritots tt = new Triceritots();
+            Assert.PropertyChanged(tt, "Special", () =>
+            {
+                tt.Size = Size.Medium;
+            });
+        }
+
+        [Fact]
+        public void ChangingSizeShouldNotifyPriceChange()
+        {
+            Triceritots tt = new Triceritots();
+            Assert.PropertyChanged(tt, "Price", () =>
+            {
+                tt.Size = Size.Medium;
+            });
+        }
+
+        [Fact]
+        public void ChangingSizeShouldNotifySizeChange()
+        {
+            Triceritots tt = new Triceritots();
+            Assert.PropertyChanged(tt, "Size", () =>
+            {
+                tt.Size = Size.Medium;
+            });
+        }
+
+        [Fact]
+        public void ChangingSizeShouldNotifyCaloriesChange()
+        {
+            Triceritots tt = new Triceritots();
+            Assert.PropertyChanged(tt, "Calories", () =>
+            {
+                tt.Size = Size.Medium;
+            });
         }
     }
 }

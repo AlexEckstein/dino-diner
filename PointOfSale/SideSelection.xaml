@@ -1,0 +1,52 @@
+﻿<Page x:Class="PointOfSale.SideSelection"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PointOfSale"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="SideSelection">
+
+
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button x:Name="BtnFryceritops" Background="WhiteSmoke" Grid.Row="1" Grid.Column="0" Click="Fryceritops_Click">
+            <TextBlock FontSize="16" FontWeight="Bold" TextWrapping="Wrap" Text="Fryceritops"/>
+        </Button>
+        <Button x:Name="BtnMac" Background="WhiteSmoke" Grid.Row="2" Grid.Column="0" Click="Mac_Click">
+            <TextBlock FontSize="16" FontWeight="Bold" TextWrapping="Wrap" Text="Meteor Mac &amp; Cheese"/>
+        </Button>
+        <Button x:Name="BtnMezzSticks" Background="WhiteSmoke" Grid.Row="3" Grid.Column="0" Click="Mezzorella_Click">
+            <TextBlock FontSize="16" FontWeight="Bold" TextWrapping="Wrap" Text="Mezzorella Sticks"/>
+        </Button>
+        <Button x:Name="BtnTriceritots" Background="WhiteSmoke" Grid.Row="4" Grid.Column="0" Click="Triceritots_Click">
+            <TextBlock FontSize="16" FontWeight="Bold" TextWrapping="Wrap" Text="Triceritots"/>
+        </Button>
+        <Button x:Name="BtnSmall" Background="WhiteSmoke" Grid.Row="1" Grid.Column="2" Click="Small_Click">
+            <TextBlock FontSize="16" FontWeight="Bold" TextWrapping="Wrap" Text="Small"/>
+        </Button>
+        <Button x:Name="BtnMedium" Background="WhiteSmoke" Grid.Row="2" Grid.Column="2" Click="Medium_Click">
+            <TextBlock FontSize="16" FontWeight="Bold" TextWrapping="Wrap" Text="Medium"/>
+        </Button>
+        <Button x:Name="BtnLarge" Background="WhiteSmoke" Grid.Row="3" Grid.Column="2" Click="Large_Click">
+            <TextBlock FontSize="16" FontWeight="Bold" TextWrapping="Wrap" Text="Large"/>
+        </Button>
+        <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0" FontSize="18" FontWeight="Bold" TextWrapping="Wrap" Text="Side"/>
+        <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="2" FontSize="18" FontWeight="Bold" TextWrapping="Wrap" Text="Size"/>
+        <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1" FontSize="18" FontWeight="Bold" TextWrapping="Wrap" Text="Customize Side"/>
+    </Grid>
+</Page>

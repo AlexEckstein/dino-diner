@@ -1,18 +1,13 @@
-﻿using System;
+﻿/*  Side.cs
+*   Author: Alex Eckstein
+*/
+using DinoDiner.Menu.Enums;
 using System.Collections.Generic;
-using System.Text;
+using System.ComponentModel;
 
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu
 {
-
-    public enum Size
-    {
-        Small,
-        Medium, 
-        Large
-    }
-
-    public abstract class Side
+    public abstract class Side : IMenuItem, IOrderItem
     {
         /// <summary>
         /// Gets and sets the price
@@ -27,12 +22,15 @@ namespace DinoDiner.Menu.Sides
         /// <summary>
         /// Gets the ingredients list
         /// </summary>
-        public List<string> Ingredients { get; }
+        public List<string> Ingredients { get; protected set; }
 
         /// <summary>
         /// Gets or sets the size
         /// </summary>
-        public Size Size { get; set; }
+        public abstract Size Size { get; set; }
+        public abstract string Description { get; }
+        public abstract string[] Special { get; }
 
+        public abstract event PropertyChangedEventHandler PropertyChanged;
     }
 }

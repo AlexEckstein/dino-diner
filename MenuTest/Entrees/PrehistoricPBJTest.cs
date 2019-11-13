@@ -1,6 +1,6 @@
+using DinoDiner.Menu;
 using System.Collections.Generic;
 using Xunit;
-using DinoDiner.Menu.Entrees;
 
 namespace MenuTest.Entrees
 {
@@ -45,6 +45,73 @@ namespace MenuTest.Entrees
             PrehistoricPBJ pbj = new PrehistoricPBJ();
             pbj.HoldJelly();
             Assert.DoesNotContain<string>("Jelly", pbj.Ingredients);
+        }
+
+        [Fact]
+        public void HoldPeanutButterShouldNotifySpecialProperty()
+        {
+            PrehistoricPBJ pbj = new PrehistoricPBJ();
+            Assert.PropertyChanged(pbj, "Special", () =>
+           {
+               pbj.HoldPeanutButter();
+           });
+        }
+
+        [Fact]
+        public void HoldJellyShouldNotifySpecialProperty()
+        {
+            PrehistoricPBJ pbj = new PrehistoricPBJ();
+            Assert.PropertyChanged(pbj, "Special", () =>
+            {
+                pbj.HoldJelly();
+            });
+        }
+
+        [Fact]
+        public void ShouldHaveEmptySpecialListByDefault()
+        {
+            PrehistoricPBJ pbj = new PrehistoricPBJ();
+            Assert.Empty(pbj.Special);
+        }
+
+        [Fact]
+        public void SpecialShouldHoldPeanutButter()
+        {
+            PrehistoricPBJ pbj = new PrehistoricPBJ();
+            pbj.HoldPeanutButter();
+            Assert.Collection<string>(pbj.Special, item =>
+            {
+                Assert.Equal("Hold Peanut Butter", item);
+            });
+        }
+
+
+        [Fact]
+        public void SpecialShouldHoldJelly()
+        {
+            PrehistoricPBJ pbj = new PrehistoricPBJ();
+            pbj.HoldJelly();
+            Assert.Collection<string>(pbj.Special, item =>
+            {
+                Assert.Equal("Hold Jelly", item);
+            });
+        }
+        [Fact]
+        public void SpecialShouldHoldPBAndJ()
+        {
+            PrehistoricPBJ pbj = new PrehistoricPBJ();
+            pbj.HoldPeanutButter();
+            pbj.HoldJelly();
+            Assert.Contains<string>("Hold Jelly", pbj.Special);
+            //needs an and symbol
+            Assert.Contains<string>("Hold Peanut Butter", pbj.Special);
+        }
+
+        [Fact]
+        public void DescriptionMatchesToString()
+        {
+            Brontowurst b = new Brontowurst();
+            Assert.Equal(b.Description, b.ToString());
         }
     }
 
