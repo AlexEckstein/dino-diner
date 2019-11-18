@@ -11,6 +11,7 @@ namespace DinoDiner.Menu
         private ColdDrink drink;
         private Side side;
         private Entree entree;
+        private Size size;
 
         public Entree Entree
         {
@@ -48,6 +49,30 @@ namespace DinoDiner.Menu
                 NotifyOfPropertyChanged("Calories");
                 NotifyOfPropertyChanged("Price");
                 NotifyOfPropertyChanged("Drink");
+            }
+        }
+
+        /// <summary>
+        /// Public Size that changes the size of drink and side
+        /// </summary>
+        public Size Size
+        {
+            get
+            {
+                return this.size;
+            }
+            set
+            {
+                this.size = value;
+                Drink.Size = value;
+                Side.Size = value;
+                this.Calories = Entree.Calories + Drink.Calories + Side.Calories;
+                this.Price = Entree.Price + Drink.Price + Side.Price - 0.25;
+                NotifyOfPropertyChanged("Size");
+                NotifyOfPropertyChanged("Special");
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Description");
             }
         }
 
@@ -104,33 +129,23 @@ namespace DinoDiner.Menu
                 return special.ToArray();
             }
         }
+   
+
         public double Price { get; set; }
         public uint Calories { get; set; }
-        public List<string> Ingredients { get; private set; }
-
-        /// <summary>
-        /// Public Size that changes the size of drink and side
-        /// </summary>
-        public Size Size
+        
+        public List<string> Ingredients
         {
             get
             {
-                return this.Size;
-            }
-            set
-            {
-                this.Size = value;
-                Drink.Size = value;
-                Side.Size = value;
-                this.Calories = Entree.Calories + Drink.Calories + Side.Calories;
-                this.Price = Entree.Price + Drink.Price + Side.Price - 0.25;
-                NotifyOfPropertyChanged("Size");
-                NotifyOfPropertyChanged("Special");
-                NotifyOfPropertyChanged("Price");
-                NotifyOfPropertyChanged("Calories");
-                NotifyOfPropertyChanged("Description");
+                List<string> ingredients = new List<string>();
+                ingredients.AddRange(Entree.Ingredients);
+                ingredients.AddRange(Side.Ingredients);
+                ingredients.AddRange(Drink.Ingredients);
+                return ingredients;
             }
         }
+
         /// <summary>
         /// Override method that prints the items in the Combo
         /// </summary>
